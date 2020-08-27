@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+</head>
+
+<body>
+    <!-- 
+        div wrapper will be the main div to contain our entire code (HTML elements)
+
+     Review:
+     We have two attributes to name/lable any element:
+     - id
+     - class
+     - # is the id symbol (we used this symbol # with hyperlinks and will be used in CSS)
+     - . is the class symbol (the dot symbol will be used in CSS)
+
+    div#wrapper ==> a div element that has id="wrapper"
+    div.wrapper ==> a div element that has class="wrapper"
+    -->
+    <div class="wrapper">
+        <!-- 
+            - Action attribute tells the browser where it should submit the form. 
+            will be "the file" on the server (localhost server in our examples) to handle the form request. 
+            This file is written in a programming language like:
+            - PHP (the popular web programming language)
+            - Python
+            - Ruby
+            - C#
+            - JAVA
+            - etc…
+
+    
+            - Method attribute tells the browser which HTTP method it should use to submit the form.
+            method="get" or method="post"
+            two main (common) types of methods that are used by PHP when we submit the form:
+
+            - get: (the default if you don’t specify)
+            * method="get" or method="GET" (The Default)
+            * is less secured (the info will be attached to the URL) because the data is appended to the URI
+            * can handle few data (simple forms)
+            * doesn't support file upload feature
+            * is usually used for the search form only
+
+            - post:
+            * method="post" or method="POST"
+            * is more secured (the info will be imbedded with the page) because the data are included in the body of the form
+            * can handle large amount of data (simple to more complex forms)
+            * supports file upload feature
+            * is used for contact us form, registration form, login from etc. (except search form)
+        -->
+        <form action="result.html" method="post">
+            <!--
+            with HTML5 we can classify our form into different sections
+            using "fieldset" element.
+
+            <fieldset> for grouping related form controls together.
+
+            like below we are grouping the contact details and the personal information of the same person 
+            inside fieldset.
+            
+            fieldest has a child element named <legend> to give a title for this group (fieldset)
+            we can divide all the form contents into several fieldset elements
+            -->
+            <fieldset>
+                <legend>Contact and Personal Details</legend>
+                <!-- We can use the div block-level element for now to make each form element take on line by itself -->
+                <div>
+                    <!-- 
+                    A labels for attribute has the same name as a inputs id.
+                    Each labels "for" should have the same value as 
+                    its corresponding inputs id -->
+                    <!-- The most commonly used way -->
+                    <label for="first-name">First Name:*</label>
+                    <br>
+                    <!-- 
+                    id="first-name":
+                    - to connect it with its label using for attribute
+                    - can be used to give this input element a unique style (CSS)
+                    - can be used with JS or jQuery to target this element
+
+                    name="first-name":
+                    - To be used by the back-end developer with sever-side language
+                    to get the value of this field
+                    - can be used by CSS to style this element
+                    - can be used by JS to target this element
+
+                    we can use required = "required" for the old versions
+                    or we can just use required for HTML5
+
+                    the classical way: required="required"
+                    OR:
+                    the new HTML5 way: required
+
+                    maxlength ==> maximum number of characters
+
+                    we will use size="30" to change the input width.
+                    instead of using size attribute we need to use CSS, size="30" is an OLD WAY (but still valid), 
+                    we will use CSS to style the width (better)
+
+                    every input field must have the name attribute
+                -->
+                    <input type="text" id="first-name" name="first-name" required maxlength="30" size="30">
+                </div>
+
+                <div>
+                    <!-- But we can also place the input element to be a child of label element
+                and we don't have to use for attribute -->
+                    <label>Last Name:*
+                        <br>
+                        <!-- use the value attribute for default input values => value="Simpsons" -->
+                        <input type="text" id="last-name" required maxlength="30" size="30">
+                    </label>
+                </div>
+                <!-- 
+            Before HTML5 we used to have only: type="text" 
+            and it's still valid (no errors in validation)
+
+            HTML5:
+            type="text" is the default one
+            Notice that all the below new listed attributes belong to HTML5:
+            type="email" ==> to write an email address
+            type="url" ==> to write a website address
+            type="tel" ==> to write a telephone number
+            type="date" ==> to write/insert the date (Calendar Icon)
+            type="number" ==> to put numbers only (Positive or negative)
+
+            But with HTML5 we should use type="email" for these two main reasons:
+            - To have an email validation automatically and instantly (has to have @ and the . symbols)
+            - For the mobile users, so the keypad will be changed to show them the @ and .com for example  
+
+            All the above new types work only with the modern and updated browsers that support HTML5. If the user opening a website with an old version browser (doesn’t support HTML5) they will be simply changed to type="text" as it used to be before HTML5
+        -->
+                <div>
+                    <label>
+                        Email:*
+                        <br>
+                        <!-- 
+                any browser that supports HTML5 will validate the email
+                the pattern must be anyText@anyText.anyText
+
+                With HTML5, we can also add the new attribute placeholder
+             -->
+                        <input type="email" name="email" placeholder="name@example.com" maxlength="40" size="30">
+                    </label>
+
+                </div>
+
+                <div>
+                    <label>
+                        Telephone:
+                        <br>
+                        <input type="tel" name="tel" placeholder="(555) 555-5555" size="30">
+                    </label>
+                </div>
+
+                <div>
+                    <label>
+                        Personal Website:
+                        <br>
+                        <input type="url" name="website" placeholder="www.example.com" size="30">
+                    </label>
+                </div>
+
+                <div>
+                    <label>
+                        Date of Birth:
+                        <br>
+                        <!-- 
+                    Note: using placeholder with type="date" will give us error in validation
+                    By default we will have the placeholder as: YYYY-MM-DD because of type="date" 
+                    so it will be always fixed format based on our windows date and time settings. 
+                    With Google Chrome, size="30" has no effect on input of type="date"
+                 -->
+                        <input type="date" name="birthdate" placeholder="YYYY-MM-DD">
+                    </label>
+                </div>
+
+                <div>
+                    <label>
+                        How many computers do you have:
+                        <br>
+                        <!-- 
+                        we will use CSS to style the width of the input type=number 
+                        becasue size attribute also has no effect on input of type ="number"
+
+                         
+                        This number input field allows only numbers greater than or equal to 0
+                        and less than or equal to 5. 
+                        
+                        if you add the attribute step="2", 
+                        It will also prevent submitting any odd number in the same range.                   
+                    -->
+                        <input type="number" name="comp" placeholder="0" min="0" max="6">
+                    </label>
+                </div>
+
+                <div>
+                    <!-- 
+            HTML5  will create colorpicker component
+            which enables user to select and enter
+            color code
+           -->
+                    <label for="color">Your favorite color:</label><br>
+                    <input type="color" id="color" name="color" placeholder="What is your favorite color">
+                </div>
+
+                <div>
+                    <!-- 
+          This input field is displayed as a slider.
+          It enables to set minimum and maximum point.
+        -->
+                    <label for="volume">Volume:</label>
+                    <input type="range" name="volume" min="0" max="10">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Registration Information</legend>
+                <div>
+                    <label>Username:
+                        <input id="username" type="text" name="username" maxlength="15" size="20">
+                    </label>
+                </div>
+
+                <div>
+                    <!-- 
+        notice how type="password" hides
+        the characters when user enters password 
+        -->
+                    <label>Password:
+                        <input id="password1" type="password" name="password1" maxlength="10" size="15">
+                    </label>
+                </div>
+
+                <div>
+                    <label>Confirm Password:
+                        <input id="password2" type="password" name="password2" maxlength="10" size="15">
+                    </label>
+                </div>
+
+                <div>
+                    <label>Tell us about yourself:
+                        <br>
+                        <!-- 
+                            using textarea element to let the user type his code
+
+                    Old Classical Attributes (still valid):
+                    cols ==> number of columns
+                    rows ==> number of rows
+                        -->
+                        <textarea name="aboutyou" cols="25" rows="10"></textarea>
+                    </label>
+                </div>
+
+                <div>
+                    What’s your most favourite computer type:<br>
+                    <!-- 
+                    Radio Buttons:
+                    - At least one option (item) should be selected by default => checked attribute
+                    - User CANNOT select more than one (and only one) => name="all have the same value"
+
+                    we can use:
+                    checked = "checked" (HTML4 and XHTML)
+                    OR just:
+                    checked (for new browsers that support HTML5)
+            
+                    in order for example "PHP/Python developers" to get the user values we use:
+                    - name attribute: has to be the same for all radio options
+                    - value attribute: has to be unique for each radio option
+                    -->
+                    <input type="radio" name="computertype" checked="checked" value="desk">Desktop<br>
+                    <input type="radio" name="computertype" value="lap">Laptop<br>
+                    <input type="radio" name="computertype" value="all">All-in-one
+                </div>
+
+                <div>
+                    What's your favourite music?
+                    <br>
+                    <!-- 
+                        With checkbox, user can select one, all, or none
+                     -->
+                    <input type="checkbox" name="music" value="rock">Rock
+                    <br>
+                    <input type="checkbox" name="music" value="soft">Soft
+                    <br>
+                    <input type="checkbox" name="music" value="jazz">Jazz
+                    <br>
+                    <input type="checkbox" name="music" value="pop">Pop
+                    <br>
+                    <input type="checkbox" name="music" value="rb">R & B
+                    <br>
+                    <input type="checkbox" name="music" value="classic">Classic
+                </div>
+
+                <div>
+                    Choose your CBC campus:
+                    <select name="campus">
+                        <option value="to">Toronto</option>
+                        <!-- 
+                            selected (Optional) ==> this option will be selected 
+                            when the page is first loaded 
+
+                            if we don't specify, the first option will be selected by default
+                        -->
+                        <option value="ms" selected>Mississauga</option>
+                        <option value="sc">Scarborough</option>
+                    </select>
+                </div>
+
+                <div>
+                    <br> How many instruments do you play?
+                    <br> Note: Please use the CTRL (Windows) or COMMAND (MAC) to select multiple instruments<br>
+                    <!-- 
+                    We still need to add name attribute for the select element
+                   
+                    if you want the user to be able to select more than one option
+                    we need to add an attribute "multiple".
+
+                    with "multiple" attribute, user can select more than one option
+                    USING the "CTRL" key in Windows or "COMMAND" key in Mac
+
+                    multiple="multiple" or just type multiple
+                    size ==> for how many options we need to display
+
+                    example:
+                    size="6" ==> 6 instruments will be
+                -->
+                    <select name="instruments" multiple size="6">
+                        <option value="gu">Guitar</option>
+                        <option value="kb">Keyboard</option>
+                        <option value="dr">Drums</option>
+                        <option value="ba">Bass</option>
+                        <option value="sa">Sax</option>
+                        <option value="fl">flute</option>
+                        <option value="na">Not Avialable</option>
+                    </select>
+                </div>
+
+                <div>
+                    Please upload your resume:
+                    <br> Note: you can use the following formats: .doc, .docx, or .pdf
+                    <br>
+                    <!-- 
+                        Note:
+                        If the user needs to upload a file,
+                        the form "method" value has to be "POST" NOT "GET"
+                        because with GET method, we can't upload/send a file to the server
+                    -->
+                    <input type="file" name="resume">
+                </div>
+            </fieldset>
+
+            <!-- 
+                    At the end of the form we need to have 
+                    the submit option
+
+                    the most commonly used way (Better):
+                -->
+            <input type="submit" value="Register" name="register">
+            <!-- 
+                We can put an image inside the submit 
+                using type="image" with src="imageFileName.jpg" this becam old fashion
+                -->
+            <input type="image" src="images/subscribe.jpg" alt="subscribe icon" name="register">
+            <!--  
+                instead of using input of type="submit"
+                we can use the <button> element to submit the form
+                but DON'T use both at the same time or at the same form
+    
+                Here we are using both just for testing
+            -->
+            <br>
+            <br>
+
+            <button>
+                <img src="images/add.gif" alt="add"> Submit
+            </button>
+
+            <!-- To clear all the form fields: -->
+            <input type="reset" name="reset" value="Clear">
+        </form>
+    </div>
+
+</body>
+
+</html>

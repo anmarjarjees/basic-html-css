@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working with Images</title>
+
+    <!-- Just a quick example, just skip it for now: -->
+    <style>
+        img {
+            max-width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Working with Images</h1>
+    <!-- 
+        <img>: inline element and empty element (self-closed tag) 
+
+        The 3 img types (extension) for the web:
+        .jpg 
+        .png
+        .gif
+
+        NOT .psd or .bmp etc... 
+
+        The src attribute stands for “source”, 
+        and it has to be included. It tells the browser where to find an image. 
+        It contains the path to the image.
+
+        alt: is a required attribute
+        Error: An img element must have an alt attribute
+        
+        Two reasons for adding alt:
+        - screen reader software used by visually impaired users 
+          can read the alt description and provide a context for the image
+        - if the image cannot be loaded alt will give us an alternative text to be displayed
+
+        title attribute (optional):
+    -->
+    <img src="Code-01.png" alt="Code Institute Logo" title="Our Logo">
+
+    <!-- 
+        Notice that img is an inline element, so we can embed the image inside a paragraph! 
+        img element has a width and height attribute
+
+        - avoid reduce/change the image dimensions using the attributes: width and height:
+        - if the actual image width is 1000px => and you change it to width = 500
+        this will not change the actual dimenstion of the image, 
+        which means we are loading the 1000px to be dispalyed as 300px!!!
+        we should change the image width/height using a photo editor      
+    -->
+    <p>Here is a group of our company developers:
+        <img src="images/coding.jpg" alt="A group of prgrammers" width="1050" height="700">
+    </p>
+
+    <p>Canadian Business College <img src="https://canadianbusinesscollege.com/wp-content/uploads/new-color_213_100.png"
+            alt="CBC"></p>
+    <!-- 
+        Hints: 
+        - You can download Gimp (Free image editor) to modify your image
+        - You can check this page if you want to use some free images in your work: 
+        https://www.computerhope.com/issues/ch000845.htm
+    -->
+
+    <!--
+        for now we can use align to align our image but then we should use CSS to style the image and never use align there are also two more attributes that we should not use: width: height:
+
+        align can have the following values: 
+        - left 
+        - right 
+        - middle
+        
+        Error: The align attribute on the img element is obsolete. 
+    -->
+    <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+        Ipsum consequatur doloremque odio, ut illum voluptate ab id,
+        ad facilis iste voluptas aspernatur repudiandae culpa! Aspernatur eveniet accusamus voluptatum ex unde!
+        <a href="https://canadianbusinesscollege.com" target="_blank">
+            <img src="https://canadianbusinesscollege.com/wp-content/uploads/new-color_213_100.png" alt="CBC"
+                align="middle">
+        </a>
+    </p>
+</body>
+
+</html>
