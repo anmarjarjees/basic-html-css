@@ -1,3 +1,3 @@
-# HTML Fundametals
-## The Basic of HTML
-My HTML code and lectures for FSSD (Fullstack Software Developer) Group
+# HTML and CSS Fundamentals
+## The Basic of HTML and CSS
+My HTML/CSS code and lectures for my Digital Media and Web Design Students
