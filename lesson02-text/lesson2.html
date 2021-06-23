@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Lesson2 - Text</title>
+</head>
+
+<body>
+    <!-- HTML Comment -->
+    <!-- 
+We have 6 types of headings:
+h1 is the maximum size of headings
+h6 is the minimum size of headings
+-->
+    <h1>HTML and CSS - Heading 1 Element</h1>
+    <h2>HTML and CSS - Heading 2 Element</h2>
+    <h3>HTML and CSS - Heading 3 Element</h3>
+    <h4>HTML and CSS - Heading 4 Element</h4>
+    <h5>HTML and CSS - Heading 5 Element</h5>
+    <h6>HTML and CSS - Heading 6 Element</h6>
+    <!-- 
+    Hints: 
+    - To add/remove (toggle) a comment => CTRL + /        
+    - To format the code: ALT + SHIFT + F
+    - To toggle "Word Wrap": ALT + Z
+    -->
+
+    <!-- We also have <p> element for paragraph: Opening <p> tag and closing </p> tag  -->
+    <p>A paragraph consists of one or more sentences. The start of a paragraph is indicated by a new line.</p>
+
+    <p>
+        Video provides a powerful way to help you prove your point.
+        When you click Online Video, you can paste in the
+        embed code for the video you want to add. You can also type a keyword to search online for the video that best
+        fits your document.
+    </p>
+
+    <!-- 
+        Page. 48
+        Not all elements in HTML have opening and closing tags, we have few of them that only have opening tag (no closing). 
+        These types of elements are called "Empty Elements"
+
+        hr is for a horizontal ruler 
+        br is for line break
+        
+        Example:
+        <br> ==> Line break OR <br />
+        <hr> ==> Horizontal Ruler OR <hr />
+    -->
+
+
+    <!-- 
+	below is the classical way (before HTML 5), to write an empty element:
+	"<" then "hr" then space then "/" then ">" 
+	-->
+    <hr />
+
+    <!-- But with HTML5 we can ignore the space and / although it's still valid to put them -->
+    <hr>
+
+
+    <!-- 
+        Two Types of Elements:
+        - Block-Level Elements
+        - Inline Elements
+
+        wil be explained in details later
+    -->
+
+    <!-- 
+        inline elements: can be embedded or inserted inside block elements
+        examples:
+        <i> for italic, <b> for bold, <em> for emphasis: are examples of inline elements
+        <p>: is an example of block-level element
+    -->
+    <p>This word will be <b>bold</b>, this word will be <i>italic</i></p>
+
+    <!-- 
+		 <em> will make the text italic 
+		 <i> will also make the text italic
+
+		 <em> is important for other programs, like Screen Readers
+		 or search engines can use this extra information
+
+		 <sup> for superscript
+		 <sub> for subscript
+	-->
+
+    <p>Here is my 1<sup>st</sup> page about <em>HTML5</em>, <br>
+        The water symbol in Chemistry is H<sub>2</sub>O</p>
+
+
+    <p>Here is my <b>first</b> test page</p>
+
+
+    <p lang="en-us">
+        I am just using <i>HTML</i> for now <em>NOT</em> CSS
+    </p>
+
+    <p>We will work on <b><i>CSS</i></b> later</p>
+
+
+    <!--
+    For making up quotations
+    using blockquote will indent the content 
+    Browser tend to indent the contents of the <blockquote> element  
+    -->
+    <blockquote>
+        "The browser will indent
+        the content of blockquote element"
+    </blockquote>
+
+    <blockquote>
+        "When there is a will, there is a way!" <em>unknown</em>
+    </blockquote>
+    <!-- br is for a line break -->
+    <br>
+    <!-- OR: -->
+    <br />
+
+    <!-- 
+		using abbr element for abbreviations
+		example:
+		MS ==> Microsoft
+
+		The extra info we add to the opening tag is called "attribute"
+		attribute ==> attributeName = "attributeValue"
+		example:
+		title = "Microsoft"
+
+		attributeName = title
+		attributeValue = "Microsoft"
+
+		so opening tag can have multiple attributes
+		Page. 25
+	-->
+    <p>
+        <abbr title="Microsoft">MS</abbr> Office Applications include
+        Word, Excel, PowerPoint, and Outlook
+    </p>
+
+    <!-- cite to reference a piece of work in italic style -->
+    <p>The famous movie <cite>The Sound of Music</cite> by Robert Wise</p>
+
+    <!-- 
+    address is for contact details (information)
+    about the page author like his email or a company physical address
+    -->
+    <address>
+        <p>123 Yonge St. Unit#12</p>
+        <p>Toronto, On</p>
+        <p>Q1W2E3</P>
+    </address>
+</body>
+
+</html>
+
+<!-- 
+    Challenge:
+    Create a new HTML Page: lesson2-practice.html inside lesson02 folder
+    Full HTML5 template
+	Page Title => "Lesson2 Practice"
+	Page content (inside the body):
+	Heading 1 => Learning HTML5
+	Heading 2 => Working with text
+	Add a horizontal line
+	One Paragraph  We learned how to work with text in chapter 2. We also learned about empty elements which are the elements that don’t have closing tags. 
+-->

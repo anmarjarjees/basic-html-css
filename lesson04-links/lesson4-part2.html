@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Lesson4 Links: Page Section Links</title>
+</head>
+
+<body>
+    <h2>Working with links</h2>
+    <p>
+        Using links to sections within an html page like the example we see in Wikipedia.
+        In this page we will imitate the Wikipedia behaviour for the learning purpose.
+    </p>
+    <h2 id="programs">CBC Programs</h2>
+    <ul>
+        <!-- 
+            Step1: Every list item has to be a hyperlink => adding <a> element
+            Step3: Adding unique id(s) for each heading (done!)
+            Step4: href values will be the id for each specific link
+         -->
+        <li>
+            <a href="#bp">Business Programs</a>
+        </li>
+        <li>
+            <a href="#lp">Law Programs</a>
+        </li>
+        <li>
+            <a href="#ip"> IT Programs</a>
+        </li>
+        <li>
+            <a href="#mp">Marketing Programs</a>
+        </li>
+        <li>
+            <a href="#hp">Healthcare Programs</a>
+        </li>
+    </ul>
+
+    <!-- 
+    Note:
+    If you don't want to waste your time by typing long random paragraphs!
+    you can tell Visual Studio Code to generate a random text by just typing the code:
+    lorem then press the enter key or TAB
+    -->
+
+    <!-- 
+        Step2:
+        We need to give each program heading a unique identifier (id):
+        We can use "id" attribute to give a unique name for any HTML element
+        for the element that we want to target in our hyperlink.
+
+        We can write any name (id's value) that makes sense to us which relevant to its element, so we can decide which value we want to use
+        The "id" value (name) CANNOT BE duplicated within the same page
+
+        NOTE: id has the # symbol, so we do need to add # symbol before its name
+        But ONLY when we want to refer to that specific id in our href or CSS (later) 
+
+        NOTE: DON'T add the # symbol within the value of id attribute
+        id="#main" ==> WRONG!
+        it must be id="main"
+
+        Now Below:
+        - We need to give every section (h3 heading) a unique address
+        - every h3 element for every program needs to have a unique value (id)
+        - Again: id value CANNOT be duplicated (repeated) within the same page
+        - id is an attribute like href or target etc.
+        - we must refer to any id value by: # plus id value
+        example:
+        id ="business" ==> #business
+        id ="law" ==> #law 
+     -->
+    <h3 id="bp">Business Programs</h3>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo laboriosam culpa consectetur animi. Quisquam
+        numquam, fuga mollitia nisi officia beatae amet quibusdam reiciendis! Harum illo nesciunt similique, sint
+        temporibus quas?
+    </p>
+    <!-- We can generate/create more paragraphs to have a long page like wikipedia -->
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo laboriosam culpa consectetur animi. Quisquam
+        numquam, fuga mollitia nisi officia beatae amet quibusdam reiciendis! Harum illo nesciunt similique, sint
+        temporibus quas?
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo laboriosam culpa consectetur animi. Quisquam
+        numquam, fuga mollitia nisi officia beatae amet quibusdam reiciendis! Harum illo nesciunt similique, sint
+        temporibus quas?
+    </p>
+    <!-- 
+    it's a very good idea to add the following link to help the user goes to the main program list.
+    
+    Yes, we can repeat the same logic of href with id value
+    -->
+    <p>
+        <a href="#programs">Go to top menu</a>
+    </p>
+
+    <!-- 
+        The same step, giving a unique id value to the heading "Law Programs"
+     -->
+    <h3 id="lp">Law Programs</h3>
+    <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt aliquam iste odio, aperiam modi non dolores
+        alias laborum at corporis perferendis consequuntur dolore eius fugit quas praesentium explicabo ipsa nesciunt.
+    </p>
+    <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt aliquam iste odio, aperiam modi non dolores
+        alias laborum at corporis perferendis consequuntur dolore eius fugit quas praesentium explicabo ipsa nesciunt.
+    </p>
+    <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt aliquam iste odio, aperiam modi non dolores
+        alias laborum at corporis perferendis consequuntur dolore eius fugit quas praesentium explicabo ipsa nesciunt.
+    </p>
+    <p>
+        <a href="#programs">Go to top menu</a>
+    </p>
+
+    <h3 id="ip">IT Programs</h3>
+    <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae sint delectus doloremque cupiditate sed voluptas
+        odio ipsam totam officia pariatur. Quam enim ut saepe officia ab nam nostrum. Explicabo, vero?
+    </p>
+    <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae sint delectus doloremque cupiditate sed voluptas
+        odio ipsam totam officia pariatur. Quam enim ut saepe officia ab nam nostrum. Explicabo, vero?
+    </p>
+    <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae sint delectus doloremque cupiditate sed voluptas
+        odio ipsam totam officia pariatur. Quam enim ut saepe officia ab nam nostrum. Explicabo, vero?
+    </p>
+    <p>
+        <a href="#programs">Go to top menu</a>
+    </p>
+
+    <h3 id="mp">Marketing Programs</h3>
+    <p>
+        Video provides a powerful way to help you prove your point. When you click Online Video, you can paste in the
+        embed code for the video you want to add. You can also type a keyword to search online for the video that best
+        fits your document.
+    </p>
+    <p>
+        <a href="#programs">Go to top menu</a>
+    </p>
+
+    <h3 id="hp">Healthcare Programs</h3>
+    <p>
+        Video provides a powerful way to help you prove your point. When you click Online Video, you can paste in the
+        embed code for the video you want to add. You can also type a keyword to search online for the video that best
+        fits your document.
+    </p>
+    <p>
+        <a href="#programs">Go to top menu</a>
+    </p>
+
+</body>
+
+</html>

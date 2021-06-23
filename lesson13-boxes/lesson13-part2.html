@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 13 Boxes: Part 2</title>
+    <!-- Internal Styles -->
+    <style>
+        /* styling the class .wrapper which the main container of our pages */
+        .wrapper {
+            width: 950px;
+            background-color: antiquewhite;
+
+            /* 
+            instead of writing:
+            border-width: 2px;
+            border-style: solid;
+            border-color: black;
+
+            below is the short way to write border:
+            border: width style colour;
+
+            8 border styles (Page 310)
+            for example: solid
+            */
+            border: 2px solid black;
+
+            /* 
+            We need to center our div.container to be the in centre it's container which is the body,
+            We can use this trick (for the second assignment also):
+            */
+
+            /* margin-left: 50px; not a good */
+            margin-left: auto;
+            margin-right: auto;
+
+            /* or using the short way as shown below: */
+            margin: auto;
+            /* auto for all the sides: top, right, bottom, and left */
+        }
+
+        /* Style all the <article> elements */
+        article {
+            /* width: 250px; */
+            /* width: 500px; */
+            width: 30%;
+            height: 200px;
+            max-width: 600px;
+
+            background-color: beige;
+            border: 1px solid red;
+
+            /* 
+            To convert block-level element to inline-level element we can use:
+
+            display: inline;  ==> the element will lose its width and height!
+
+            To make block-level element to flow like an inline element, 
+            while retaining the other features (like width, height) of 
+            a block-level element we can use:
+
+            display: inline-block;
+             */
+            display: inline-block;
+            /* inline-block is for CSS Level 3 or CSS3 */
+
+            /* Using some of the new CSS3 rules */
+            /*
+            box-shadow: value1 value2 value3 (optional) value4 (optional) color;
+            value1: Horizontal Offset
+            value2: Vertical Offset
+            value3 (Optional): Blur Distance
+            value4 (Optional): Spread of Shadow
+            color: the color of the shadow
+            */
+            box-shadow: 5px 5px 15px 2px black;
+
+
+            /* 
+            CSS3: Rounded Corners
+            will affect the border (not the box) to have rounded corner(s)
+            */
+            /* border-radius: 20px; ==> 20px rounded corners for all the corners */
+            border-top-left-radius: 20px;
+            border-radius: 20px;
+
+            /*
+                overflow:
+                auto ==> to see the scroll bars
+                hidden ==> to hide the extra overflowing text
+                scroll ==> to have both vertical and horizontal scrolls
+            */
+
+            /* using overflow property */
+            overflow: scroll;
+            margin: 0 10px;
+        }
+
+        /* style the main nav in my page */
+
+        /* convert the <li> elements of the main navigation 
+           (not the <li> in all the page) to be inline instead 
+           for block-level elements
+        */
+        header nav li {
+            /* style only <li> which is a child of <nav> */
+            display: inline;
+            /* margin ==> 0 for top/bottom and 5px for left/right */
+            margin: 0 5px;
+        }
+
+        /* 
+        When using inspect feature in any browser, 
+        we found that there are some values for the top and bottom margins 
+        plus there is a padding of 40px by default
+        that were added by the browser itself. 
+        So we will override them below:
+        */
+        header nav ul {
+            /* to override the margin/padding default values from the browser */
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 
+        To style only <a> elements (anchor tag) that are 
+        inside the <nav> inside the <header>:
+        */
+
+        /* link ==> a:link, a:visited, a:hover, a:active */
+
+        /* Styling the normal link to get rid from 
+        the browser default style: blue color with underline */
+        a:link {
+            color: brown;
+            /* to remove the underline */
+            text-decoration: none;
+            /* without any decoration */
+            /* 
+            Change the text inside the link to be Uppercase. 
+            we should do the uppercase using CSS 
+            instead of type them with uppercase inside the html
+            */
+            text-transform: uppercase;
+        }
+
+        a:visited {
+            color: rgb(233, 197, 183);
+        }
+
+        a:hover {
+            color: red;
+            /* font-style: italic; */
+        }
+
+        a:active {
+            color: yellow;
+        }
+
+        h2 {
+            margin: 0;
+        }
+
+        /* 
+        .hideIt class is used to hide any element that has a class="hideIt":active
+        */
+
+        /* going with the complex way!! */
+        [class="hideIt"] {
+            /* we put the code here  */
+            visibility: hidden;
+        }
+
+        /* or going with the very simple way */
+        .hideIt {
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- div.wrapper ==> to contain the entire page -->
+    <div class="wrapper">
+        <header>
+            <nav id="main-nav">
+                <ul>
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">About Us</a>
+                    </li>
+                    <li class="hideIt">
+                        <a href="#">Our Services</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact Us</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <h2>Types of treatments</h2>
+        <ul>
+            <li>Day spa, a form of beauty salon</li>
+            <li>Destination spa, a resort for personal care treatments</li>
+            <li>Spa town, a town visited for the supposed healing properties of the water</li>
+            <li>Foot spa</li>
+        </ul>
+
+        <article>
+            <h2>Fender Mustang</h2>
+            <p>The Fender Mustang was introduced in 1964 as the basis of a major redesign of Fender's student models
+                then consisting of the Music master and Duo-Sonic. It was originally popular in sixties surf music and
+                attained cult status in the 1990s largely as a result of its use by a number of alternative rock bands.
+            </p>
+        </article>
+        <article>
+            <h2>Fender Stratocaster</h2>
+            <p>The Fender Stratocaster or "Strat" is one of the most popular electric guitars of all time, and its
+                design has been copied by many guitar makers. It was designed by Leo Fender, George Fullerton and Fredie
+                Tavares in 1954.
+            </p>
+        </article>
+        <article>
+            <h2>Gibson Les Paul</h2>
+            <p>The Gibson Les Paul is a solid body electric guitar that was first sold in 1952. The Les Paul was
+                designed by Ted McCarty in collaboration with popular guitarist Les Paul, whom Gibson enlisted to
+                endorse the new model. It is one of the most well-known electric guitar types in the world.</p>
+        </article>
+    </div>
+</body>
+
+</html>

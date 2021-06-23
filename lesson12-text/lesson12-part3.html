@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 12 Part 1: Pseudo Class</title>
+    <style>
+        <style>header,
+        footer,
+        section,
+        aside,
+        article,
+        figcaption,
+        figure {
+            display: block;
+        }
+
+        p::first-letter {
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        header nav a:link {
+            /* to remove the underline from any a element */
+            text-decoration: none;
+            /* to change the default blue color of the link */
+            color: darkmagenta;
+        }
+
+        header nav a:visited {
+            color: darkgray;
+        }
+
+        header nav a:hover {
+            color: chocolate;
+        }
+
+        header nav a:active {
+            color: red;
+        }
+
+        /*
+        style any element that has a class value of "note"
+        */
+        .note {
+            line-height: 1em;
+        }
+
+
+        /* Style any element with class "title" */
+        .title {
+            /* notice that the color of the font-family value
+            is different, so it's in black (or other color)
+            because “Alaska” is not considered to be a web safe font.
+            
+            Web Safe Fonts: are the fonts that are supported or available
+            in all the browsers in any platform or Operating system
+
+            below we used "Adelle Sans" font, although it's working in our
+            machine but it might not work on MAC
+            */
+            font-family: "Adelle Sans";
+            font-style: italic;
+        }
+
+
+        /* Review of a bad Example Below: */
+        section h2 {
+            color: brown;
+        }
+
+        /* 
+            below is a bad way to repeat the same selector
+            we need to group all the styles in one block
+        */
+        section h2 {
+            text-decoration: underline;
+        }
+
+        /* 
+        Style any fieldset:
+        background color and border
+        */
+
+        fieldset {
+            background-color: ivory;
+
+            /* Below, we have the long way: */
+            border-width: 3px;
+            border-style: groove;
+            border-color: rgb(114, 114, 18);
+
+            /* we can summarize the code above (3 lines) using short-hand */
+            border: 3px groove rgb(114, 114, 18);
+            /* border: width style color */
+            /*
+                we need just a simple margin from the bottom
+            background-color: rgb(223, 223, 180);
+            /* 10px for all the sides (top, right, bottom, and left) */
+            /* margin: 10px; */
+
+            /* all fieldset elements will have a margin (space) of 10px */
+            /* margin and padding in lesson 13 */
+            margin-bottom: 10px;
+        }
+
+        /*
+        style the legend elements:
+        with any background 
+        giving it a padding
+
+        */
+        legend {
+            background-color: peachpuff;
+            /*
+                it's good idea to have some padding 
+                is the space within the box
+                padding: top right bottom left
+
+                margin and padding topics will be covered later in more details:
+            */
+            /* padding: 5px 5px 5px 5px; */
+            /*
+                since all the values for top, right, bottom, and left
+                are the same! so we can just write it like this
+            */
+            /* 5px from all the sides */
+            padding: 5px;
+            border: 2px inset rosybrown;
+        }
+
+        /* Style the textarea background */
+        textarea {
+            background-color: rgb(211, 183, 183);
+        }
+
+        /* Attribute Selectors Page:292 */
+
+        /* 
+        style any element that has an attribute "class"
+        any element that has class="....
+
+        We don't care about the value of the class!!!
+        Just the attribute class with any value
+        */
+        [class] {
+            font-style: italic;
+        }
+
+        /* 
+        style any element that has an attribute "type"
+        any type value like:
+        type="text", type="email", type="tel", or etc...(Again, we don't care about the value)
+
+        by changing the background to light blue
+        */
+        [type] {
+            background-color: lightblue;
+        }
+
+        /* 
+        Be more specific by selecting/targeting/styling all h1 and h2 elements
+        that have attributes "class" 
+        
+        in other words, styling any h1 or h2 that have a class attribute
+        */
+        h1[class],
+        h2[class] {
+            /* to transform all the letters to be uppercase */
+            text-transform: uppercase;
+        }
+
+        /* 
+        No need to create another new rule for h2[class],
+        we can merge it or add it to h1[class] since both have 
+        the same styles
+        */
+        /*
+        h2[class] {
+            text-transform: uppercase;
+        }
+        */
+
+        /* 
+        Matching a specific attribute with a specific value:(*)
+        
+        Task: Let's target/style each element that:
+        - has an attribute "type"
+        - the attribute value is "email"
+
+        style any element that has an attribute named "type"
+        and at the same time the value of "type" is "email" 
+
+        not only styling any type=*******
+        its only type="email"
+
+        type="text" ==> skipped
+        type="tel" ==> skipped
+        type="email" ==> only this one has to be styled :-)
+        */
+        [type="email"] {
+            background-color: lightcoral;
+        }
+
+        /*
+        Prefix
+        style a specific attribute that has a value starting 
+        with these 3 letters "sub" like class="submenu" , class="subitems", class="subsediaries"
+        
+        any element that has a class attribute with the value 
+        starting with "sub"
+
+        it has to start with "sub" as the first 3 letters.
+        
+        Examples:
+        class="submenu"
+        class="subitems"
+        class="sub-sidebar"
+        class="subanything"
+
+        By using the symbol ^ with =
+        */
+        [class^="sub"] {
+            border: 1px dotted blue;
+        }
+
+        /*
+        Substring:
+        style any element that has a class value contains
+        the letter "m" like: class="main" or class="submenu"
+
+        By using the symbol * with =
+        */
+        [class*="m"] {
+            letter-spacing: 12px;
+        }
+
+        /* 
+        style an element that has an id attribute with a value that 
+        starts with letter "d"
+
+        but we don't have an id value staring with "d"
+        */
+        [id^="d"] {
+            background-color: red;
+        }
+
+        /*
+        Task:
+        style any link <a> element which is a child of any element
+        that has class value contains the letter "m"
+
+        link <a> ==> a:link or we can just write a
+        child of:
+        class value contains the letter "m" ==> [class*="m"]
+        */
+        [class*="m"] a:link {
+            /* any style */
+            background-color: yellow;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <!-- we can apply more than one style to the same element -->
+            <h1 class="title main note">ABC Advanced School</h1>
+            <h2 class="subtitle">All the courses you need for your career</h2>
+            <nav>
+                <ul id="main-list" class="submenu">
+                    <li>
+                        <a href="lesson12a.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">About Us</a>
+                    </li>
+                    <li>
+                        <a href="#">Our Programs</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact Us</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <section id="content">
+
+            <h2>Welcome to our school</h2>
+            <h3>The right choice for your career</h3>
+
+            <p class="">Just a simple paragraph</p>
+            <!-- we can have <aside> inside the section -->
+            <aside>
+
+            </aside>
+            <!-- article is like a blog article  -->
+            <article>
+                <p>We are using HTML5 new elements, we can visit
+                    <a href="https://www.w3schools.com" target="_blank">
+                        W3 School</a> to learn more.
+                </p>
+            </article>
+            <form action="register.php" method="post">
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    <label>First Name*</label>
+                    <input id="firstname" name="Firstname" type="text" maxlength="25" size="25" required />
+                    <br>
+                    <br>
+                    <label>Last Name*</label>
+                    <input id="lastname" name="Lastname" type="text" maxlength="25" size="25" required />
+                    <br>
+                    <br>
+                    <label>Email*</label>
+                    <input id="email" name="Email" type="email" maxlength="25" size="25" required />
+                    <br>
+                    <br>
+                    <label>Please select the music genre(s) that you like:</label>
+                    <br>
+                    <input type="checkbox" name="genre" value="classic" /> Classic
+                    <br>
+                    <input type="checkbox" name="genre" value="jazz" /> Jazz
+                    <br>
+                    <input type="checkbox" name="genre" value="blues" /> Blues
+                    <br>
+                    <input type="checkbox" name="genre" value="intru" /> Instrumental
+                    <br>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Your Message</legend>
+                    <label>How did you hear about us?</label>
+                    <select name="source">
+                        <option value="web">Our Website</option>
+                        <option value="fr">Friends</option>
+                        <option value="tv">TV Advertising</option>
+                        <option value="oth">Other</option>
+                    </select>
+                    <br>
+                    <br>
+                    <label> Would you recommend us to your friends?</label>
+                    <input type="radio" name="recommend" checked value="yes"> Yes </input>
+                    <input type="radio" name="recommend" value="no" /> No
+                    <input type="radio" name="recommend" value="maybe" /> Maybe
+                    <br>
+                    <br>
+                    <label>Your request:</label>
+                    <br>
+                    <textarea name="aboutyou" cols="40" rows="5">
+                        </textarea>
+                    <br>
+                    <br>
+                    <input type="checkbox" name="signme" checked value="sign" /> Sign me up for email updates
+                    <br>
+                    <br>
+                    <button>
+                        Submit
+                    </button>
+                </fieldset>
+            </form>
+        </section>
+
+        <aside id="main-sidebar" class="sub-content jomanji">
+            Hi There I am just the sidebar!
+        </aside>
+        <footer>
+            &copy; 2021 - attribute selector
+        </footer>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 13 Boxes: Part 1</title>
+    <!-- Internal Styles -->
+    <style>
+        /* styling the class .wrapper which the main container of our pages */
+        .wrapper {
+            /* 
+            NOTE: 
+            We can set the width of any block-level element using the "width" property 
+            But we CANNOT use the width with "inline" elements -> useless no affect
+            */
+            width: 950px;
+            /* 950px => the common width in the old days :-) */
+            background-color: antiquewhite;
+
+            /* 
+            instead of writing:
+            border-width: 2px;
+            border-style: solid;
+            border-color: black;
+
+            below is the short way to write border:
+            border: width style colour;
+
+            8 border styles (Page 310)
+            for example: solid
+            */
+            border: 2px solid black;
+        }
+
+        /* Style all the <article> elements */
+        article {
+            /*  
+            if we don't specify the width value of a block-level element, 
+            It will just take the full width of its container element
+             */
+            width: 180px;
+            /* width: 500px; */
+            width: 29%;
+            /*
+            we changed the height value to be 100px fixed
+            whether the content fits or doesn't fit.
+
+            if we don't specify the height value,
+            the height will be adjusted automatically based on its content
+
+            */
+            height: 100px;
+
+            /* 
+            We can also use:
+            min-width: specifies the smallest size a box can be
+            displayed at when the browser window is narrow.
+            
+            max-width: specifies the highest size a box can be
+            displayed at when the browser window is wide or large.
+
+            we also have min-height and max-height
+             */
+            /* min-width: 150px; */
+            min-width: 300px;
+            max-width: 600px;
+            background-color: beige;
+
+            background-color: beige;
+            border: 1px solid red;
+
+            /* 
+            The text will overlap after setting the width and the height
+            Because it cannot fit inside its container element
+
+            Solution: using the property "overflow"
+            overflow: to tell the browser what to do 
+            if the content is more than the size of its container
+
+            auto ==> to see the scroll bars
+            hidden ==> to hide the extra overflowing text
+            scroll ==> to have both vertical and horizontal scrolls
+            */
+            /* using overflow property */
+            overflow: auto;
+
+            /* 
+            Padding: is the space within the block-level (box) element
+            Use padding to add some space inside the article
+            space between the block element and its contents
+
+
+            Examples:
+            padding: value1 value2 value3 value4
+            value1: Top padding
+            value2: Right padding
+            value3: Bottom padding
+            value4: Left padding
+
+            Think of a clock, and just move clockwise: 12 then 3 then 6 then 9
+
+            padding: value1 value2
+            value1: Top/bottom padding
+            value2: Left/Right padding
+
+
+            padding: value1
+            value1: Top/bottom/Left/Right padding
+
+            padding ==> 7px for top/bottom 10px for left/right 
+            */
+
+            padding-top: 7px;
+            padding-bottom: 7px;
+            padding-right: 7px;
+            padding-left: 7px;
+
+            /* 
+            below is the short way (shorthand) instead of writing 
+            4 statements which means all the sides will have 7px 
+            padding 
+            */
+            padding: 7px;
+
+            /* top, right, bottom, left = 7px */
+            /* the order: top right bottom left */
+            /* top=7px right=10px bottom=7px left=10px */
+            /* notice that this rule will override the previous one */
+            padding: 7px 10px 7px 10px;
+
+            /*
+                padding: 7px 10px 7px 10px; 
+                since 
+                - the top padding = bottom padding
+                - the right padding = left padding
+
+                padding: value1 value2;
+                value1: top and bottom
+                value2: left and right
+            */
+            padding: 7px 10px;
+
+            /* 
+                The same rules for padding 
+                can be applied to margin.
+
+                margin: 5px 8px;
+
+                below we have 5px margin, 
+                it's the value for all sides
+
+                The margin is the space outside the box (block-level element)
+
+                            If the margin property has three values:
+                margin: 25px 50px 75px;
+                top margin is 25px
+                right and left margins are 50px
+                bottom margin is 75px
+            */
+            margin: 5px;
+            /*
+            Note:
+            If the margin property or the padding property has three values:
+            margin: 25px 50px 75px;
+            top margin is 25px
+            right and left margins are 50px
+            bottom margin is 75px
+            */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- div.wrapper ==> to contain the entire page -->
+    <div class="wrapper">
+        <article>
+            <h2>Fender Mustang</h2>
+            <p>The Fender Mustang was introduced in 1964 as the basis of a major redesign of Fender's student models
+                then consisting of the Music master and Duo-Sonic. It was originally popular in sixties surf music and
+                attained cult status in the 1990s largely as a result of its use by a number of alternative rock bands.
+            </p>
+        </article>
+        <article>
+            <h2>Fender Stratocaster</h2>
+            <p>The Fender Stratocaster or "Strat" is one of the most popular electric guitars of all time, and its
+                design has been copied by many guitar makers. It was designed by Leo Fender, George Fullerton and Fredie
+                Tavares in 1954.
+            </p>
+        </article>
+        <article>
+            <h2>Gibson Les Paul</h2>
+            <p>The Gibson Les Paul is a solid body electric guitar that was first sold in 1952. The Les Paul was
+                designed by Ted McCarty in collaboration with popular guitarist Les Paul, whom Gibson enlisted to
+                endorse the new model. It is one of the most well-known electric guitar types in the world.</p>
+        </article>
+    </div>
+</body>
+
+</html>

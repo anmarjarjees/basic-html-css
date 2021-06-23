@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 14: Form</title>
+
+    <style>
+        /* 
+        Styling any <input> element that is a child of (inside) <fieldest> 
+        */
+        fieldset input {
+            border: 1px solid rgb(77, 74, 74);
+            /* all the four sides will have 5px margin */
+            margin: 5px;
+        }
+
+        /* 
+           when we hover the mouse over any input element
+           inside a fieldset, its background color should be changed
+
+           We will use pseudo class ":hover",
+           Usually we use :hover with <a> elements
+           But we can add it to any html elements
+           to apply some styles if we like
+        */
+        fieldset input:hover {
+            background-color: rgb(250, 250, 210);
+        }
+
+        /* 
+           when we click any input element which is inside a fieldset,
+           its background color should be changed.
+           So we can use the pseudo class "focus"
+           any pseudo class using single ":"
+           Examples:
+           :link, :visited, :hover, :focus, :active
+           
+           :focus as shown below:
+
+           focus works when we have the cursor inside the element
+        */
+        fieldset input:focus {
+            /* 
+            when any input field is clicked
+            - its background color will be changed
+            - it will have 3px solid red border (Zooming out might not make the color clear)   
+             */
+            background-color: rgb(223, 223, 240);
+            border: 3px solid rgb(255, 0, 0);
+        }
+
+        /*
+            change the width of the input field
+            that has id value of "fullname"
+        */
+        input#fullname {
+            width: 200px;
+        }
+
+
+        /* 
+        Styling only that specific input element that has
+        an id with the value of "email" 
+        so only the <input> that has id="email"
+
+        or in other words:
+
+        put the required image as a background for the email field
+        target the input with id="email"
+        */
+
+        input#email1 {
+            /* 
+                the image file name: "email.png"
+                the location: inside "images" folder
+            */
+            background-image: url("images/email.png");
+            /* 
+            By default, the browser will repeat the image 
+            horizontally and vertically
+
+            We will fix later :-)
+            */
+        }
+
+        /* 
+        doing the same for the two other fields:
+        - twitter => add its image
+        - web => add its image
+        */
+        /* for input with id value of twitter */
+
+        input#twitter {
+            background-image: url("images/twitter.png");
+        }
+
+        /* for input with id value of web */
+
+        input#web {
+            background-image: url("images/web.png");
+        }
+
+
+        /* 
+        style:
+        - #email
+        - #twitter
+        - #web 
+        all in one single rule
+        instead of repeating the same shared rules
+        */
+        input#email1,
+        input#twitter,
+        input#web {
+            /*
+            the default option will be repeat for the background-image,
+            we need to disable this option => no-repeat
+            */
+            background-repeat: no-repeat;
+
+            /* 
+            To keep the consistency, make them 200px like the full name field
+            */
+            width: 200px;
+
+
+            /* 
+            The icons are in touch with the left border!
+
+            We need to move the background 
+            (change its position) a little bit to the right
+
+            change the background image position by using background position to indent the background image:
+
+            background-position: value1 value2
+            value1 ==> x position (xpos) 
+            value2 ==> y position (ypos) 
+ 
+            background-position: value
+            value ==> x position (xpos)
+
+            we want to indent the image from the left only (xpos) 
+            so we put only one value 2px
+
+            if you put two values like:
+            background-position: 2px 5px;
+            it means: 2px from the left (xpos)
+            and 5px from the top (ypos)
+            */
+            background-position: 2px;
+
+
+            /* 
+            we need to add padding from the left
+            because we have the background image on the left
+            */
+            padding-left: 20px;
+        }
+
+        /* 
+        Style the <input> for the submit type only. 
+        <input type="submit"....
+
+        we will override the default browser styling for the button 
+        notice that this <input> of type="submit"
+        has an id="submit".
+
+        we can target that input field using different ways,
+        and below are just 3 of them:
+        */
+
+        /* 
+        First Way* (recommended): style any input element that is a child 
+        of div with class="submit" 
+        */
+        div.submit input {
+            /* write the css rule */
+        }
+
+        /*
+        Second Way: using equality "="
+        Style any input element that has an attribute named "type"
+        with the value of "submit"
+        */
+        input[type="submit"] {
+            /* write the css rule */
+        }
+
+        /*
+        Third Way: using the id value of the <input> field
+        we are styling the two input fields:
+        1) with id value of "submit"
+        2) with id value of "reset"
+        */
+        input#submit,
+        input#reset {
+            background-color: rgb(153, 238, 153);
+            /* Using:
+            text-shadow: value1 value2 value3 color;
+            value1: left/right distance
+            value2: top/bottom distance
+            value3: is the blur effect
+            */
+            text-shadow: 1px 1px 2px rgb(190, 151, 151);
+            border: 1px inset rgb(172, 252, 52);
+            border-radius: 5px;
+        }
+
+        /* 
+        For more interesting behaviour,
+        let's add a hover affect for the both buttons
+        */
+        input#submit:hover,
+        input#reset:hover {
+            background-color: rgb(47, 75, 65);
+            color: rgb(209, 243, 243);
+            /*
+                it's good idea to change the mouse pointer into hand
+            */
+            cursor: pointer;
+            /*
+                You can look at these options on page: 347
+                auto
+                crosshair
+                default
+                wait
+            */
+        }
+
+        /* Style all the fieldset elements */
+        fieldset {
+            /* using the shorthand way of styling the border: */
+            border: 2px groove rgb(142, 207, 248);
+            /* using the CSS3 radius: */
+            border-radius: 10px;
+            /* 10px for all the corners */
+
+            /* 
+            It's not good idea to too much <br> in our html code!
+
+            if we need to have enough nice gabs,
+            we can use CSS margins
+            */
+            margin-top: 10px;
+        }
+
+        /* style all the legend elements of all the fieldset */
+        fieldset legend {
+            border: 1px groove rgb(1, 128, 128);
+            padding: 0 10px;
+            /* 
+            padding: value1 value2;
+            value1: top and bottom => 0 => no padding
+            value2: left and right => 10px
+            */
+            background-color: rgb(248, 240, 205);
+            border-radius: 5px;
+            /* styling any text inside the legend to be uppercase */
+            text-transform: uppercase;
+        }
+
+        /* 
+        style an <a> element with a class="web-link"
+         */
+        a.web-link {
+            /* put any rule/style you like */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="contianer">
+        <form>
+            <fieldset>
+                <legend>Personal Info</legend>
+                <input type="text" id="fullname" placeholder="Full Name" />
+                <!-- 
+                    placeholder="Email"
+                    using a background image instead
+                 -->
+                <input type="text" id="email1" />
+                <!-- 
+                    placeholder="Twitter"
+                    using a background image instead
+                 -->
+
+                <input type="text" id="twitter" />
+                <!-- 
+                    using a background image
+                 -->
+                <input type="text" id="web" />
+            </fieldset>
+
+            <fieldset>
+                <legend>Newsletter</legend>
+                <label for="name">Name: </label>
+                <input type="text" id="name" />
+                <label for="email2">Email: </label>
+                <input type="text" id="email2" />
+            </fieldset>
+
+            <div class="submit">
+                <input type="submit" value="Register" id="submit" />
+                <input type="reset" value="Clear" id="reset" />
+            </div>
+        </form>
+        <p>
+            Don't forget to visit
+            <a class="web-link" href="#">W3 Schools</a>
+            to learn more about Web Design and Development
+        </p>
+    </div>
+</body>
+
+</html>

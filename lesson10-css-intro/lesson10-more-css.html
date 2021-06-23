@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS More Examples</title>
+    <!--
+            We will use External Style Sheet File
+            The link must be inside <head> element
+
+            We used to add the attribute: type="text/css" ==> No need with HTML5
+    -->
+    <link href="css/more-styles.css" rel="stylesheet">
+
+    <!-- Internal Styles:
+         Warning:
+         The [type="text/css"] attribute for the <style> element is NOT needed
+         It should be omitted ==> type="text/css"
+         This is the way it used to be, but no more with HTML5
+ 
+         So W3C will give us this Warning Message if you use it: The type attribute for the style element is not needed and should be omitted.
+         -->
+    <style>
+        /* We put all our internal styles inside this <style> element that is inside <header> element */
+    </style>
+</head>
+
+<body>
+    <!-- the main container div of all the page contents -->
+    <div id="container">
+        <header>
+            <nav>
+                <ul>
+                    <li>Home</li>
+                    <li>About Us</li>
+                    <li>Contact Us</li>
+                </ul>
+            </nav>
+             
+            <hr>
+            <div>
+                <ul>
+                    <li>First Program</li>
+                    <li>Second Program</li>
+                    <li>Third Program</li>
+                </ul>
+            </div>
+        </header>
+
+        <p>This paragraph is used for testing "General Sibling Selector".</p>
+
+        <h1 id="top">Kitchen Garden Calendar</h1>
+        <h2>Main Calendar</h2>
+        <p id="introduction">Here you can read our handy guide about what to do when.</p>
+        <!-- 
+        Inline Style: 
+        inline styles: is an attribute for any HTML element
+        style = " property: value; property: value; "
+        -->
+        <p style="color:chocolate; background-color: bisque;">
+            Here is just a simple text to practice the inline styles
+        </p>
+        <hr>
+
+        <h2>Spring</h2>
+        <ul class="note">
+            <li><a href="mulch.html">Spring mulch vegetable beds</a></li>
+            <li><a href="potato.html">Plant out early potatoes</a></li>
+            <li><a href="tomato.html">Sow tomato seeds</a></li>
+            <li><a href="beet.html">Sow beet seeds</a></li>
+            <li><a href="zucchini.html">Sow zucchini seeds</a></li>
+            <li><a href="rhubarb.html">Deadhead rhubarb flowers</a></li>
+        </ul>
+        <hr>
+
+        <!-- 
+            Review Notes:
+            Element can have more than one class value:
+            like below this p element has two classes: "note" and "rule"
+
+            But element can have ONLY one id value, otherwise we will have
+            this error:
+            Error: Bad value ... for attribute id....An ID must not contain whitespace.
+         -->
+        <p class="note rule">Here is just another paragraph to practice CSS</p>
+        <p class="note">
+            This page was written by <a href="mailto:ivy@example.org">ivy@example.org</a>
+            for <a href="http://www.example.org">Example</a>.
+        </p>
+
+        <p>
+            <a href="#top">Top of page</a>
+        </p>
+
+        <h2>MS Office</h2>
+        <ol class="note">
+            <li>Word</li>
+            <li>PowerPoint</li>
+            <li>Excel</li>
+            <li>Outlook</li>
+        </ol>
+
+        <h2>CBC Campuses</h2>
+        <ul>
+            <li>Toronto</li>
+            <li>Scarborough</li>
+            <li>Mississauga</li>
+        </ul>
+
+        <p>
+            <a href="#top">Top of page</a>
+        </p>
+    </div> <!-- end div#container -->
+</body>
+
+</html>

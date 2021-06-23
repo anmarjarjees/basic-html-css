@@ -1,0 +1,12 @@
+/* My External File for CSS */
+/* 
+This the comment symbol in CSS language
+We are going to add a style here:
+*/
+
+/* 
+Task: target any ul element(s) to give it a different background 
+*/
+ul {
+    background-color: goldenrod;
+}

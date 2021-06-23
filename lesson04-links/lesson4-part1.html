@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Lesson4 Links: Absolute Links</title>
+</head>
+
+<body>
+    <h2>Working with links</h2>
+    <p>In this chapter we are going to practice the 4 types of links:</p>
+    <dl>
+        <dt>Linking to Other Sites (Absolute URL):</dt>
+        <dd>
+            When you link to a different website, the value of the href attribute will be the full web address for the
+            site, which is know as an absolute URL.
+        </dd>
+
+        <dt>Linking to Other pages on the Same Site (Relative URL):</dt>
+        <dd>
+            When you link to other pages within the same site, you do not need to specify the domain name in the URL.
+            You can use a shorthand known as relative URL.
+        </dd>
+
+        <dt>Email Links:</dt>
+        <dd>
+            When you link to the user’s email program. The value of the href attribute starts with mailto: and is
+            followed by the email address of the recipient.
+        </dd>
+
+        <dt>Linking to a Specific Part of the Same Page or Another Page:</dt>
+        <dd>
+            To link to an element that uses an id attribute, so the value of the href attribute starts with the # symbol
+            followed by the value of the id attribute of the element you want to link to.
+        </dd>
+    </dl>
+
+    <h3>Uniform Resource Locator (URL)</h3>
+    <p>A Uniform Resource Locator (URL), colloquially termed a web address, is a reference to a web resource that
+        specifies its location on a computer network and a mechanism for retrieving it.</p>
+
+    <p>
+        We have two types of links, <em>"absolute link"</em> and <em>"relative link"</em>. Absolute link is for linking
+        to another website while relative link is for linking to another page on the same website or to other part
+        (section) within the same page. In relative links, we don't use the full URL address, we just need to specify
+        the file name with its full local path if needed.
+    </p>
+
+    <!-- 
+        Absolute link ==> the full URL
+        example: https//www.facebook.com 
+
+        URL: stands for Uniform Resource Locator.
+    -->
+
+
+    <!-- 
+        using <a> and </a> to add anchor tag 
+        <a> element is used for adding Hyperlinks
+
+        - to add a link means to add a hyperlink by using <a> element,
+        - the <a> stands for anchor element, 
+        - we need to add  an anchor tag to make the <a> element functional
+        - we can convert any element to be a hyperlink element if you want just by enclosing (wrapping) it with <a> element.
+        - <a> element has opening and closing tags: <a>My Content</a>
+
+        examples: 
+        - href="https://canadianbusinesscollege.com"
+        OR:
+        - href="https://canadianbusinesscollege.com/"
+
+        All browsers have a set of default styles:
+        By default, any link will be:
+        - in blue colour 
+        - underlined 
+        but we learn how to change these two default style by using CSS.
+        
+        NOTE:
+        After visiting the link (click it) the colour will be purple (by default)
+        but we can also change with our custom CSS
+        
+        -----------------------------------
+        The <a> element has two attributes:
+        -----------------------------------
+        Attributes:
+        Just to recap, attributes are the extra needed information that we can add/write within the opening tags. Some Attributes are mandatory while other attributes are optional. We cannot add attributes to the closing tags!
+
+        1) href attribute (mandatory):
+        - to make <a> element active (work): we must add its required attribute "href" which is short for "hyperlink reference"
+        - href is used to tell the link where to go?
+        href="?"
+        href: is the attribute name
+        "?": is the attribute value which is the URL (the target address)
+        
+        2) target attribute (optional):
+        also we can add another optional attribute "target" to specify whether you want to open the link within the same tab (over the current page) or in a separate new tab within the same browser window (this is the default)
+
+        Example: To open the link in a new tab: target="_blank"
+
+        The link could be the destination (address):
+        1- Page within the same website ==> [Relative URL]
+        2- Another Website ==> [Absolute URL] ==> The full address (URL)
+        Example for Absolute URL: http://www.w3schools.com
+        or https:// ==> s for secured connection (depends on the website)
+        3- Content within the same page [Using id attribute]
+    -->
+
+    <!-- We will start with "Absolute Link" as it's very straight froward-->
+    <h2>Absolute Link Example</h2>
+    <!-- 
+        Task: 
+        convert the text "W3Schools" in this paragraph
+        to make a link to open the home page of this website
+
+        the href value should be the URL for "W3Schools"
+        
+        HINT: 
+        it's better to open the home page of this website 
+        and just copy and paste the link into the href attribute value
+        which is "https://www.w3schools.com/"
+     -->
+    <p>
+        We are studying HTML5, and in this lesson, we are going to work with links. You can visit
+        <a href="https://www.w3schools.com/" target="_blank">W3Schools</a> to
+        learn more about HTML5 and other important subjects
+    </p>
+
+    <!-- 
+        Task: Add an absolute URL for "Canadian Business College"         
+
+        Be carful that not all websites have https:// (secured connection)
+        many of them have just http:// (no "s" => not secured)
+
+        if the website doesn't provide a secured connection, so don't put https:// just put http:// in the absolute URL.
+
+        So it's better to copy the address instead of trying to type it
+    -->
+    <p>You can join the web design courses at
+        <a href="http//www.Canadianbusinesscollege.com" target="_blank">Canadian Business College</a> to learn more
+        about how to create websites
+    </p>
+
+</body>
+
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Color Final</title>
+    <style>
+        /* 
+        we can use the two versions of CSS:
+        -CSS2: CSS Level 2 
+        (the old classical rules that are supported by all the browsers)
+        -CSS3: CSS Level 3 
+        (was introduced with HTML5)
+        */
+
+        /* 
+        Task: body element: change the color to blue
+        
+        Based on the idea of "Cascading" of "CSS",
+        all the elements inside the body will have the following rules:        
+        */
+        body {
+            /* make all the text inside the body to be blue */
+            color: blue;
+            /* 
+            maximum 147 names:
+            W3Schools: https://www.w3schools.com/colors/colors_names.asp
+
+            Instead of using names, we should use: 
+            - Hex code 
+            - RGB 
+s            - HSL (Hue, Saturation, Light => in Photoshop)
+            */
+
+
+            /* 1. Hex (Hexadecimal) Code */
+            /* #RRGGBB ==> Red, Green, and Blue => to be used in Digital Media (Screens) */
+
+            /* Remember, in Photoshop we used: CMYK  - Cyan Magenta Yellow Black => for printing */
+
+            color: #0c0ca0;
+
+            /* 
+            RGB: 
+            using: rgb(value1, value2, value3) 
+            value1 ==> r for red
+            value2 ==> g for green
+            value3 ==> b for blue
+            
+            Each value ==> from 0 to 255
+            r: red
+            g: green
+            b: blue 
+            The numbers have to between 0 and 255
+            min ==> 0
+            max ==> 255
+
+            W3Schools: https://www.w3schools.com/colors/colors_hsl.asp
+
+            */
+            color: rgb(12, 12, 160);
+
+            /* 
+            HSL Colors
+            HSL color values are supported in IE9+, Firefox, Chrome, Safari, and in Opera 10+.
+
+            hsl(hue, saturation, lightness)
+            H: Hue ==> value (0 - 360) as an angle
+            S: Saturation ==> value (0 to 100%) as percentage
+            L: Lightness ==> (0 to 100%) as percentage
+            */
+            color: hsl(240, 86%, 34%);
+
+
+            /* this color will be applied*/
+            background-color: brown;
+
+            /* 
+            You can use the color picker of W3Schools for more creative ideas:
+            https://www.w3schools.com/colors/colors_picker.asp
+            */
+        }
+
+        /* 
+        Task: target the "div" that has an id = "container" 
+        which means => div#container
+        
+        if we had our div to have class = "container", we can write div.container
+        but our div has the id="container"
+        */
+
+        div#container {
+            /* 
+            using background-image to see the a (opacity or alpha) effect 
+            Notice that background-image will be covered in details later
+            */
+            background-image: url('otters.jpg');
+        }
+
+        /* Styling the header element */
+        header {
+            /* 
+            using CSS3 rgba (a alpha) 
+            
+            a is for the opacity of the element
+            a = alpha value: 0.000 and 1.0
+            0 ==> completely transparent 
+            1 ==> is the full color (no transparent)                
+            Examples: 
+            0.5 is 50% opacity
+            0.15 is 15% opacity
+            */
+            background-color: rgba(100, 100, 150, 0.5);
+            border: 1px solid #007a99;
+        }
+
+        /* Style any ul element */
+        ul {
+            /* 
+            using the CSS3: HSL and HSLA
+            hsl(hue, saturation, lightness)
+            hsla(hue, saturation, lightness, alpha)
+            H: Hue ==> value (0 - 360) as an angle
+            S: Saturation ==> value (0 to 100%) as percentage
+            L: Lightness ==> (0 to 100%) as percentage
+            A: Alpha ==> hsla (0 to 1.0)
+            */
+            background-color: hsla(36, 100%, 50%, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- the main container of all the page contents -->
+    <div id="container">
+        <header>
+            <!-- 
+                The code of this page which is the content of div#container
+                was taken from chapter-10/css-selectors.html (Page: 237)
+            -->
+            <h1 class="note">
+                <!-- 
+                    Notice that a element is an inline element,
+                    so applying a background color will be applied on the element contents only
+                    and not the entire row (line)
+                 -->
+                <a id="top">Kitchen Garden Calendar</a>
+            </h1>
+            <h2>Your Dream Garden</h2>
+        </header>
+        <p id="introduction" class="note">Here you can read our handy guide about what to do when.</p>
+        <!-- 
+            Inline Styles:
+            below is an example of applying an inline styles
+            we use the attribute "style" so inline styles can be applied 
+            as attributes for any HTML element:
+            style="property: value; property: value; and so on...."
+    
+            Notice that inline styles will override the external and the internal styles because they are the closest ones to the elements
+         
+            inline styles: as an attribute for any HTML element
+            style = " property: value; property: value; "
+    
+            Notice that we don't use { and } because there is no selector,
+            our our selector is the current element itself
+            -->
+
+        <p style="color:antiquewhite; background-color:brown;">
+            here is just a simple text to practice the inline styles
+        </p>
+        <h2>Spring</h2>
+        <ul>
+            <li>
+                <a href="mulch.html">Spring mulch vegetable beds</a>
+            </li>
+            <li>
+                <a href="potato.html">Plant out early potatoes</a>
+            </li>
+            <li>
+                <a href="tomato.html">Sow tomato seeds</a>
+            </li>
+            <li>
+                <a href="beet.html">Sow beet seeds</a>
+            </li>
+            <li>
+                <a href="zucchini.html">Sow zucchini seeds</a>
+            </li>
+            <li>
+                <a href="rhubarb.html">Deadhead rhubarb flowers</a>
+            </li>
+        </ul>
+        <p class="note">This page was written by
+            <a href="mailto:ivy@example.org">ivy@example.org</a> for
+            <a href="http://www.example.org">Example</a>.
+        </p>
+        <p>
+            <a href="#top">Top of page</a>
+        </p>
+    </div> <!-- end div#container -->
+</body>
+
+</html>

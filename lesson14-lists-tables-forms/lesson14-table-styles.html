@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 14: Table</title>
+
+    <style>
+        /* Style any <table> element: */
+        /*
+            style the table to have width of 800px 
+        */
+        table {
+            width: 800px;
+            /* 
+            using the shorthand border to border to the table
+            border: width style color;
+
+            instead of typing:
+            border-width:
+            border-style:
+            border-color:
+            */
+
+            /* 
+            notice that this will only add an outside border 
+            for the entire table (not for each cell inside the table)
+            */
+            border: 5px ridge red;
+
+            /* 
+            style the space between the table cells.
+            remove any space value by giving it the value of 0
+            so the following rule will remove all the spacing 
+            between all the cells (<th> and <td>) inside the table
+            */
+
+            /* 
+            NOTE:
+            Please be advised the using the property named "border-collapse"
+            will disable this property "border-spacing"
+            so no need to write the following rule because of border-collapse 
+
+            the following rule has not affect:
+            */
+            border-spacing: 10px;
+
+            /*
+            border-collapse: collapse will override the border-spacing 
+            this rule will ignore all the spaces in between the cells             
+            So if use ==> border-collapse: collapse;
+            we should not use ==> border-spacing: 30px;
+            because it will useless 
+            unless if use ==> border-collapse: show;     
+            notice that show is the default option,
+            so you don't to write ==>  border-collapse: collapse;       
+            */
+
+            /* border-collapse */
+            border-collapse: collapse;
+            /* 
+            with collapse, border-spacing will be useless 
+          
+            the two commonly used values for border-collapse
+            - separate (the default)
+            - collapse
+
+            NOTE: to see the result of border-collapse,
+            We need to add borders to the th,td elements
+            */
+        }
+
+        /* to style all the table cells not only outside border */
+
+        /* styling only the <th> */
+
+        th {
+            background-color: darkred;
+            color: lightgoldenrodyellow;
+        }
+
+        /* styling only the <td> */
+
+        td {
+            border: 2px inset lightcoral;
+        }
+
+        /* 
+          Style both <th> and <td> by adding padding 
+          padding: inside space between the box border and its content
+        */
+        th,
+        td {
+            /*
+        it's good idea (looks better) to add or to have a space within each cell.
+        padding: space between the text (cell's content) and the cell border
+        for all the table cells:
+            */
+            padding: 5px;
+        }
+
+        /* 
+        we can also style the empty cells to make them:
+        - visible ==> show (the default) 
+        - invisible ==> hide (to hide them)
+        */
+
+        /* don't forget to add the following rule to the previous one (the same selector td) */
+        td {
+            empty-cells: hide;
+            /*
+            Notice that the changes will not be obvious 
+            if you have the value of border-collapse
+            equal to "collapse"
+
+            you will see the changes between hide and show
+            if you change the value of border-collapse to separate
+            */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>First Edition Auctions</h1>
+    <table>
+        <tr>
+            <th>Author</th>
+            <th>Title</th>
+            <th class="money">Reserve Price</th>
+            <th class="money">Current Bid</th>
+        </tr>
+        <tr>
+            <td>E.E. Cummings</td>
+            <td>Tulips & Chimneys</td>
+            <td class="money">$2,000.00</td>
+            <td class="money">$2,642.50</td>
+        </tr>
+        <tr class="even">
+            <td>Charles d'Orleans</td>
+            <td>Poemes</td>
+            <td class="money"></td>
+            <td class="money">$5,866.00</td>
+        </tr>
+        <tr>
+            <td>T.S. Eliot</td>
+            <td>Poems 1909 - 1925</td>
+            <td class="money">$1,250.00</td>
+            <td class="money">$8,499.35</td>
+        </tr>
+        <tr class="even">
+            <td>Sylvia Plath</td>
+            <td>The Colossus</td>
+            <td class="money"></td>
+            <td class="money">$1031.72</td>
+        </tr>
+    </table>
+
+</body>
+
+</html>

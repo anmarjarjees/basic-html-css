@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 6: Tables</title>
+</head>
+
+<body>
+    <h2>ABC School</h2>
+    <h3>First Table:</h3>
+    <!-- 
+        <table> element
+        table have row(s) ==> <tr></tr>
+        each row can be divided into number(s) of cells
+        ==> <td></td> for table data (cell(s) in each row) 
+        so <td> can also represent the table columns
+        which means every tr has td
+
+        row#: 3 rows
+        columns: 5 columns (or each row has 5 cells <td>)
+        
+        remember that <table> has no visible borders
+        
+        ==========================================
+        To see the table border:
+        we will use an "obsolete" attribute just for this class named "border".
+        border="1" ==> 1, 2, 3, etc. represents the border width
+
+        W3C Validator Error:
+        Error: The border attribute on the table element is obsolete. Use CSS instead.
+     -->
+    <table border="1">
+        <tr>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Class</td>
+            <td>Room</td>
+            <td>Time</td>
+        </tr>
+        <tr>
+            <td>Alex</td>
+            <td>Chow</td>
+            <td>Music</td>
+            <td>12</td>
+            <td>9:00 AM</td>
+        </tr>
+        <tr>
+            <td>Martin</td>
+            <td>Smith</td>
+            <td>English</td>
+            <td>9</td>
+            <td>10:30 AM</td>
+        </tr>
+        <tr>
+            <td>Sarah</td>
+            <td>Wilson</td>
+            <td>Math</td>
+            <td>10</td>
+            <td>9:30 AM</td>
+        </tr>
+    </table>
+
+    <h3>Second Table:</h3>
+    <!-- 
+        To add cell spacing and cell padding:
+                we will use two obsolete attributes just for this class
+                - cellspacing ==> to add spaces between the cells
+                when the value is 0 ==> we will see only one single border
+
+                - cellpadding ==> to add padding (spaces) inside the cells (within the cells)
+                when the value is 0 ==> we will have no padding, so the content of the cells will be in touch with border
+                 
+                ==========================================
+                To specify the table width:
+                we will use an obsolete attribute just for this class named "width"
+
+                ==========================================
+                To add a background color for the entire table or for any cell(s):
+                we will use an obsolete attribute just for this class named "bgcolor" (for background color)
+
+                To summarize, all these attributes are obsolete (deprecated):
+                - border like border="1"
+                - cellspacing like cellspacing="3" 
+                - cellpadding like cellpadding="5" 
+                - width like width="500"
+                - bgcolor like bgcolor="beige"
+
+                We use them in this file only, 
+                because soon, we will learn how to add border using CSS
+     -->
+    <table border="1" cellspacing="5" width="500" bgcolor="beige">
+        <tr bgcolor="yellow">
+            <!-- 
+                we need to make this <td> taking 2 cells like Merging in MS Word
+
+                we can use the two table attributes:
+                - rowspan ==> is used to merge rows <tr>
+                - colspan ==> is used to merge columns (cells or table data) <td> or <th>
+                    we can use <th> instead of <td>, 
+
+                <th> is for table Head cell
+                the content (text) in inside this element <th> 
+                will be formatted by the browser to be bold 
+                and aligned to centre (By Default)                
+            -->
+            <th colspan="2">Full Name</th>
+            <th colspan="3">Course Details</th>
+        </tr>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Class</th>
+            <th>Room</th>
+            <th>Time</th>
+        </tr>
+        <tr>
+            <td>Alex</td>
+            <td>Chow</td>
+            <td>Music</td>
+            <td>12</td>
+            <td>9:00 AM</td>
+        </tr>
+        <tr>
+            <td>Martin</td>
+            <td>Smith</td>
+            <td>English</td>
+            <td>9</td>
+            <td>10:30 AM</td>
+        </tr>
+        <tr>
+            <td>Sarah</td>
+            <td>Wilson</td>
+            <td>Math</td>
+            <td>10</td>
+            <td>9:30 AM</td>
+        </tr>
+        <tr>
+            <td colspan="5">Don’t miss your chance, and register now!</td>
+        </tr>
+    </table>
+
+    <h3>Third Table:</h3>
+    <!-- 
+        HTML5 has introduced to us few new semantic elements for <table>
+        copy the entire table below:
+        we will remove all the obsolete attributes except border
+     -->
+    <table border="1" width="500" cellspacing="3" cellpadding="5">
+        <!-- HTML5 ==> table head ==> <thead> -->
+        <thead>
+            <!-- tr ==> table row -->
+            <tr>
+                <th colspan="6">ABC School Schedule</th>
+            </tr>
+        </thead>
+        <!-- HTML5 ==> Table body ==> <tbody> -->
+        <tbody>
+            <!-- bgcolor is another old attribute -->
+            <!-- tr ==> table row -->
+            <tr bgcolor="#e6ac00">
+                <!-- th ==> for the table headings for each column -->
+                <th>#</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Class</th>
+                <th>Room</th>
+                <th>Time</th>
+            </tr>
+            <tr>
+                <!-- td ==> Table data -->
+                <td>1</td>
+                <td>Alex</td>
+                <td>Chow</td>
+                <td>Music</td>
+                <td>12</td>
+                <td>9:00 AM</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Martin</td>
+                <td>Smith</td>
+                <td>Math</td>
+                <td>9</td>
+                <td>10:30 AM</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Sam</td>
+                <td>Simpson</td>
+                <td>English</td>
+                <td>10</td>
+                <td>9:00 AM</td>
+            </tr>
+        </tbody>
+
+        <!-- HTML5 ==> Table footer ==> <tfoot> -->
+        <tfoot>
+            <tr>
+                <th bgcolor="#ffcc99" colspan="3">Tel: (905) 123-1234</th>
+                <th bgcolor="#ffcc99" colspan="3">Fax: (905) 123-1222</th>
+            </tr>
+            <tr>
+                <!-- We can also insert a picture inside a table -->
+                <td align="center" colspan="6"><img src="CBC.jpg" width="50" /></td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+
+</html>

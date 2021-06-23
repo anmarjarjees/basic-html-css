@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducing CSS</title>
+    <!-- 
+    CSS ==> Cascading Style Sheet
+    
+    3 ways to apply the styles:
+    - External Styles
+    - Internal Styles
+    - Inline Styles
+
+    External Styles:
+    All style rules will be written in an external file (not in the same HTML file)
+    this external file will have the extension of ".css", 
+    this file must be connected/linked to our html file
+
+    Internal (Embedded) Styles:
+    All style rules will be written inside the <head> element of our html file
+    inside <style> and </style> tags
+
+    Inline Styles:
+    All style rules will be written as attributes for the html elements
+    
+    Review:
+    <element attribute="value">content</element>
+    HTML ==> <h1 id="test">Head Title<h1>
+
+    Selector {
+        Property: value; ==> Declaration
+    }
+
+
+    Using External Style Sheet:
+    the styles are inside a separate (external) file
+    since that file contains only CSS rules and NO HTML
+    the extension of that file will be .css and Not .html
+    
+    Example: 
+    styles.css or style.css or my-styles.css or abc-style.css    
+    -->
+
+    <!-- 
+        Using External CSS:
+        -------------------
+        Add a link to an external CSS file named "css-intro.css" which is inside a sub-folder named "css" 
+        to apply/use external css file in our html page => link element 
+
+        we need to add:
+         - href="??? File name and location ??"
+         - rel="stylesheet"
+
+        Optional attribute with HTML5 (W3C validator will not complaint):
+         - type="text/css"
+
+         
+        Notice by default VS code will generate: <link rel="stylesheet" href="">
+
+        We need to place this line in the head element of every HTML page
+    -->
+
+    <!-- <link rel="stylesheet" href="css/css-intro.css" type="text/css"> -->
+
+    <!-- We can use the new code without type attribute: -->
+    <link rel="stylesheet" href="css/css-intro.css">
+
+    <!-- 
+    we will start with Internal Style first:
+        
+    Internal Style Sheet:
+    - Placed inside the HTML head section (Outside the body)
+    - using <style> </style> 
+    -->
+
+    <!-- Using Internal CSS:  -->
+    <style>
+        /* Notice that CSS comment is like this */
+        /*
+        Page: 232
+            selector {
+                declaration ==> property: value;
+            }
+
+            Selector can be any element like p
+            Examples of selector:
+            could be ==> id, class, html element (p, h1, h2, ul, etc...)
+        */
+
+        /* Target the body element to have any background color: */
+        body {
+            background-color: lightblue;
+        }
+
+        /* Target/style all the p elements */
+        /*
+        We want to:
+        1- change the color (In MS Word => Font/Text Color) of all the paragraphs in our page to be dark red
+        2- change the background color of all the paragraphs in our page to be lightcoral
+        */
+
+        p {
+            /* be careful: after each declaration we have to add ; */
+            color: darkred;
+            background-color: lightcoral;
+            /* 
+            notice that we can omit the ; from the last declaration 
+            that ends with the closing }
+            */
+        }
+
+        /*
+        Notice that the following p style will be applied 
+        so the last rule will override the previous one if they are the same 
+        */
+        p {
+            color: darkblue;
+        }
+
+        /* 
+        Make all h1 element(s) green 
+        Which means making all heading 1 element(s) to have a green color (font color)
+        also add a background color of lightblue
+        */
+        h1 {
+            color: green;
+            /* 
+            Because h1 is a block level element and any block level element will be in a new line by itself and take the entire line, 
+            so the entire line will have a background color
+            */
+            background-color: lightblue;
+        }
+
+        /* change all h2 to have a red color */
+        h2 {
+            /* 
+            here since we have one declaration
+            so the ; is optional! But I like to add it
+            */
+            color: red;
+        }
+
+        /*
+        general rules: we should always add the ; even if it's optional for the last line of code
+        */
+
+
+        /*
+            two attributes for labeling any element: id and class
+            id ==> # (id value cannot be repeated, it has to be unique, it can be used only one time)
+            class ==> . (class value can be repeated as many times as we need)
+        */
+
+        /* 
+        Target ANY element that has a class value equal to "note" 
+        - any HTML element that has a class = "note" 
+        - change the font style to be italic
+        
+        Review: 
+        Remember that we have two general attributes: id and class that can be applied to any html element:
+        id ==> its symbol is # (id value cannot be repeated, it must be unique)
+        class ==> its symbol is . (class value can be repeated as many times as we need)
+
+
+        Because we are targeting "note" which is the value for class attribute,
+        we need to use the .
+        target any element that has a class value of "note" to have an italic font style:
+        */
+        .note {
+            font-style: italic;
+        }
+
+        /* 
+        Target ANY <P> element that has a class value equal to "note"
+        
+        in our HTML file:
+        - we have one h1 element and 2 p elements with class value of "note"
+
+        - make their font to be bold
+
+        notice we put: p.note => only the p element that has a class="note"
+        */
+        p.note {
+            font-weight: bold;
+        }
+
+        /* 
+        Below: style any element that has an id="introduction"
+        and/or any element that has an id="top" 
+        in other word, target the element that has an id value of "introduction"
+        and the element that has an id value of "top"
+        
+        The styles:
+        - capital letters 
+        - any dark color
+        - any dark background color
+
+        target the element that has an id value of "introduction"
+        target the element that has an id value of "top"
+        to have the same styles as listed above
+
+        Solution: using the comma to separate our selectors:
+        */
+
+        #introduction,
+        #top {
+            /* Make all the letters capital letters (uppercase) */
+            text-transform: uppercase;
+            /* Make the font color darkcyan */
+            color: darkcyan;
+            /* Make the background color darkslategrey */
+            background-color: darkslategrey;
+        }
+
+
+        /* 
+        Avoid repeated code (style): Since both id selectors #introduction and #top 
+        have the exactly the same styles so we should definitely combine them together 
+        as you have just did above.  
+        */
+
+        /* 
+        #introduction {
+            text-transform: uppercase;
+            color: darkcyan;
+            background-color: darkslategrey;
+        }
+
+        #top {
+            text-transform: uppercase;
+            color: darkcyan;
+            background-color: darkslategrey;
+        } 
+        */
+
+
+        /*
+        Note:
+        Notice that we are using the color names in this example/file just for learning, 
+        we should avoid using this way of coding the colors by typing their names like "red" or "lightblue" instead we should use one these ways:
+        - HEX Codes 
+        - RGB Values 
+        - HSL 
+        (You will learn that in the following lessons)
+
+        We can use up to 140 color names:
+        W3Schools: https://www.w3schools.com/colors/colors_names.asp
+        */
+
+        /* 
+        style the element that has id value of "container" to have a background color of antiquewhite 
+        */
+        #container {
+            background-color: antiquewhite;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- the main container of all the page contents -->
+    <div id="container">
+        <!-- 
+            The code of this page which is the content of div#container
+            was taken from chapter-10/css-selectors.html (Page: 237)
+        -->
+        <h1 class="note">
+            <!-- 
+                Notice that a element is an inline element,
+                so applying a background color will be applied on the element contents only
+                and not the entire row (line)
+             -->
+            <a id="top">Kitchen Garden Calendar</a>
+        </h1>
+        <p id="introduction" class="note">Here you can read our handy guide about what to do when.</p>
+        <!-- 
+        Inline Styles:
+        below is an example of applying an inline styles
+        we use the attribute "style" so inline styles can be applied 
+        as attributes for any HTML element:
+        style="property: value; property: value; and so on...."
+
+        Notice that inline styles will override the external and the internal styles because they are the closest ones to the elements
+     
+        inline styles: as an attribute for any HTML element
+        style = " property: value; property: value; "
+
+        Notice that we don't use { and } because there is no selector,
+        our our selector is the current element itself
+        -->
+
+        <p style="color:antiquewhite; background-color:brown;">
+            here is just a simple text to practice the inline styles
+        </p>
+        <h2>Spring</h2>
+        <ul>
+            <li>
+                <a href="mulch.html">Spring mulch vegetable beds</a>
+            </li>
+            <li>
+                <a href="potato.html">Plant out early potatoes</a>
+            </li>
+            <li>
+                <a href="tomato.html">Sow tomato seeds</a>
+            </li>
+            <li>
+                <a href="beet.html">Sow beet seeds</a>
+            </li>
+            <li>
+                <a href="zucchini.html">Sow zucchini seeds</a>
+            </li>
+            <li>
+                <a href="rhubarb.html">Deadhead rhubarb flowers</a>
+            </li>
+        </ul>
+        <p class="note">This page was written by
+            <a href="mailto:ivy@example.org">ivy@example.org</a> for
+            <a href="http://www.example.org">Example</a>.
+        </p>
+        <p>
+            <a href="#top">Top of page</a>
+        </p>
+    </div> <!-- end div#container -->
+</body>
+
+</html>

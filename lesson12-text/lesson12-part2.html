@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 12 Part 1: Pseudo Class</title>
+    <style>
+        /* 
+    Very Important Note:
+    We still need to make sure that the listed new HTML5 block elements 
+    are being displayed as block elements in the very old browsers like ie8 and before,
+    for that reason we will keep the following rule. 
+    you will do the same in your assignment2 and the project 
+
+    Remember that The second last part of chapter 17 (HTML5 Layout):
+    We studied these elements:
+    <header> <section> <article> <aside> <nav> <footer> <figure> <figcaption>
+    
+    Problem:
+    All these elements suppose to be displayed as block elements, 
+    but old browsers can't display them as block elements 
+    because they can't recognize them! so they will displayed as inline elements 
+    
+    Solution:
+    to overcome this issue we will need to add the following CSS rule: display: block;
+    so we can group them all into one selector to apply this style:
+    */
+        header,
+        section,
+        article,
+        aside,
+        nav,
+        footer,
+        figure,
+        figcaption {
+            display: block;
+        }
+
+
+        /* 
+        style any <h2> inside the <section> 
+        Descendant Selector
+        */
+        section h2 {
+            color: brown;
+        }
+
+        /* 
+        To recap:
+        - Pseudo Elements: acts like an extra element in the code:
+        we focused on these two Pseudo Elements rules
+        ::first-letter (The textbook [Released in 2011] uses one : but we should use :: now)
+        ::first-line
+        */
+
+        /* Review Task: style the first letter of each paragraph with .... */
+        p::first-letter {
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        /*
+    - Pseudo Class: acts like an extra value for a class attribute
+
+    We will work on these 4 main types of "Pseudo Class":
+    :link ==> the normal link inside <a> element (default style: blue color with underline)
+    :visited ==> the visited or the clicked links (After the user clicked the link)
+    :hover ==> when we hover the mouse over the link
+    :active ==> when we click the link (The moment when we click/hold the mouse button on the link)
+
+    To use them all, they should appear in the following sequence:
+    Link Visited Hover Active => LoVe HAte
+    */
+
+        /* 
+    let's style the <a> elements inside our <nav> element which is inside the <header> element
+    in other word, style the a element which is the descendant of nav which is the descendant of header
+    header => nav => a
+
+    Descendant Selector (Page 238 table):
+    style any <a> element inside the <nav> which is inside the header        
+
+
+    my basic/initial selector: header nav a 
+
+    we will apply the four types of "Pseudo Classes" on our selector "header nav a"
+    */
+
+        /* The default normal link (visited): */
+        header nav a:link {
+            text-decoration: none;
+            /* remove the default underline */
+            color: rgb(129, 6, 6);
+            /* override the default blue color */
+            text-transform: uppercase;
+        }
+
+        /* The already clicked link (visited): */
+        header nav a:visited {
+            /* The default color for any visited link is purple */
+            color: rgb(151, 150, 150);
+        }
+
+        /* The hover: on mouse hovering/moving */
+        header nav a:hover {
+            color: rgb(248, 152, 8);
+        }
+
+
+        /* The active: on mouse click */
+        header nav a:active {
+            color: rgb(255, 0, 0);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <h1>ABC Advanced School</h1>
+            <h2>All the courses you need for your career</h2>
+            <nav>
+                <ul id="main-list">
+                    <li>
+                        <a href="lesson12-part2.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">About Us</a>
+                    </li>
+                    <li>
+                        <a href="#">Our Programs</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact Us</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+         
+        <section id="content">
+
+            <h2>Welcome to our school</h2>
+            <h3>The right choice for your career</h3>
+
+            <p>Just a simple paragraph</p>
+            <!-- we can have <aside> inside the section -->
+            <aside>
+
+            </aside>
+            <!-- article is like a blog article  -->
+            <article>
+                <p>We are using HTML5 new elements, we can visit
+                    <a href="https://www.w3schools.com" target="_blank">
+                        W3 School</a> to learn more.
+                </p>
+            </article>
+        </section>
+
+        <aside id="main-sidebar">
+
+        </aside>
+        <footer>
+            &copy; 2021 - Working with links
+        </footer>
+    </div>
+</body>
+
+</html>

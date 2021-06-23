@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Video and Audio</title>
+</head>
+
+<body>
+    <!-- 
+it's a good idea to create a div with an id or a class attribute to contain all page content. 
+It will easy for us in the future to center the page content using CSS 
+-->
+    <div id="wrapper">
+        <!-- 
+            .mp4 is the new format for internet videos
+            - used by YouTube
+            - used by Flash Players
+            - supported by HTML5
+
+            using <video> element to insert the video
+            NOTE: video is an inline element
+
+            You can read more: https://www.w3schools.com/html/html5_video.asp
+
+            IE (MS Edge), Chrome, Firefox, Safari, and Opera
+            can support the MP4 video format
+
+            Besides .mp4 we have the other video formats which are: 
+            - WebM: Chrome, Firefox, Opera, Safari, Edge
+            - Ogg: Chrome, Firefox, Opera, Edge
+
+            Note that:
+            - "IE" and "Safari" don't support .Ogg format
+            - "IE" doesn't support WebM format also 
+            *   *   *   *   *   *   *
+
+
+            <video> is NOT an empty element => It has opening/start and closing/end tags
+
+            all video's elements will be as attributes in the opening tag only
+            attName="attValue"
+
+            As we have learnt before, in HTML5 some attributes don't have values because their name
+            is descriptive and they can only do one thing:
+
+            Examples:
+            - we can just write required instead or required="required"
+            - we can just write checked instead or checked="required"
+
+            The video file "puppy.mp4" is from our textbook
+            
+            so instead of typing: autoplay="autoplay" as we usually do
+            we can just type autoplay
+
+            notice these attribute, don't have a values:
+            - controls
+            - preload
+            - muted
+            - autoplay
+
+            We and add width and height if needed (optionals)
+
+
+            The "preload" attribute: <video preload="auto|metadata|none">
+            It specifies how the author thinks that the video should be loaded when the page loads.
+
+            The preload attribute allows the author to provide a hint to the browser 
+            about what he/she thinks will lead to the best user experience. 
+            This attribute may be ignored in some instances.
+
+            Note: The preload attribute is ignored if autoplay is present.
+            
+            Auto => The author thinks that the browser should load the entire video when the page loads
+            Metadata => The author thinks that the browser should load only metadata when the page loads
+            None => The author thinks that the browser should NOT load the video when the page loads
+            *   *   *   *   *   *   *
+            
+            Based on MDN Docs:
+            the attribute "preload":
+            This enumerated attribute is intended to provide a hint to the browser about what the author thinks will lead to the best user experience with regards to what content is loaded before the video is played. 
+            
+            It may have one of the following values:
+            none: Indicates that the video should not be preloaded.
+            metadata: Indicates that only video metadata (e.g. length) is fetched.
+            auto: Indicates that the whole video file can be downloaded, even if the user is not expected to use it.
+            empty string: Synonym of the auto value.
+            The default value is different for each browser. The spec advises it to be set to metadata.
+
+            The link: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video#attr-preload
+        -->
+
+        <video src="puppy.mp4" autoplay muted controls width="400" height="300" preload="metadata" poster="puppy.jpg">
+            <!-- 
+                if the browser is very old (IE 8) and doesn't support the new HTML5 video element 
+                the following text will appear.
+
+                We will not be able to see this paragraph => we all use the recent versions of the browsers
+            -->
+            <p>Your browser does not support the HTML5 video element!</p>
+        </video>
+
+        <!--
+        The other way of loading a video file is using the format sources, 
+        so if you want to load more than one format, 
+        we need to use the <source> "empty" element with src attribute in w3 schools website:
+        we can apply the same attributes exactly as the top video element
+
+        Notice that the "video" element can have all the same attribute as the above example
+        except the "src" attribute, it's replaced with <source> element
+        -->
+        <hr>
+        <video autoplay muted controls>
+            <!-- the format that is supported by the browser will be loaded: -->
+            <source src="puppy.mp4" type="video/mp4">
+            <source src="puppy.WebM" type="video/WebM">
+            <source src="puppy.ogg" type="video/ogg">
+            <!--
+            if the browser is very old (IE 8) and doesn't support the new HTML5 video element
+            the following text will appear:
+            -->
+            <p>Your browser does not support the HTML5 video element!</p>
+        </video>
+
+
+        <!-- 
+            same rules for <video> element are applied for <audio> element
+            
+            The three supported audio formats:
+            - mp3: used by all browsers
+            - wav: all browsers except IE
+            - ogg: Chrome, Firefox, and Opera (except IE and Safari)
+            
+            To learn more about video and audio:
+            you can visit this page in W3 Schools:
+            https://www.w3schools.com/html/html5_audio.asp
+        -->
+        <hr>
+        <audio controls>
+            <source src="test-audio.mp3">
+            <source src="test-audio.wav">
+            <source src="test-audio.ogg">
+            <p>Your browser does not support the HTML5 audio element</p>
+        </audio>
+
+        <hr>
+        <!-- 
+            We can use the same idea to embed video into our website. 
+            you can just copy the code using Embed Code as I just did below: 
+
+            frameborder="0" => is an obsolete attribute
+        -->
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/xh-z2fGVuTc" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+        </iframe>
+
+    </div>
+</body>
+
+</html>

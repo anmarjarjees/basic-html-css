@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working with Images</title>
+</head>
+
+<body>
+    <!-- 
+        To insert an image, we use the <img> empty element 
+        empty element has only opening tag (doesn't have a closing tag)
+        
+        we must use "src" attribute to call the image file (notice that we need to specify the full path if the image is in deferent folder)
+   
+        src:
+        - short for source 
+        - this attribute is mandatory
+        
+        Example:
+        src="path/imageFileName"
+
+        - path ==> is the location (full address) of the images (in which folder or which website)
+        - imageFileName ==> is full name of the image plus the extension (.jpg, .png, or gif)
+    
+        <img> element can load only one image, if you want for example
+        to load 2 images, each image must have its own <img> element
+
+        There is no: <img src="image1.jpg" src="image2.jpg"> ==> WRONG
+        There is no: <img src="image1.jpg image2.jpg"> ==> WRONG
+
+        <img> element needs to have another attribute named "alt"
+        alt is short for "alternative". 
+        
+        We should use "alt" attribute because:
+        1. It provides a text description about the image. the text will be visible to us only if the image cannot be loaded.
+        *2. Is used by a screen reader software (People with visual impairments) 
+        and search engine.
+ 
+        Note: ignoring the "alt" attribute will give an error in W3C validator
+        Error: An img element must have an alt attribute, except under certain conditions.
+
+        We can also add another optional attribute named "title" to add a title for the image, the title will appear as a tooltip when we hover the mouse over the image
+
+        We can also use the classical way to close an empty element using:
+        "space" then "/>"
+        as shown in the textbook and the example below,
+        or just use the modern HTML5 way just by adding ">"
+
+        <img> element can have the two attributes: "width" and "height"
+        to specify the with and the height of the image using pixel units
+
+        img element has other optional attributes:
+        - title => appears when we hover the mouse
+        - width
+        - height
+
+        We should use an image editor like Adobe Photoshop to reduce the image size instead of using width and height because reducing the size using these two attributes will not reduce the size of the actual image file.
+
+        NOTE:
+        Even it's much better to use "CSS" (Cascading Style Sheets) to specify the image size instead of using width and height attributes (old-fashioned way) because if we want to use a responsive design, the image will not be resized automatically based on the browser window, it will be always have a fixed size.
+
+        CSS: is used to make the website more attractive by controlling how the elements should appear. 
+        For example, the font size, the font family, the color, the background color
+        the positions of all the elements, the layout of the page etc...
+
+        Responsive Design: to make the website width and layout changed based on the 
+        browser windows size (viewport).
+        =============================================
+    
+ 
+        Note: 
+        In the example below, the actual image size is 600 x 450
+        But we changed the width and height values to be 400 x 250
+        We should avoid using the following code (the example below)
+        because we used the width and height to resize the image instead of using a photo editor software:
+        
+        Remember that with HTML5, 
+        we are allowed to put the attribute value without " or '
+        like: height=250 and width=400 
+        but we should avoid using this way of coding 
+        because it's confusing for us as developers
+        -->
+    <img src="quokka.jpg" alt="Quokka Family" title="Quokka animal" width="400" height="250" />
+
+    <!-- 
+    Below we must write the full path "Relative URL" to call the image
+        since we put all the images inside a folder named "images",
+        so we have to put: "images/" the folder name, then the file name
+    -->
+    <img src="images/chocolate-islands.jpg" alt="Chocolate Islands" title="Chocolate Islands" width="400"
+        height="250" />
+
+    <!-- 
+        BLOCK ELEMENTS and INLINE ELEMENTS:
+        The browsers (like IE or chrome for example) show/display HTML elements in one of two ways (in HTML we have):
+        - Block Level Elements or (Block Elements): 
+        - Cannot be displayed in one line
+        - Each element appears on a new line.
+        - Even if we put them in one line in our code
+        - The browser will display each one in a separate new line.
+        Examples: h1, h2, h3, p, ul, and li elements
+        
+        - Inline Elements:
+        - Inline elements sit within a block level element and do not start on a new line.
+        Examples: i, em, img
+
+        The concept of Block/Inline Elements will be explained more in lesson8
+    -->
+    <h2>More about images</h2>
+
+    <h3>Images with paragraphs</h3>
+    <!-- 
+         <img> is an inline element 
+         can be placed inside any block element.
+         In the example below, 
+         we placed the <img> which is an element within the <p> which is a block-level element 
+
+         another example of inline elements based on our previous lecture:
+         <em> and <i> and b>
+         
+        for this file only, we will use an obsolete attribute named "align"
+        just for learning (obsolete attribute)
+        align attribute has the following 5 values:
+        - left
+        - right
+        - middle
+        - top
+        - bottom
+        
+        in the future we should use "CSS" to align the image and avoid using align attribute because this attribute has been removed from HTML, so we should AVOID them, and CSS instead as we will see later
+
+        With W3C Validator:
+        Error: The align attribute on the img element is obsolete. Use CSS instead.
+    -->
+
+    <!-- 
+        for now we can use align to align our image but then we should use CSS to style the image and never use align there are also two more attributes that we should not use:
+        width:
+        height:
+
+All the paragraphs in this file are just random text to demonstrate how to write img element:
+    -->
+    <h2>Using align right</h2>
+    <p>
+        <img src="images/bird.gif" alt="Bird ClipArt" title="Single Bird" align="right" /> Video provides a powerful
+        way to help you prove your point. When you click Online Video, you can paste in the embed code for the video you
+        want to add. You can also type a keyword to search online for the video that best fits your
+        document. To make your document look professionally produced, Word provides header, footer, cover page, and
+        textbox designs that complement each other. For example, you can add a matching cover page, header, and sidebar.
+        Click Insert and then choose the elements you want from the different galleries.
+    </p>
+    <hr>
+
+    <h2>Using align left</h2>
+    <p>
+        Video provides a powerful way to help you prove your point. When you click Online Video, you can paste in the
+        embed code
+        for the video you want to add. You can also type a keyword to search online for the video that best fits your
+        document.
+        To make your document look professionally produced, Word provides header, footer, cover page, and text box
+        designs
+        that complement each other. For example, you can add a matching cover page, header, and sidebar. Click Insert
+        and
+        then choose the elements you want from the different galleries.
+        <img src="images/bird.gif" alt="Bird ClipArt" title="Single Bird" align="left" />
+    </p>
+    <hr>
+
+    <h2>Using align middle</h2>
+    <p>
+        Video provides a powerful way to help you prove your point. When you click Online Video, you can paste in the
+        embed code for the video you want to add. You can also type a keyword to search online for the video that best
+        fits your document. To make your document look professionally produced, Word provides header, footer, cover
+        page, and text box designs that complement each other.
+        <img src="images/bird.gif" alt="Bird ClipArt" title="Single Bird" align="middle" /> For example, you can add a
+        matching cover page, header, and sidebar. Click Insert and then choose the elements you want from the different
+        galleries.
+    </p>
+    <hr>
+
+    <h2>HTML5: Figure and Figure Caption</h2>
+    <p>
+        HTML5 has introduced a new figure element to contain images and their caption so that the two are associated.
+        If you want to see the new otters, you can look at the figure below.
+    </p>
+    <!-- 
+         The new HTML5 element named "figure", and it has open and closing tag (Not empty element)
+          this element can contain the image + its caption.
+          
+        <figure> is a block element
+        we have to put <figure> first then <figcaption> inside it 
+        
+        SO <figure> is the parent of <figcaption>
+        or:
+        <figcaption> is the child of <figure>
+	<figure>
+		<figcaption>
+		</figcaption>
+      </figure>
+    -->
+    <figure>
+        <!--
+here we can put the img element
+alt: alternative text if the image is not displayed
+ -->
+        <img src="images/otters.jpg" alt="Photograph of two sea otters floating in water">
+        <!-- Then we can put the figure caption -->
+        <figcaption>
+            Sea otters hold hands when they sleep so they don't drift away from each other
+        </figcaption>
+    </figure>
+
+    <!-- 
+    Images can have many types (extensions), 
+    The three image extensions that we can use in our webpages:
+    - .jpg => like a normal picture when it has different colors. Cannot be transparent (we cannot remove the background)
+    - .png => can be used for transparent (like an image without background). Usually with logos that have different shapes (not rectangle or square) or if we want to have the logo without any background. Remember that is not necessary or mandatory to have every .png picture without a background. So .png image can with or without a background colour.
+
+    Note: We can use Adobe Photoshop CC to remove the background then save it as .png
+    - .gif => is the same like “.png” but .gif file can have a simple animation
+    We don't use .bmp because the file is too large and also we don’t other adobe product extension like .psd for photoshop
+    -->
+</body>
+
+</html>

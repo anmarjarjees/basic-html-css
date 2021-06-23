@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 14: Lists</title>
+    <style>
+        /* styling the lists => list-style-type property */
+
+        /* style any ordered list */
+        ol {
+            /* The default is decimal: 1 2 3  */
+            list-style-type: upper-alpha;
+            /*
+                decimal: 1 2 3
+                decimal-leading-zero: 01 02 03
+                lower-alpha: a b c
+                upper-alpha: A B C
+                lower-roman: i. ii. iii.
+                upper-roman: I II II
+            */
+        }
+
+        /* style the unordered list: */
+        ul {
+            /* The default is disc: black circles  */
+            /* empty circles not black circles as default */
+            list-style-type: circle;
+            /*
+            none
+            disc
+            circle
+            square
+          */
+        }
+
+        /* 
+        Class Selector Example: 
+        style any <ul> [NOT any element or any list only the ul]
+        that has a class named "illuminations"
+        */
+        ul.illuminations {
+            /* change the position of the <li> elements */
+            list-style-position: inside;
+            /*
+            - outside (the default)
+            - inside => will indent the list items a little bit to the right side
+            */
+            /* 
+            To recap: 
+            We used "background-image:" property
+            to set a background image for any element
+            These property needs to have the CSS built-in function named url()
+            url() => accept the full path of the image
+
+            Now with lists, we can use the same CSS built-in function which is url()
+            but it's used with the list property: list-style-image:
+            
+            list-style-image: url(the image file path) 
+            
+            We will use "star.png" file inside images folder of lesson14 
+            */
+            list-style-image: url("images/star.png");
+            /* 
+            If the image cannot be loaded
+            the browser will use the default option
+            or the any previous style that we set before
+             */
+        }
+
+        /* style only any <ul>  that has a class named "season" */
+
+        ul.season {
+            /*
+                instead of typing the two rules below:
+           */
+            list-style-type: square;
+            list-style-position: inside;
+            /*
+            we can combine them using the list shorthand:
+            list-style: value1 value2;
+            value1: list-style-type 
+            value2: list-style-position
+
+            so we can comment the above two rules
+            and just use the rule below:
+            */
+            list-style: square inside;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>The Complete Poems</h1>
+    <h2>Emily Dickinson</h2>
+    <ol>
+        <li>Life</li>
+        <li>Nature</li>
+        <li>Love</li>
+        <li>Time and Eternity</li>
+        <li>The Single Hound</li>
+    </ol>
+
+    <h1>Index of Translated Poems</h1>
+    <h2>Arthur Rimbaud</h2>
+    <ul>
+        <li>Ophelia</li>
+        <li>To Music</li>
+        <li>A Dream for Winter</li>
+        <li>Vowels</li>
+        <li>The Drunken Boat</li>
+    </ul>
+
+    <h1>List Positioning and Shorthand</h1>
+    <ul class="illuminations">
+        <li>That idol, black eyes and yellow mop, without parents or court ...</li>
+        <li>Gracious son of Pan! Around your forehead crowned with flowerets ...</li>
+        <li>When the world is reduced to a single dark wood for our four ...</li>
+    </ul>
+    <ul class="season">
+        <li>Once, if my memory serves me well, my life was a banquet ...</li>
+        <li>Hadn't I once a youth that was lovely, heroic, fabulous ...</li>
+        <li>Autumn already! - But why regret the everlasting sun if we are ...</li>
+    </ul>
+
+</body>
+
+</html>

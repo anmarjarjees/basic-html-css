@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 12 Part 1: Text</title>
+    <style>
+        /*
+            Font size or Type size:
+            We have 3 main/major units of type size (the most commonly used ones):
+            - Pixels
+            - Percentage  
+            - EMS (for Capital letter M)
+
+            The default size of text in a browser is 16 pixels  
+
+            Print Designer: often refer to the size of text in terms of points
+            rather than pixels
+
+            Pixels (the browser default):
+            - 16 Pixel Scale:
+                Normal Text Size (like p elements): 16px
+                h1: 32px
+                h2: 24px;
+                h3: 18px;
+            Percentages (the browser default):
+                Normal Text Size (like p elements): 100%
+                h1: 200%
+                h2: 150%
+                h3: 112.5% 
+
+            EMS (the browser default)
+                Normal Text Size (like p elements):  1em
+                (EM is the size of capital letter M)
+                Ems: allow you to change the size of text relative to the size 
+                of the text in the parent element.
+
+                body: 100%
+                h1: 2em ==> (M)
+                h2: 1.5em
+                h3: 1.125em;
+
+            body: 16px = body: 100% = body: 100% in EM
+            h1: 32px = h1: 200% = h1:2em
+        */
+
+        body {
+            font-family: Georgia, Times, serif;
+            /* 
+            By default the browser wil set the normal font size to 16px;
+
+            It's a good practice to reset the font size to its default value of 16px
+            in case if the user has changed the browser settings
+            */
+            font-size: 16px;
+            /* 
+            Notice that the font-size:  16px == is equivalent to ==> 100% == is equivalent to ==> 1em
+
+            So we can set the font size:
+            
+            - font-size: 16px;
+
+            OR: 
+
+            - font-size: 100%;
+
+            OR:
+
+            - font-size: 1em;
+
+
+            Conclusion:
+            if 100% = 1em = 16px
+            so 200% = 2em = 32px
+            and so on...
+            */
+        }
+
+        /* Style: h1 and h2 => they have some common/shared styles */
+        h1,
+        h2 {
+            font-family: Arial, Verdana, sans-serif;
+            font-weight: bold;
+            font-style: italic;
+            text-transform: uppercase;
+            /* line-height is similar to line-spacing in MS Word */
+            line-height: 34px;
+            letter-spacing: 10px;
+            /* the space between letters */
+            word-spacing: 10px;
+            /* the space between words */
+        }
+
+        /* override just the value h1 style for the property  "line-height" */
+        h1 {
+            /* 
+            Nice Trick :-) 
+            Instead of displaying the text of heading 1 which is "BRIARDS"
+            We will display the image/logo of "BRIARDS"
+
+            We can achieve this trick by considering these steps:
+            - background-image CSS property => to load the image (with any related settings you like)
+            - Change the line height of the element (h1) to make sure that our full image is visible
+            - We need to hide the text of the element (h1) => text-indent
+            
+            because my image inside a sub folder named images
+            I have to write images/imageName.imageExtension as the value for url
+            */
+            background-image: url("images/logo.gif");
+            background-repeat: no-repeat;
+            /* we had to use line-height in order to change 
+            the <h1> element height to contain or to view the entire picture */
+            line-height: 95px;
+            /* notice that our image height is 100px, it should works fine */
+
+            /*
+                since our image contains the title, we need to hide the h1 title (text)
+                but we don't want to delete the content/text of h1 or h2 or etc 
+                because headings are used by the search engines and screen readers
+
+                so we will just indent our text to the left hand side 
+
+                Although it works if we put -215px;
+                but to be 100% sure that this text will not appear,
+                we can put a vary huge number like in your textbook example,
+          */
+
+            /* text-indent: -215px; */
+            text-indent: -9999px;
+        }
+
+        /* styling all p elements */
+        p {
+            /* 
+            each line in the paragraph (except the last one) 
+            should be set to take up the full width of the containing box
+
+            it means: applying the same style as MS Word when we choose "Justify"
+
+            we can use the same option (Left, right, center, or justify) like MS Word
+            to align our paragraphs
+            */
+            text-align: justify;
+            /* left, right, center */
+        }
+
+        /* 
+        Review: target/style h1.credits ==> for any <h1> element that has a class="credits" 
+
+        Notice we don't have any h1 with class value of "credits", but you can add it if you like
+        */
+        h1.creadits {
+            font-family: "Courier New", Courier, monospace;
+        }
+
+        /* 
+        - styling all the <a> element for hyperlinks:
+        - remove/disable the underline default style of the browser => we can use text-decoration
+        - change the font to italic
+        */
+
+        a {
+            text-decoration: none;
+            font-style: italic;
+        }
+
+        /* style the p element that has in id="note" */
+        p#note {
+            /*
+            text-shadow: to create a drop-down shadow
+            it belongs to CSS3 (CSS Level 3)
+
+            text-shadow: length1 length2 length3 color;
+
+            length1 ==> how far to the left or right
+                positive values for going right
+                negative values for going left
+
+            length2 ==> the distance to the top or bottom
+                positive values for going down
+                negative values for going up
+                
+            length3 ==> (optional) the amount of blur (default value is 0 which means no blur)
+            */
+            text-shadow: 2px 2px 5px red;
+
+            /* let's make it upper case */
+            text-transform: uppercase;
+        }
+
+        /* Task: 
+        Style any <span> element(s) that:
+        - has class="different"
+        - and inside p element (child of/descendant of p element)
+
+        by changing its background color using rgb with any color you like
+        */
+
+        p span.different {
+            background-color: rgb(238, 192, 192);
+            font-weight: bold;
+            color: rgb(68, 28, 35);
+        }
+
+        /*
+            In CSS we have these two symbols to be used:
+            - :: => Pseudo Elements ==> selector::Pseudo Element (with double ::)
+            - : => Pseudo Class ==> selector:Pseudo Element (with one : ) => To be covered in different lesson
+
+            NOTE:
+            The double colon replaced the single-colon notation for pseudo-elements in CSS3.
+            This was an attempt from W3C to distinguish between pseudo-classes and 
+            pseudo-elements.
+
+            So in the old days, we used to have only one singe : but now with CSS3 we have : or ::
+
+            The two Pseudo Elements:
+            - ::first-line
+            - ::first-letter
+
+            To read more about "Pseudo Elements": https://www.w3schools.com/css/css_pseudo_elements.asp
+        */
+
+        /*
+            Example os Pseudo Element:
+            Task: style ONLY the "first line" of a paragraph with id="memo"
+         */
+        p#memo::first-line {
+            /* make it all uppercase */
+            text-transform: uppercase;
+            /* background of light silver color */
+            background-color: #dddcd9;
+        }
+
+        /*
+            Example os Pseudo Element:
+            Task: style ONLY the "first letter" of a paragraph with id="memo"
+         */
+        p#memo::first-letter {
+            color: red;
+            font-weight: bold;
+            font-style: italic;
+            font-size: larger;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Briards</h1>
+    <p class="credits">by Ivy Duckett</p>
+    <p class="intro">The
+        <a class="breed" href="http://en.wikipedia.org/wiki/Briard" target="_blank">briard</a>, or berger de brie, is a
+        large breed of
+        dog
+        traditionally used as a herder and guardian of sheep.
+    </p>
+    <h2 class="credits" id="note">Breed History</h2>
+
+    <p>The briard, which is believed to have originated in France, has been bred for centuries to herd and to protect
+        sheep. The breed was used by the <span class="different">French Army</span> as sentries, messengers and to
+        search for wounded soldiers because of its fine sense of hearing. Briards were used in the <span
+            class="different">First World War</span> almost to the point of extinction. Currently the population of
+        briards is slowly recovering. Charlemagne, Napoleon, Thomas Jefferson and Lafayette all owned briards.</p>
+    <p id="note">The briard, which is believed to have originated in France, has been bred for centuries to herd and to
+        protect sheep. The breed was used by the French Army as sentries, messengers and to search for wounded soldiers
+        because of its fine <span>sense of hearing</span>. Briards were used in the First World War almost to the point
+        of extinction. Currently
+        the population of briards is slowly recovering. Charlemagne, Napoleon, Thomas Jefferson and Lafayette all owned
+        briards.</p>
+
+    <p id="memo">The briard, which is believed to have originated in France, has been bred for centuries to herd and to
+        protect sheep. The breed was used by the French Army as sentries, messengers and to search for wounded soldiers
+        because of its fine sense of hearing. Briards were used in the First World War almost to the point of
+        extinction. Currently <span>the population of briards</span> is slowly recovering. Charlemagne, Napoleon, Thomas
+        Jefferson
+        and Lafayette all owned briards.</p>
+
+</body>
+
+</html>
