@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floating-Part2</title>
+    <style>
+        /* styling the div element with class="container" */
+        div.container {
+            background-color: rgb(215, 247, 167);
+            width: 1000px;
+            margin: auto;
+        }
+
+        /* styling any <blockquote> element: */
+        blockquote {
+            /* background color */
+            background-color: rgb(223, 221, 221);
+            width: 90%;
+            /* padding of 5px */
+            padding: 5px;
+            /* top border */
+            border-top: 2px groove rgb(165, 164, 164);
+            /* bottom border */
+            border-bottom: 2px groove rgb(165, 164, 164);
+            /* font style "italic" */
+            font-style: italic;
+            /* 
+                text-shadow: value1 value2 value3 color
+                value1 ==> left or right
+                value2 ==> top or bottom
+                value3 ==> the amount of blur (optional)
+                */
+            text-shadow: 1px 1px 1px rgb(165, 164, 164);
+            margin: auto;
+        }
+
+        header {
+            background-color: rgb(157, 228, 193);
+        }
+
+        /* style any p element */
+        p {
+            background-color: yellow;
+            margin: 10px 0;
+        }
+
+        /* *************** Floating Elements: ******************** */
+        /* style the div element with class ="content" */
+        div.content {
+            background-color: rgb(252, 175, 175);
+            padding: 5px;
+            width: 690px;
+            /* 
+            Yes, the width of this element is: 700px
+            But we have padding of 5px!!!!
+
+            in Boxing model => The actual width of any element will be total of its pure width + padding + border
+
+            so the real width of this element => 700px + 5px + 5px = 710px 
+            to make it equal to exactly 700:
+            - we can remove the padding (we don't like to remove the padding)
+            - reduce the width value based on the value of the padding
+            */
+            float: left;
+        }
+
+        aside {
+            background-color: rgb(209, 162, 100);
+            width: 300px;
+            float: left;
+        }
+
+        /* 
+        
+        Clearing Floats:
+        ===============
+        One final problem:
+        The footer will jump to the right side for the top element 
+        because of the floating left issue
+
+        In this case we cannot use overflow: auto
+        We have another solution => clear: both;
+        This will clear all the contents/elements on the left/right hand-sides of the footer element
+        */
+        footer {
+            background-color: rgb(248, 217, 179);
+            text-align: center;
+            font-weight: bold;
+            padding: 3px 0;
+            /* 
+            We don't want to see any other elements on the both sides of this element
+            To make this elements start in a clear/fresh space (line)
+            */
+            clear: both;
+            /* 
+            we want to empty (clear) any element from the left side so we can also use: clear: left;
+            */
+        }
+
+
+        /* 
+        Good point to consider:
+        
+        If we need to use clear both for more than one element in a page
+        We can declare a custom "class" with the name "clear-both-sides" *
+        */
+
+        .clear-both-sides {
+            clear: both;
+        }
+
+        /* Or using the long way (page: 292): */
+        [class="clear-both-sides"] {
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <nav id="main-nav">
+                <ul>
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">About Us</a>
+                    </li>
+                    <li>
+                        <a href="#">Our Services</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact Us</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="content">
+            <h2>Main Subjects</h2>
+            <p>1. In 1817 Baron von Drais invented a walking machine that would help him get around the royal gardens
+                faster:
+                two same-size in-line wheels, the front one steerable, mounted in a frame upon which you straddled. The
+                device was propelled by pushing your feet against the ground, thus rolling yourself and the device
+                forward
+                in a sort of gliding walk.
+            </p>
+
+            <p>2. The next appearance of a two-wheeled riding machine was in 1865, when pedals were applied directly to
+                the front wheel. This machine was known as the velocipede (meaning "fast foot") as well as the "bone
+                shaker," since its wooden structure combined with the cobblestone roads of the day made for an
+                extremely
+                uncomfortable ride. They also became a fad and indoor riding academies, similar to roller rinks, could
+                be found in large cities.
+            </p>
+
+            <p>3. The machine became known as the Draisienne (or "hobby horse"). It was made entirely of wood. This
+                enjoyed
+                a short lived popularity as a fad, not being practical for transportation in any other place than a
+                well
+                maintained pathway such as in a park or garden.
+            </p>
+
+            <p class="clear">4. The front wheels became larger and larger as makers realized that the larger the
+                wheel, the farther you
+                could travel with one rotation of the pedals. For that reason, you would purchase a wheel as large as
+                your leg length would allow. This machine was the first one to be called a bicycle ("two wheel"). These
+                bicycles enjoyed a great popularity during the 1880s among young men of means. (They cost an average
+                worker six month's pay.)
+            </p>
+
+            <p>5. Because the rider sat so high above the center of gravity, if the front wheel was stopped by a stone
+                or
+                rut in the road, or the sudden emergence of a dog, the entire apparatus rotated forward on its front
+                axle and the rider, with his legs trapped under the handlebars, was dropped unceremoniously on his
+                head.
+                Thus the term "taking a header" came into being.
+            </p>
+
+            <p>6. Because the rider sat so high above the center of gravity, if the front wheel was stopped by a stone
+                or
+                rut in the road, or the sudden emergence of a dog, the entire apparatus rotated forward on its front
+                axle and the rider, with his legs trapped under the handlebars, was dropped unceremoniously on his
+                head.
+                Thus the term "taking a header" came into being.
+            </p>
+
+            <p class="clear">7. Because the rider sat so high above the center of gravity, if the front wheel was
+                stopped by a stone or
+                rut in the road, or the sudden emergence of a dog, the entire apparatus rotated forward on its front
+                axle and the rider, with his legs trapped under the handlebars, was dropped unceremoniously on his
+                head.
+                Thus the term "taking a header" came into being.
+            </p>
+
+            <p>8. Because the rider sat so high above the center of gravity, if the front wheel was stopped by a stone
+                or
+                rut in the road, or the sudden emergence of a dog, the entire apparatus rotated forward on its front
+                axle and the rider, with his legs trapped under the handlebars, was dropped unceremoniously on his
+                head.
+                Thus the term "taking a header" came into being.
+            </p>
+        </div>
+
+        <aside>
+            <h2>Sidebar Content</h2>
+            <blockquote>
+                "Life is like riding a bicycle. To keep your balance you must keep moving." - Albert Einstein
+            </blockquote>
+            <blockquote>
+                "Life is like riding a bicycle. To keep your balance you must keep moving." - Albert Einstein
+            </blockquote>
+            <blockquote>
+                "Life is like riding a bicycle. To keep your balance you must keep moving." - Albert Einstein
+            </blockquote>
+            <blockquote>
+                "Life is like riding a bicycle. To keep your balance you must keep moving." - Albert Einstein
+            </blockquote>
+        </aside>
+
+        <footer>
+            &copy;2021 Designed by: Anmar
+        </footer>
+    </div> <!-- end div.container -->
+</body>
+
+</html>

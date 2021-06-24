@@ -65,6 +65,7 @@
 
         The use:
         position: static;
+        -------------------
         position: relative;
         position: absolute;
         position: fixed;
@@ -131,9 +132,20 @@
               Again, we can think about the four corners of a box shape
 
             so below we used only two sides: top and left 
+            to target the top/left corner
+
+            Please remember these two properties
+            will have no affect at all
+            if position: relative is commented
             */
             top: 10px;
-            left: 35px;
+            left: 30px;
+            /* 
+            The element will move 
+            10px from the top
+            30px form the left
+            Based on its normal flow (its original anchor point without any positioning)
+            */
         }
 
         /* 
@@ -174,8 +186,178 @@
 
         div.third-div {
             background: bisque;
+            /*
+            this div element has a position property with "relative" value
+            */
+            position: relative;
+            /*
+            Notice here we only have => position: relative
+            Without any value for: top, left, right, or, bottom! 
+            So the element will not move anywhere,
+            even if it has a "relative" position
+            because we didn't use/specify any number of pixels to move the item/element from:
+            top/left, 
+            top/right, 
+            bottom/left, 
+            or bottom/right
+
+            Question: 
+            Why we applied relative positioning for this element if we don't want to move it anywhere?
+
+            Answer:
+            Because we just need to position its children elements based on this element "div.third-div" and not based on the browser window!
+            */
+
+            /*
+            Notice that we used only => position: relative
+            without specifying how many pixels we want to push this element
+            top:
+            left:
+            right:
+            bottom:
+            */
+        }
+
+        /*
+        styling any p element with class="absolute-p"
+        we only have one => p.absolute-p
+        
+        Remember that this paragraph is a child 
+        of the parent element "div.third-div"
+        and its parent element has the relative positioning
+
+        absolute: moves an element in relation to 
+        its containing element
+
+        Example in this page:
+        div.third-div is the containing element (parent) of p.absolute-p
+
+        we have a <div> with class="div.third-div" which is 
+        the container of <p> with class="absolute
+
+        position absolute is used with position relative as explained below inside the following rule:
+        */
+        p.absolute-p {
+            /* give it different colors to see it easier */
+            color: rgb(45, 45, 151);
+            /* background-color: rgba(187, 218, 238, 0.5); 
+            */
+            background-color: rgb(187, 218, 238);
+
+            /*
+            Usually we use (position absolute) for any element that has parent with with (position relative)
+
+            Otherwise if this element has no parent(s) with position relative,
+            it will just be positioned based on the browser window when we move it
+
+            in other words:
+            if its container has no position: relative
+            this absolute positioned <p> will be positioned
+            based on the browser window
+
+            else <p> will be positioned based 
+            on its relative container element
+            */
+            position: absolute;
+            /* we can test this class using left, top or: */
+            top: 10px;
+            left: 20px;
+
+            /*
+            The z-index property specifies the stack order of an element.
+            An element with greater stack order is always in front of an element with a lower stack order.
+            
+            Note: 
+            z-index ONLY works on positioned elements
+            (position: absolute, position: relative, position: fixed, or position: sticky).
+
+            To read more about Z-Index: https://www.w3schools.com/cssref/pr_pos_z-index.asp
+            */
+            z-index: 1;
+        }
+
+
+        /*
+        In Our HTML Code:
+        <div class="third-div">
+            <div></div>
+        </div>
+
+        We want to style the inner div inside div.third-div
+         */
+        div.third-div div {
+            background-color: rgb(240, 202, 98);
+            font-style: italic;
+            /* 
+            Remember these notes:
+            - the current "div" is inside "div.third-div"
+            - the parent element of this div which is "div.third-div" has a relative positioning
+            - So we can use absolute positioning for this "div" with corner pixel to move it
+
+            Based on its first container with position relative
+            if there is no such container element with position relative,
+            it will be positioned based on the browser window
+
+            Let's try it below:
+            */
+            position: absolute;
+            top: 0;
+            right: 0;
+            /* 
+            With position: relative, absolute, or fixed, boxes
+            or elements can overlap.
+            So we can change the order of the elements (arrange them)
+            using z-index:
+
+            the element with the higher value or number of z-index
+            will be on the top of other elements
+
+            The positioned element(s) with the highest index
+            will be above the element(s) with lowest index
+            */
+            z-index: 2;
+        }
+
+        /*
+            fixed: moves/positions the element in relation to the browser window (that's it!).
+            Will be in a fixed position (not moving) based on the browser window
+
+            let's target the first div (the first div with class="first-div")
+        */
+
+        div.first-div {
+            /* just adding background color to easy see it */
+            background-color: rgb(155, 119, 141);
+            border: 2px groove darkblue;
+            color: yellow;
+
+            position: fixed;
+            /*
+            like the other position, we need or should to specify two sides:
+            */
+
+            /* top: 10px;
+            left: 15px; */
+
+            bottom: 10px;
+            right: 50px;
+            /*
+            so fixed means that this element will not move when we scroll the browser window,
+            it will be always fixed based on its two positioning values
+            */
+
+            z-index: 10;
+            /* 
+            Please note that margin properties will NOT work with positioning 
+            
+            We used these two properties with "auto" value to center the element but they will not work with positioning properties:
+
+            margin-left:auto;
+            margin-right:auto;
+            */
         }
     </style>
+
 </head>
 
 <body>
@@ -234,6 +416,9 @@
             propelled by pushing your feet against the ground, thus rolling yourself and the device forward in a sort
             of
             gliding walk.</p>
+        <!-- 
+            Notice that I gave this p element a class of "absolute-p" to practice the absolute positioning 
+        -->
         <p class="absolute-p">The machine became known as the Draisienne (or "hobby horse"). It was made entirely of
             wood.
             This enjoyed a short lived popularity as a fad, not being practical for transportation in any other place
