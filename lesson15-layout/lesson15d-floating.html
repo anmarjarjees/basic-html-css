@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floating-Part2</title>
+    <style>
+        /* 
+        style all the elements to have:
+        - margin of 0 => this will remove any default margin added by browser 
+        - padding of 0 => this will remove any default padding added by the browser 
+        */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            /*	
+            Change all font family to sans-serif font type
+            Because of the cascading, all the text inside the body will have this font family
+            */
+            font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+        }
+
+        /* styling the div element with class="wrapper" */
+        div.wrapper {
+            /* The width 1100px, centre it, and add any background color */
+            width: 1100px;
+            margin: auto;
+            background-color: rgb(215, 247, 167);
+        }
+
+        /* styling any <blockquote> element: */
+        blockquote {
+            /* background color */
+            background-color: rgb(223, 221, 221);
+            width: 90%;
+            /* padding of 5px */
+            padding: 5px;
+            /* top border */
+            border-top: 2px groove rgb(165, 164, 164);
+            /* bottom border */
+            border-bottom: 2px groove rgb(165, 164, 164);
+            /* font style "italic" */
+            font-style: italic;
+            /* 
+                text-shadow: value1 value2 value3 color
+                value1 ==> left or right
+                value2 ==> top or bottom
+                value3 ==> the amount of blur (optional)
+                */
+            text-shadow: 1px 1px 1px rgb(165, 164, 164);
+            margin: auto;
+        }
+
+        header {
+            background-color: rgb(233, 117, 8);
+        }
+
+        /* style any p element */
+        p {
+            margin: 10px 0;
+        }
+
+        /* style the nav element:
+        - any background color
+        */
+        nav {
+            background-color: #2fa32f;
+        }
+
+        /* 
+        style the ul inside the nav:
+        - remove the bullets
+        */
+        nav ul {
+            list-style-type: none;
+        }
+
+        /*
+        Style the list items <li> inside ul inside nav element:
+        - display them with inline block
+        - display them as uppercase
+        - change their font size to be 18px
+        - add a simple shadow
+        */
+        nav ul li {
+            /* 
+            Horiz. nav ==> list items need to be displayed as inline elements, we will use the CSS3 value "inline-block"
+
+            the value "inline-block" has two actions:
+	        - inline => to display the block level elements to be inline
+	        - block => to keep their width and height
+            */
+            display: inline;
+            text-transform: uppercase;
+            font-size: 18px;
+            text-shadow: 1px 1px 10px #fff;
+        }
+
+        /* 
+        style/target the <a> elements inside the main navigation of our website:
+         
+        - My selector (more specific): nav => ul => li => a 
+        nav ul li a
+
+        - Or: nav => a
+        nav a
+
+        - Or: nav => ul => a
+        nav ul a
+
+        - Or: nav => li => a
+        nav li a
+
+        All the above selectors will work
+        since we are targeting the <a> (anchor elements) inside our <nav>. 
+        
+        But Each one will have different number of specificity (number of points)
+
+        using the 4 mouse status [LoVe HAte]:
+        - link
+        - visited
+        - hover
+        - active
+
+        Notice that we can write 4 separate rules for each mouse state (link, visited, hover, and active) 
+        
+        or we can combine two rules together:
+        - link and visited can be combined together
+        - hover and active can be combined together
+        */
+        nav ul li a:link,
+        nav ul li a:visited {
+            /*	we should also override the default blue color for for link */
+            color: #EBFFA3;
+        }
+
+
+        nav ul li a:hover,
+        nav ul li a:active {
+            color: #036003;
+        }
+
+        /* 
+Based on our layout we have two <aside> elements and one <section> element inside <main>
+
+the element "main" is the container of:
+- aside element (first one) => with class="sidebar1"
+- section element
+- aside element (second one) => with class="sidebar2"
+*/
+
+        main {
+            background-color: rgb(243, 230, 212);
+            /*	
+              Below is another solution to fix the issue of floating.
+              the main element will be collapsed (we can't see it the browser)
+              because all its block-level children element (2 aside elements and 1 section element) have the float property
+              and we know when the element is floating => will lose its existence (as it's not written)
+
+              To review the solution that we tried before:
+	          So with any container that contains floating children, 
+              we can use the property "overflow" with the value of "auto" or "hidden" 
+              to prevent the container element from being collapsed.
+	
+	        Note: if you want to use this solution, you don't need to add clear both for the footer element
+            */
+            overflow: hidden;
+            /* we can use the value of "hidden" and "auto" */
+        }
+
+        /* 
+        style any aside element inside main:
+        Remember that we have two aside elements
+        General Rule: Let's add width for any aside element inside main,
+        the rule below will be applied to both <aside> elements
+        */
+        main aside {
+            /*	no need for a background color anymore */
+            background-color: lightblue;
+            width: 20%;
+            /* 20% x 2 == because we have two aside element => 40% total will be for both aside elements */
+            float: left;
+            /* both aside elements in our HTML will be floating to the left */
+        }
+
+        /* style any section element inside main */
+        main section {
+            background-color: lightcoral;
+            width: 60%;
+            float: left;
+        }
+
+        /*
+        Add space within (inside) each one of these elements: 
+        - section 
+        - the two aside elements
+        
+        To have a nice gab/space around the content of each element, which means we need to add "padding" 
+        We don't want to add "margin" => this will affect the space outside the element!
+        */
+        main section,
+        main aside {
+            padding: 10px;
+            /*	
+            Note to review:
+            Adding 10px or any value for the padding or the border, 
+            this will be added to the 100% of the total width. 
+            So how can we fix it? The solution that we used in the previous example will be very complex!
+            Because here we are using % values not pixels
+            
+            The new smart solution that works only with CSS level 3:
+            It's better to have the padding or the border (if you add border) values
+            included with the width of the section and aside, so we need to use a new CSS3 property: 
+            box-sizing => yes, it's another trick :-)
+
+            using the box-sizing with the value of "border-box"
+
+            this amazing CSS3 property will save our time of doing the calculations for considering the padding or the borders
+            */
+            box-sizing: border-box;
+        }
+
+        footer {
+            background-color: rgb(248, 217, 179);
+            text-align: center;
+            font-weight: bold;
+            padding: 3px 0;
+        }
+
+        /* make the images responsive */
+        img {
+            max-width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <nav id="main-nav">
+                <ul>
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">About Us</a>
+                    </li>
+                    <li>
+                        <a href="#">Our Services</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact Us</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <aside class="sidebar1">
+                <h2>Sidebar1 (aside element)</h2>
+                <!-- 
+                    Generate two random paragraphs: type lorem then press TAB key
+                -->
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem autem culpa eaque maiores cupiditate
+                    quod ipsa non. Nemo sint, nulla reprehenderit voluptatibus doloremque quod incidunt sit, et omnis
+                    iusto cupiditate.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem autem culpa eaque maiores cupiditate
+                    quod ipsa non. Nemo sint, nulla reprehenderit voluptatibus doloremque quod incidunt sit, et omnis
+                    iusto cupiditate.</p>
+            </aside>
+            <section>
+                <h1>Welcome to Green Start</h1>
+                <figure>
+                    <img src="page-layout.png" alt="Our Page Mockup">
+                    <figcaption>The General Mockup For The Current Page</figcaption>
+                </figure>
+                <article>
+                    <h2>Go Green</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam aliquid excepturi nostrum minus
+                        velit nihil nulla ad soluta officiis, eligendi cumque natus eos cupiditate provident!
+                        Temporibus, quaerat odit. Numquam, voluptatibus.</p>
+                </article>
+                <article>
+                    <h2>Green Living</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam aliquid excepturi nostrum minus
+                        velit nihil nulla ad soluta officiis, eligendi cumque natus eos cupiditate provident!
+                        Temporibus, quaerat odit. Numquam, voluptatibus.</p>
+                </article>
+                <article>
+                    <h2>Green Working</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam aliquid excepturi nostrum minus
+                        velit nihil nulla ad soluta officiis, eligendi cumque natus eos cupiditate provident!
+                        Temporibus, quaerat odit. Numquam, voluptatibus.</p>
+                    <figure>
+                        <img src="bike.jpg" alt="Bike">
+                        <figcaption>My Favourite Gray Color Bike</figcaption>
+                    </figure>
+                </article>
+            </section>
+            <aside class="sidebar2">
+                <h2>Sidebar2 (aside element)</h2>
+                <!-- same content: two random paragraphs -->
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem autem culpa eaque maiores cupiditate
+                    quod ipsa non. Nemo sint, nulla reprehenderit voluptatibus doloremque quod incidunt sit, et omnis
+                    iusto cupiditate.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem autem culpa eaque maiores cupiditate
+                    quod ipsa non. Nemo sint, nulla reprehenderit voluptatibus doloremque quod incidunt sit, et omnis
+                    iusto cupiditate.</p>
+            </aside>
+        </main>
+        <footer> &copy; 2021 3 Columns Layout Page. Desinged By Anmar. All rights reserved </footer>
+    </div> <!-- end div.wrapper -->
+</body>
+
+</html>

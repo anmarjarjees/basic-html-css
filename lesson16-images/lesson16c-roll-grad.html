@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 16c: Rollovers and Gradients</title>
+    <style>
+        /* style the <a> element that has class="button" */
+        /* below is just the shared rules between the two buttons  */
+        a.button {
+
+            background-image: url("images/button-sprite.jpg");
+            /*
+            Dear students,
+            Please remember that any inline-level element 
+            CANNOT have width or height properties,
+            unless if we convert them to block-level elements
+            
+            <a> is an inline-level element 
+            we need to convert it into a block-level element
+
+            be carful that width and height properties work ONLY with block element
+            so we need to convert a to block element in order to see the height
+
+            Make it block in order to have all the above rules (height, background-image, and text-indent)
+            working properly just by adding display: block
+
+            block-level 
+            */
+            display: inline-block;
+            height: 36px;
+
+            /* 
+                Now, we can use the same trick for hiding the text
+            */
+            text-indent: -9999px;
+        }
+
+        a#add-to-basket {
+            width: 171px;
+            /* will view the image from the with x=0 and y=0 (top and left) */
+            /* The default */
+            background-position: 0 0;
+        }
+
+        a#framing-options {
+            width: 204px;
+            /* will view the image from the with x=0 and y=0 (top and left) */
+            /* The default */
+            background-position: -180px 0;
+        }
+
+        /* 
+        Applying hover or active => the same image just change the position values
+        */
+        a#add-to-basket:hover {
+            background-position: 0 -40px;
+        }
+
+        a#add-to-basket:active {
+            background-position: 0 -78px;
+        }
+
+        /*
+        Since you have an idea about how to use the images with #add-to-basket,
+        You can try on your own to style the #framing-options
+        Your task: for more information see page 417 in your textbook
+        */
+
+        #gradient {
+            /* background color: light blue to blue */
+            background-image: linear-gradient(#e1edf7, #5497ce);
+            padding: 5px;
+            /* padding has no color */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Image Rollovers and Sprites</h1>
+    <a class="button" id="add-to-basket">Add to basket</a>
+    <hr>
+    <a class="button" id="framing-options">Framing options</a>
+
+    <div id="gradient">
+        <h1>Working with CSS3 Gradients</h1>
+        <h2>Magnolia</h2>
+        <p>
+            <b>
+                <i>Magnolia grandiflora</i>
+            </b>, commonly known as the
+            <b>Southern magnolia</b> or
+            <b>bull bay</b>, is a tree of the family Magnoliaceae native to the southeastern United States, from
+            coastal Virginia
+            you can add more random text
+        </p>
+    </div>
+</body>
+
+</html>

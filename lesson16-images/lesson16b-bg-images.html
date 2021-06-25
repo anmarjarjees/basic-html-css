@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 16b: Background Images</title>
+    <style>
+        /* Style the body element */
+        body {
+            /* add a background image: using url() CSS built-in function */
+            background-image: url("images/pattern.gif");
+
+            /* 
+            the default behaviour of the browser
+            is to repeat the background image
+            horizontally (x) and vertically (y) 
+            */
+
+            /* We can add all the following properties: */
+            /* background-repeat: no-repeat; */
+
+            /* repeat-x will repeat the image horizontally */
+            /* background-repeat: repeat-x; */
+
+            /* repeat-y will repeat the image vertically */
+            /* background-repeat: repeat-y; */
+
+            /* the default */
+            /* background-repeat: repeat; */
+            /* background-position: right top; */
+            /* background-position: center top; */
+            background-attachment: fixed;
+            /*
+            background-attachment: scroll (the default) or fixed
+            */
+        }
+
+        /* 
+        targeting the div element that has class attribute 
+        with the value of "container": class="container" 
+        */
+        div.container {
+            width: 960px;
+            /* margin: auto ==> auto for all the sides */
+            margin: auto;
+            /* 
+            we need to use background-color 
+            to hide the body background image
+            */
+            /* background-color: antiquewhite; */
+            padding: 10px;
+
+
+            /*
+            Note: 
+            adding 10px padding ==> 10 px to the left and to the right side
+            width: 960px ==> 960 + 10 + 10 ==> the actual size of div.container will be 980px;
+            
+            So be careful that padding 10px will be added to the above 
+            value of the width for the div.container:
+            960px + 10px to the left + 10px to the right ==>980px            
+            */
+            /* we can use the CSS3 background option */
+            background-color: rgba(194, 194, 163, .6);
+            /* alpha: 0.0 to 1.0 */
+            background-image: url("images/tulip.gif");
+            /* 
+            We want to repeat the image vertically only => repeat-y;
+            */
+            background-repeat: repeat-y;
+            /* 
+            By default, the browse will position the image on the top/left corner
+            background-position ==> page: 415 
+            */
+            background-position: top right;
+            /*
+            to center the background image (horiz and vert):
+            to have on image in the centre, we need to disable the repeat first
+            then write the following rule by using 50% to both sides
+            */
+            /* background-position: 50% 50%; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Background Images -->
+        <h1>Planting Guide</h1>
+        <h2>Magnolia</h2>
+        <p>
+            <b>
+                <i>Magnolia grandiflora</i>
+            </b>, commonly known as the
+            <b>Southern magnolia</b> or
+            <b>bull bay</b>, is a tree of the family Magnoliaceae native to the southeastern United States, from
+            coastal Virginia
+            you can add more random text
+        </p>
+        <h2>Ranunculus</h2>
+        <p>
+            <b>
+                <i>Ranunculus asiaticus (Persian Buttercup)</i>
+            </b> is a species of buttercup (Ranunculus) native to the eastern Mediterranean region in southwestern
+            you can add more random text
+        </p>
+        <h2>Tulip</h2>
+        <p>
+            <b>
+                <i>Tulipa gesneriana L. or "Didier's tulip"</i>
+            </b> is a plant belonging to the family of Liliaceae. This species has uncertain origins, possibly from
+            Asia, and
+            you can add more random text
+        </p>
+        <h1>Planting Guide</h1>
+        <h2>Magnolia</h2>
+        <p>
+            <b>
+                <i>Magnolia grandiflora</i>
+            </b>, commonly known as the
+            <b>Southern magnolia</b> or
+            <b>bull bay</b>, is a tree of the family Magnoliaceae native to the southeastern United States, from
+            coastal Virginia
+            you can add more random text
+        </p>
+        <h2>Ranunculus</h2>
+        <p>
+            <b>
+                <i>Ranunculus asiaticus (Persian Buttercup)</i>
+            </b> is a species of buttercup (Ranunculus) native to the eastern Mediterranean region in southwestern
+            Asia, southeastern
+            you can add more random text
+        </p>
+        <h2>Tulip</h2>
+        <p>
+            <b>
+                <i>Tulipa gesneriana L. or "Didier's tulip"</i>
+            </b> is a plant belonging to the family of Liliaceae. This species has uncertain origins, possibly from
+            Asia, and
+            has become naturalised in south-west Europe. Most of the cultivated species, subspecies and cultivars of
+            tulip
+            you can add more random text
+        </p>
+    </div>
+
+</body>
+
+</html>
