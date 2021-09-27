@@ -124,14 +124,15 @@ but we can style it for the future in case if we need to add h3
 
         /* More examples about type selector */
 
-        /* Task: style all the hr element(s) => we might have one or more or maybe nothing!
-1- change the "border color" to be: brown
-2- change the "border width" to be: 3px
-3- change the "border style" to be: dashed
+        /* 
+            Task: style all the hr element(s) => we might have one or more or maybe nothing!
+            1- change the "border color" to be: brown
+            2- change the "border width" to be: 3px
+            3- change the "border style" to be: dashed
 
-Notice that to let VSC code helps you, the keyword is "border". 
-When you type border VSC will give you all the properties related to border
-*/
+            Notice that to let VSC code helps you, the keyword is "border". 
+            When you type border VSC will give you all the properties related to border
+        */
 
         hr {
             /* 1. change the border color to be brown */

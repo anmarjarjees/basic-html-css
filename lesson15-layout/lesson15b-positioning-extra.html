@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More about Positioning</title>
+    <style>
+        .img-div,
+        .video-div {
+            /* The parent element has "relative" position */
+            position: relative;
+            /*
+            We don't need to set the position corners/sides/margins: top, left, right, bottom
+            This div will be just used as an anchor point for its children
+            that have "absolute" positioning 
+            */
+
+            border: 2px solid blue;
+
+            width: 896px;
+            /* based on our image width */
+            padding: 5px;
+        }
+
+        .video-div video {
+            /* 
+                since video element is an inline  
+                we cannot set its margin to auto
+                is has to be a block level element
+            */
+            display: block;
+            margin: auto;
+        }
+
+        /* The first child of div.img-div */
+        #box-wrapper-title,
+        #box-header-title,
+        #box-main-title,
+        #box-footer-title,
+        #video-title {
+            /* The child/children element(s) has/have "absolute" position */
+            position: absolute;
+            /* All these elements will overlap, but we will each one a different position margins */
+            background-color: rgba(255, 196, 0, 0.719);
+            color: rgb(78, 60, 13);
+            padding: 0 5px;
+            border-radius: 7px;
+        }
+
+        #box-wrapper-title {
+            /* 
+                We need to set these margins: top, right, bottom, left
+                
+                They work as pairs by using the box corners (using them logically!): 
+                - top AND left
+                - top AND right
+                - bottom AND left
+                - bottom AND right
+
+                We set the four corners of any box shape
+
+                We can use these two properties together:
+                top: 5px;
+                bottom: 10px;
+
+                To summarize, we can combine these opposite direction: 
+                - left AND right
+                - top AND bottom
+            */
+            top: -15px;
+            right: 10px;
+        }
+
+
+        #box-header-title {
+            top: 18px;
+            right: 30px;
+        }
+
+        #box-main-title {
+            top: 155px;
+            right: 30px;
+        }
+
+        #box-footer-title {
+            bottom: 0px;
+            right: 30px;
+        }
+
+        /* Targeting the h3 with id value of video-title for the video division */
+        #video-title {
+            top: 5px;
+            right: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <nav></nav>
+        </header>
+        <main>
+            <h1>More about Positioning!</h1>
+            <p>
+                Video provides a powerful way to help you prove your point. When you click Online Video, you can paste
+                in the embed code for the video you want to add. You can also type a keyword to search online for the
+                video that best fits your document.
+                To make your document look professionally produced, Word provides header, footer, cover page, and text
+                box designs that complement each other. For example, you can add a matching cover page, header, and
+                sidebar. Click Insert and then choose the elements you want from the different galleries.
+            </p>
+
+            <div class="img-div">
+                <h3 id="box-wrapper-title">The div.wrapper - main container</h3>
+                <h3 id="box-header-title">The Page Header also contains the nav element</h3>
+                <h3 id="box-main-title">The main content</h3>
+                <h3 id="box-footer-title">The Page footer</h3>
+                <img src="page-layout.png" alt="Page layout/Mockup">
+            </div>
+            <hr>
+            <div class="video-div">
+                <h3 id="video-title">Nice Animated Video!</h3>
+                <!-- We can use canIUse.com to check any element or attribute -->
+                <video poster="assets/images/sea_spa_logo.jpg" preload="auto" controls="controls" muted="muted"
+                    autoplay="autoplay" loop="loop">
+                    <source src="puppy.mp4" type="video/mp4">
+                    <!-- 
+                        This warning message for IE8 and less: 
+                        Remember that it just an alternative text (paragraph)
+                        to appear if the video element cannot be loaded/rendered
+                    -->
+                    <p>Sorry your browser doesn't support Video, try to update your browsers</p>
+                </video>
+            </div>
+        </main>
+        <footer>
+
+        </footer>
+    </div>
+</body>
+
+</html>

@@ -8,3 +8,8 @@ My HTML/CSS code and lectures for my Digital Media and Web Design Students
 -	W3schools.com
 -	HTML5doctor.com
 -	My code examples
+
+Files Names:
+https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/Dealing_with_files
+
+https://www.dummies.com/web-design-development/site-development/how-to-name-html-files/

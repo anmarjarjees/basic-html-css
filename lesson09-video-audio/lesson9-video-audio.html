@@ -110,6 +110,11 @@ It will easy for us in the future to center the page content using CSS
 
         Notice that the "video" element can have all the same attribute as the above example
         except the "src" attribute, it's replaced with <source> element
+
+        NOTE: 
+        Chrome will not activate/use the attribute "autoplay" if there is NO "muted" attribute!
+        Chrome will only auto play the video with "autoplay" attribute if there is "muted" attribute
+        Why? To protect the user privacy and keep us away from any embarrassing situation :-)
         -->
         <hr>
         <video autoplay muted controls>
