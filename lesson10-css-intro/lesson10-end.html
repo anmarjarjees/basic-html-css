@@ -9,10 +9,15 @@
     <!-- 
     CSS ==> Cascading Style Sheet
     
-    3 ways to apply the styles:
-    - External Styles
-    - Internal Styles
+    3 ways/methods to apply/configure the styles 
+    starting from the more specific to the general and more global ones:
+    
     - Inline Styles
+    - Embedded (Internal) Styles
+    - External Styles
+    - Imported Styles
+
+    
 
     External Styles:
     All style rules will be written in an external file (not in the same HTML file)
@@ -25,6 +30,14 @@
 
     Inline Styles:
     All style rules will be written as attributes for the html elements
+
+    Imported styles (Not used frequently): 
+    Are similar to external styles for connecting with a separate file
+    that contains the CSS code. 
+    This file can be imported into:
+    - embedded styles
+    - another external style sheet
+    by using @import directive
     
     Review:
     <element attribute="value">content</element>
@@ -54,8 +67,12 @@
          - href="??? File name and location ??"
          - rel="stylesheet"
 
-        Optional attribute with HTML5 (W3C validator will not complaint):
-         - type="text/css"
+        NOTE:
+        In XHTML syntax, type attribute with the value of "text/css" is required.
+        - type="text/css"
+
+        It's an optional attribute with HTML5 (W3C validator will not complaint):
+        - type="text/css"
 
          
         Notice by default VS code will generate: <link rel="stylesheet" href="">
@@ -80,7 +97,7 @@
     <style>
         /* Notice that CSS comment is like this */
         /*
-        Page: 232
+        Textbook Page: 232
             selector {
                 declaration ==> property: value;
             }
@@ -279,17 +296,19 @@
         <!-- 
         Inline Styles:
         below is an example of applying an inline styles
-        we use the attribute "style" so inline styles can be applied 
-        as attributes for any HTML element:
+        we use the attribute "style" 
+        so inline styles can be applied as attributes for any HTML element:
         style="property: value; property: value; and so on...."
 
         Notice that inline styles will override the external and the internal styles because they are the closest ones to the elements
      
         inline styles: as an attribute for any HTML element
-        style = " property: value; property: value; "
+        style = " property: value; property: value; etc... "
 
-        Notice that we don't use { and } because there is no selector,
-        our our selector is the current element itself
+        NOTES:
+        - We don't use { and } because there is no selector,
+        our selector is the current element itself
+        - Inline styles override the global styles applied to the elements
         -->
 
         <p style="color:antiquewhite; background-color:brown;">

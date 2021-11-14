@@ -10,9 +10,23 @@
         /*
             Font size or Type size:
             We have 3 main/major units of type size (the most commonly used ones):
-            - Pixels
-            - Percentage  
-            - EMS (for Capital letter M)
+            - Pixel Unit (px):
+            Depends on screen resolution, may not scale in every browser when text is resized.
+            
+            - Percentage Value (%):
+            Recommended by W3C, scale will when text is resized in browser.
+
+            - Em Unit (em) (for Capital letter M):
+            Same as Percentage value. This unit is the width of a square block of type
+            typically the uppercase M for a particular font and type size.
+
+            Other Unit values:
+            - Text value:
+            Examples: 
+            xx-small, x-small, small, medium (default), large, x-large, xx-large
+            
+            - Point Unit (pt): 
+            to configure print version of web page. may not scale in every browser when text is resized
 
             The default size of text in a browser is 16 pixels  
 
@@ -25,17 +39,19 @@
                 h1: 32px
                 h2: 24px;
                 h3: 18px;
-            Percentages (the browser default):
-                Normal Text Size (like p elements): 100%
-                h1: 200%
-                h2: 150%
-                h3: 112.5% 
 
             EMS (the browser default)
                 Normal Text Size (like p elements):  1em
                 (EM is the size of capital letter M)
                 Ems: allow you to change the size of text relative to the size 
-                of the text in the parent element.
+                of the text in the parent element (typically the body element).
+
+            Percentages (the browser default):
+                Percentage values work in a similar manner to em units.
+                Normal Text Size (like p elements): 100%
+                h1: 200%
+                h2: 150%
+                h3: 112.5% 
 
                 body: 100%
                 h1: 2em ==> (M)

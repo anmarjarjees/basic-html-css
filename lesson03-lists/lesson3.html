@@ -9,56 +9,58 @@
 <body>
     <h2>MS Office Module</h2>
     <!--
-Create a list:
-with numbers ==> ordered list
-without numbers (symbols) ==> unordered list
+        Create a list:
+        with numbers ==> ordered list
+        without numbers (symbols) ==> unordered list
 
-Unordered List ==> <ul> </ul>
-Ordered List ==> <ol> </ol>
+        Unordered List ==> <ul> </ul>
+        Ordered List ==> <ol> </ol>
 
-In between these tags, we must add <li> </li> for each list item
+        In between these tags, we must add <li> </li> for each list item
 
-Unordered list <ul> Examples:
-•	Word
-•	Excel
-•	PowerPoint
-•	Outlook
+        Unordered list <ul> Examples:
+        •	Word
+        •	Excel
+        •	PowerPoint
+        •	Outlook
 
-Ordered List <ol> Examples:
-1.	Word
-2.	Excel
-3.	PowerPoint
-4.	Outlook
+        Ordered List <ol> Examples:
+        1.	Word
+        2.	Excel
+        3.	PowerPoint
+        4.	Outlook
 
-a.	Word
-b.	Excel
-c.	PowerPoint
-d.	Outlook
--->
+        a.	Word
+        b.	Excel
+        c.	PowerPoint
+        d.	Outlook
+    -->
 
     <!-- Simple example of using <ul> element -->
     <ul>
         <!--
-Every List Item must be enclosed or wrapped by <li></li> element, 
-<li> stands for list item 
--->
+        Every List Item must be enclosed or wrapped by <li></li> element,
+        <li> stands for list item
+        -->
         <li>MS Word</li>
         <li>MS PowerPoint</li>
         <li>MS Excel</li>
         <li>MS Outlook</li>
     </ul>
 
-    <!-- 
-We can use the "type" attribute to modify the list icons
-This will give us an error with W3C validator:
-Error: The type attribute on the ul element is obsolete. Use CSS instead.
+    <!--
+    Although we can use the "type" attribute to modify the list icons style
+    But this will give us an error with W3C validator:
+    Error: The type attribute on the ul element is obsolete. Use CSS instead.
 
-"type" attribute was used in HTML4
-(Not supported by HTML5 for unordered list), 
-it's better to use the CSS rule named "list-style-type" 
-to specify the list type for both ordered list and unordered list
-so we should never use this attribute, but using CSS instead [later :-)]
--->
+    "type" attribute was used in HTML4/XHTML
+    Not supported by HTML5 for unordered list because it's decorative 
+    and does not convey meaning.
+
+    it's better to use the CSS rule named "list-style-type"
+    to specify the list type for both ordered list and unordered list
+    so we should never use this attribute, but using CSS instead [later :-)]
+    -->
     <ul type="circle">
         <!-- Every List Item has to be enclosed with <li></li> -->
         <li>Word</li>
@@ -84,10 +86,11 @@ so we should never use this attribute, but using CSS instead [later :-)]
         <li>Outlook</li>
     </ol>
 
-    <!-- 
-Please be advised:
-The type attribute on the ol element is NOT obsolete    
--->
+    <!--
+    NOTE: 
+    Please be advised that the using type attribute with the ol elements
+    is NOT obsolete (no error in validation) as we saw with using type with ul elements
+    -->
     <ol type="I">
         <li>MS Word</li>
         <li>MS PowerPoint</li>
@@ -109,15 +112,15 @@ The type attribute on the ol element is NOT obsolete
         <li>MS Outlook </li>
     </ol>
 
-    <!-- 
-Definition List: <dl> </dl>
-<dt> Definition Term
-<dd> the data definition of each definition term
+    <!--
+    Definition List: <dl> </dl>
+    <dt> Definition Term
+    <dd> the data definition of each definition term
 
-Definition List <dl> Example:
-MS Word: <=> Definition Title <dt>
-For writing our resumes and cover letters <=> Definition Data <dd>
--->
+    Definition List <dl> Example:
+    MS Word: <=> Definition Title <dt>
+    For writing our resumes and cover letters <=> Definition Data <dd>
+    -->
 
     <dl>
         <dt>MS Word:</dt>
@@ -131,18 +134,18 @@ For writing our resumes and cover letters <=> Definition Data <dd>
     </dl>
 
 
-    <!-- 
-Nested List:
-if we do not nest the ul/ol and li properly:
-Error: Element ul not allowed as child of element ul in this context. 
-(Suppressing further errors from this subtree.)
--->
+    <!--
+    Nested List:
+    if we do not nest the ul/ol and li properly:
+    Error: Element ul not allowed as child of element ul in this context.
+    (Suppressing further errors from this subtree.)
+    -->
     <h2>Nested Lists</h2>
-    <!-- 
-Creating a list inside a list: 
-the main list contains the modules names
-the sub-lists or nested lists contain the subjects for each module
--->
+    <!--
+    Creating a list inside a list:
+    the main list contains the modules names
+    the sub-lists or nested lists contain the subjects for each module
+    -->
     <ul>
         <li>MS Word:
             <!-- This ul belongs to "MS Word" -->
@@ -179,19 +182,19 @@ the sub-lists or nested lists contain the subjects for each module
 
     <!-- Example of more complex list: using 3 ul elements -->
     <h2>HTML and CSS Module</h2>
-    <!-- 
-We have 3 levels of ul:
-Level 1: the ul of two items: HTML and CSS
-Level 2: the ul for the lessons of each subject:
-- HTML has two items for two lessons
-- CSS has two items for two lessons
-Level 3: the ul for subjects of each lesson
+    <!--
+    We have 3 levels of ul:
+    Level 1: the ul of two items: HTML and CSS
+    Level 2: the ul for the lessons of each subject:
+    - HTML has two items for two lessons
+    - CSS has two items for two lessons
+    Level 3: the ul for subjects of each lesson
 
-By Default (the default set/rules of the browser): 
-Level1 => the filled/black circle
-Level2 => the empty circle
-Level3 => the black square 
--->
+    By Default (the default set/rules of the browser):
+    Level1 => the filled/black circle
+    Level2 => the empty circle
+    Level3 => the black square
+    -->
     <ul>
         <li>HTML:
             <ul>
@@ -231,6 +234,43 @@ Level3 => the black square
             </ul>
         </li>
     </ul>
+
+    <hr>
+    <!-- Another example using ol -->
+    <!-- Nested List Example -->
+    <ol>
+        <li>Word:
+            <!-- Add the first nested list -->
+            <ol type="a">
+                <li>Header and Footer</li>
+                <li>Tables
+                    <ol type="i">
+                        <li>Merge Cells</li>
+                        <li>Split Cells</li>
+                    </ol>
+                </li>
+                <li>Pictures</li>
+                <li>On-line pictures</li>
+                <li>Local pictures</li>
+                <li>SmartArt</li>
+                <li>Mail Merge</li>
+            </ol>
+        </li>
+        <li>Excel:
+            <ol type="a">
+                <li>Formulas</li>
+                <li>Charts</li>
+            </ol>
+        </li>
+        <li>PowerPoint:
+            <ol type="a">
+                <li>Slide Themes</li>
+                <li>Slide Transitions</li>
+                <li>Animations</li>
+            </ol>
+        </li>
+        <li>Outlook</li>
+    </ol>
 </body>
 
 </html>

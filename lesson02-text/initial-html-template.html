@@ -1,28 +1,33 @@
 <!DOCTYPE html>
-<!-- 
+<!--
     we can use:
     lang=en
-    lang=en-CA
-    lang=en-US
+    lang='en'
+    lang="en"  <= Double Quotations are used by convention in HTML
+
+    You can also be more specific:
+    lang=en-CA <= for Canadian English 
+    lang=en-US <= for American English
  -->
 <html lang="en">
 
 <head>
-    <!-- 
+    <!--
         meta element:
         - is an empty element to describe data
+        * Empty Element (Self-contained tag) => has only opening tag (no closing tag)
         - charset: character set
         - UTF: standard Unicode Transformation Format (UTF).
-        
+
         UTF-8:
-        - (UCS Transformation Format 8) is the World Wide Web's most common character encoding. 
-        - Each character is represented by one to four bytes. 
+        - (UCS Transformation Format 8) is the World Wide Web's most common character encoding.
+        - Each character is represented by one to four bytes.
         - UTF-8 is backward-compatible with ASCII and can represent any standard Unicode character.
         - UTF-8 can represent any character in the Unicode standard
         - UTF-8 is the preferred encoding for e-mail and web pages
 
 
-        charset uses the code "UTF-8" 
+        charset uses the code "UTF-8"
         This code support all the languages from different countries
         like Japan or china or middle-east (right to left)
 
@@ -30,10 +35,10 @@
         it's like information about information
         so we want here to describe the character set code is UTF-8
         we add:  <meta charset="utf-8">
-        
+
         Link: https://developer.mozilla.org/en-US/docs/Glossary/UTF-8
      -->
-
+    <meta charset="utf-8">
     <title>Page Title</title>
 </head>
 
