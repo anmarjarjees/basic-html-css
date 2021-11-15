@@ -9,14 +9,14 @@
 </head>
 
 <body>
-    <!-- 
+    <!--
         Types of images that can be used for the web:
         - GIF or .gif (Graphic Interchange Format):
-        ******************************************* 
-        > are best used for flat line drawing containing mostly solid tones 
+        *******************************************
+        > are best used for flat line drawing containing mostly solid tones
         and simple images such as clip art. Images can be animated.
-        > Lossless compression: 
-        nothing in the original image is lost when compressed 
+        > Lossless compression:
+        nothing in the original image is lost when compressed
         and rendered by the browser.
 
         - JPEG or .jpg (Joint Photographic Experts Group):
@@ -28,26 +28,26 @@
 
         - PNG or .png (Portable Network Graphic):
         *****************************************
-        > combine the best of GIF and JPEG 
+        > combine the best of GIF and JPEG
         > can replace the GIF (but they don't support animation)
         > support variable transparency levels
         > Lossless compression
-        
-        To insert an image, we use the <img> empty element 
+
+        To insert an image, we use the <img> empty element
         empty element has only opening tag (doesn't have a closing tag)
-        
+
         we must use "src" attribute to call the image file (notice that we need to specify the full path if the image is in deferent folder)
-   
+
         src:
-        - short for source 
+        - short for source
         - this attribute is mandatory
-        
+
         Example:
         src="path/imageFileName"
 
         - path ==> is the location (full address) of the images (in which folder or which website)
         - imageFileName ==> is full name of the image plus the extension (.jpg, .png, or gif)
-    
+
         <img> element can load only one image, if you want for example
         to load 2 images, each image must have its own <img> element
 
@@ -55,11 +55,11 @@
         There is no: <img src="image1.jpg image2.jpg"> ==> WRONG
 
         <img> element needs to have another attribute named "alt"
-        alt is short for "alternative". 
-        
+        alt is short for "alternative".
+
         We should use "alt" attribute because:
         1. It provides a text description about the image. the text will be visible to us only if the image cannot be loaded.
-        *2. Is used by a screen reader software (People with visual impairments) 
+        *2. Is used by a screen reader software (People with visual impairments)
         and search engine.
  
         Note: ignoring the "alt" attribute will give an error in W3C validator
@@ -85,30 +85,31 @@
         NOTE:
         Even it's much better to use "CSS" (Cascading Style Sheets) to specify the image size instead of using width and height attributes (old-fashioned way) because if we want to use a responsive design, the image will not be resized automatically based on the browser window, it will be always have a fixed size.
 
-        CSS: is used to make the website more attractive by controlling how the elements should appear. 
+        CSS: is used to make the website more attractive by controlling how the elements should appear.
         For example, the font size, the font family, the color, the background color
         the positions of all the elements, the layout of the page etc...
 
-        Responsive Design: to make the website width and layout changed based on the 
+        Responsive Design: to make the website width and layout changed based on the
         browser windows size (viewport).
         =============================================
-    
+
  
-        Note: 
+        Note:
         In the example below, the actual image size is 600 x 450
         But we changed the width and height values to be 400 x 250
         We should avoid using the following code (the example below)
         because we used the width and height to resize the image instead of using a photo editor software:
-        
-        Remember that with HTML5, 
+
+        Remember that with HTML5,
         we are allowed to put the attribute value without " or '
-        like: height=250 and width=400 
-        but we should avoid using this way of coding 
+        like: height=250 and width=400
+        if the value is one word or one number!
+        But we should avoid using this way of coding
         because it's confusing for us as developers
         -->
     <img src="quokka.jpg" alt="Quokka Family" title="Quokka animal" width="400" height="250" />
 
-    <!-- 
+    <!--
     Below we must write the full path "Relative URL" to call the image
         since we put all the images inside a folder named "images",
         so we have to put: "images/" the folder name, then the file name
@@ -117,15 +118,31 @@
         height="250" />
 
     <!-- 
+        Just for more and quick reference
+        using "style" attribute for adding CSS 
+        This type of CSS is called "Inline Styles"*
+        the syntax: style=" property:value "
+
+        Below we have two examples to make the image responsive:
+        First example: style="max-width:100%"
+        Second example: style="width:100%"
+
+        *Please stay tuned for discussing this topic in more details (lesson10)
+     -->
+    <img src="quokka.jpg" alt="Quokka Family" title="Quokka Animal" style="max-width:100%">
+
+    <img src="quokka.jpg" alt="Quokka Family" title="Quokka Animal" style="width:100%">
+
+    <!--
         BLOCK ELEMENTS and INLINE ELEMENTS:
         The browsers (like IE or chrome for example) show/display HTML elements in one of two ways (in HTML we have):
-        - Block Level Elements or (Block Elements): 
+        - Block Level Elements or (Block Elements):
         - Cannot be displayed in one line
         - Each element appears on a new line.
         - Even if we put them in one line in our code
         - The browser will display each one in a separate new line.
         Examples: h1, h2, h3, p, ul, and li elements
-        
+
         - Inline Elements:
         - Inline elements sit within a block level element and do not start on a new line.
         Examples: i, em, img
@@ -135,15 +152,15 @@
     <h2>More about images</h2>
 
     <h3>Images with paragraphs</h3>
-    <!-- 
-         <img> is an inline element 
+    <!--
+         <img> is an inline element
          can be placed inside any block element.
-         In the example below, 
-         we placed the <img> which is an element within the <p> which is a block-level element 
+         In the example below,
+         we placed the <img> which is an element within the <p> which is a block-level element
 
          another example of inline elements based on our previous lecture:
          <em> and <i> and b>
-         
+
         for this file only, we will use an obsolete attribute named "align"
         just for learning (obsolete attribute)
         align attribute has the following 5 values:
@@ -152,14 +169,14 @@
         - middle
         - top
         - bottom
-        
+
         in the future we should use "CSS" to align the image and avoid using align attribute because this attribute has been removed from HTML, so we should AVOID them, and CSS instead as we will see later
 
         With W3C Validator:
         Error: The align attribute on the img element is obsolete. Use CSS instead.
     -->
 
-    <!-- 
+    <!--
         for now we can use align to align our image but then we should use CSS to style the image and never use align there are also two more attributes that we should not use:
         width:
         height:
@@ -209,26 +226,27 @@ All the paragraphs in this file are just random text to demonstrate how to write
         HTML5 has introduced a new figure element to contain images and their caption so that the two are associated.
         If you want to see the new otters, you can look at the figure below.
     </p>
-    <!-- 
+    <!--
          The new HTML5 element named "figure", and it has open and closing tag (Not empty element)
           this element can contain the image + its caption.
-          
+
         <figure> is a block element
-        we have to put <figure> first then <figcaption> inside it 
-        
+        we have to put <figure> first then <figcaption> inside it
+
         SO <figure> is the parent of <figcaption>
         or:
         <figcaption> is the child of <figure>
-	<figure>
-		<figcaption>
-		</figcaption>
-      </figure>
+
+        <figure>
+            <figcaption>
+            </figcaption>
+        </figure>
     -->
     <figure>
         <!--
-here we can put the img element
-alt: alternative text if the image is not displayed
- -->
+        here we can put the img element
+        alt: alternative text if the image is not displayed
+        -->
         <img src="images/otters.jpg" alt="Photograph of two sea otters floating in water">
         <!-- Then we can put the figure caption -->
         <figcaption>
@@ -237,13 +255,13 @@ alt: alternative text if the image is not displayed
     </figure>
 
     <!-- 
-    Images can have many types (extensions), 
+    Images can have many types (extensions),
     The three image extensions that we can use in our webpages:
     - .jpg => like a normal picture when it has different colors. Cannot be transparent (we cannot remove the background)
     - .png => can be used for transparent (like an image without background). Usually with logos that have different shapes (not rectangle or square) or if we want to have the logo without any background. Remember that is not necessary or mandatory to have every .png picture without a background. So .png image can with or without a background colour.
 
     Note: We can use Adobe Photoshop CC to remove the background then save it as .png
-    - .gif => is the same like “.png” but .gif file can have a simple animation
+    - .gif => is the same like ".png" but .gif file can have a simple animation
     We don't use .bmp because the file is too large and also we don’t other adobe product extension like .psd for photoshop
     -->
 </body>
