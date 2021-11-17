@@ -6,22 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML5 Layout</title>
-    <!-- 
-        Please be advised that this comment and this new element <style> are based on lesson 10 lecture, 
-        so you can skip it till we finish lesson 10 so it will make sense to you later but not now 
+    <!--
+        Please be advised that this comment and this new element <style> are based on lesson 10 lecture,
+        so you can skip it till we finish lesson 10 so it will make sense to you later but not now
     -->
 
-    <!-- 
+    <!--
         Internal Styles is when we place our styles
-    inside the <head> section of the html page: 
+    inside the <head> section of the html page:
     -->
 
-    <!-- 
+    <!--
         Warning: The type attribute for the style element is not needed and should be omitted.
     -->
     <style>
-        /* 
-        Since very old browsers like ie7 cannot understand 
+        /*
+        Since very old browsers like ie7 cannot understand
         or recognize the new html5 elements like section, header, or nav,
         they will be changed to be inline elements like <span>.
 
@@ -43,7 +43,7 @@
         }
 
         /*
-    instead of 
+    instead of
     footer {
         display: block;
     }
@@ -56,8 +56,8 @@
 </head>
 
 <body>
-    <!-- 
-        HTML5 offers new semantic elements to define different parts of a web page:  
+    <!--
+        HTML5 offers new semantic elements to define different parts of a web page:
         •	<article>
         •	<aside>
         •	<details>
@@ -72,7 +72,7 @@
         •	<summary>
         •	<time>
 
-        IMPORTANT NOTES: 
+        IMPORTANT NOTES:
         - The HTML5 semantic elements are "Block Level" Elements
         - Please, be advised that Internet Explorer 11 and lower don't support HTML5 semantic elements
         which means they will be displayed as "Inline" Elements
@@ -82,7 +82,7 @@
 
      -->
 
-    <!-- 
+    <!--
     div stands for division (section of the page)
     we can give it an "id" or "class" attribute
     we can give id or class a value like:
@@ -90,60 +90,60 @@
     - container
     - wrapper
     - or any name that makes sense to you since you are the developer
-    
+
     notice that <div> is block level element
 
-    If you don't want to use div as a block level element, 
-    you can use <span> which is an inline element that can be imbedded or inserted inside any element 
+    If you don't want to use div as a block level element,
+    you can use <span> which is an inline element that can be imbedded or inserted inside any element
     -->
 
-    <!-- 
+    <!--
     we should never use section or article elements to layout the page content.
     in this case we need to use div element
-    
+
     It's a good idea to have one main major div to contain all
-    the elements of your webpage 
+    the elements of your webpage
     -->
 
-    <!-- 
+    <!--
         Using section is not recommended <section id="container"></section>
         we need this div to layout our page and for CSS NOT for adding any semantic meaning
     -->
     <div id="container">
-        <!-- 
+        <!--
         instead of typing:
         <div id="header">
         <div class="pageheader"> and etc..........
         we can just use HTML5 <header> element
         to refer to the main page header
 
-        <header> element specifies 
+        <header> element specifies
         a header for a document section (The main header)
      -->
         <header>
             <h1>HTML5 Layout Elements</h1>
             <h2>More About Elements</h2>
-            <!-- 
-            HTML5 <nav> element contains the major navigational block of the website 
+            <!--
+            HTML5 <nav> element contains the major navigational block of the website
 
-            <nav> contains the major 
+            <nav> contains the major
             navigational block such as the primary site navigation
             we can place the main navigation inside the <header> or after the <header>
             depending on how you like/prefer to style it
             -->
             <nav>
                 <ul>
-                    <!-- 
+                    <!--
                     since we have no actual link to open
                     we can just put the symbol #
-                    this symbol will prevent the page from 
+                    this symbol will prevent the page from
                     being refreshed or reloaded when we click any link
 
                     we need to add <a> to navigate
                     adding the attribute href="#"
                     will prevent the link from going anywhere
-                    it will just work as link when we 
-                    hover the mouse 
+                    it will just work (act) as a link when we
+                    hover the mouse
                 -->
                     <li>
                         <a href="#">Home</a>
@@ -161,24 +161,24 @@
             </nav>
         </header>
 
-        <!-- 
-            NOTE: 
+        <!--
+            NOTE:
             When any browser couldn't understand the element (not defined element)
             It will just treat it as an inline element:
 
             for fun, I put my initial to be an HTML element
             the browser will display the content in horizontal layout
-        
+
             <aj>
                 My new element
             </aj>
 
             <aj>
                 My initial :-)
-            </aj> 
+            </aj>
         -->
 
-        <!-- 
+        <!--
             between header and footer
             we need to have the "main" page content
             we can use main as the main element for the page content
@@ -189,18 +189,18 @@
             </main>
     -->
 
-        <!-- 
+        <!--
              HTML5 <section> element groups related content together,
              and each <section> would have its own heading.
 
-            <section> element groups related content together, each section would have its own heading 
+            <section> element groups related content together, each section would have its own heading
         -->
         <section id="content">
-            <!-- 
+            <!--
                 When have two headings:
-                title and subtitle, we can group them inside 
+                title and subtitle, we can group them inside
                 hgroup element.
-                it is useful to group them as integral parts of a heading 
+                it is useful to group them as integral parts of a heading
 
                 <hgroup></hgroup>
             -->
@@ -215,21 +215,21 @@
             <aside>
                 <!-- nothing inside this element! -->
             </aside>
-            <!-- 
+            <!--
                  HTML5 <article> element
                 could be individual article or blog entry, a comment or forum post,
                 or any other independent piece of content
 
                 example below is an article about id and class attributes
-                
+
                 <article> could be individual article or blog entry, a comment or forum post, or any other independent piece of content.
-                article is like a blog article  
+                article is like a blog article
             -->
             <article>
-                <!-- 
-                    if no heading!! we will have a warning 
+                <!--
+                    if no heading!! we will have a warning
                     each article should have a heading starting from
-                    h2 to h6 
+                    h2 to h6
                 -->
                 <h2>ID Attribute</h2>
                 <p>
@@ -267,10 +267,10 @@
             </article>
         </section>
 
-        <!-- 
-        instead of using: 
+        <!--
+        instead of using:
         <div id="main-sidebar">
-        </div> 
+        </div>
 
         we can HTML5 <aside> element
             contains information that is related to the entire page (website)
@@ -279,39 +279,39 @@
             This is the main aside element that should be available in every page
          -->
         <aside id="main-sidebar">
-            <!-- 
+            <!--
                 <aside> element contains information that is related to the entire page like a sidebar
                 this is the main aside element
-                that has to be available in every page, 
-                so it's outside the section 
+                that has to be available in every page,
+                so it's outside the section
             -->
         </aside>
 
-        <!-- 
-           HTML5 <footer> element is the main footer of the website that 
-           appears in every page 
+        <!--
+           HTML5 <footer> element is the main footer of the website that
+           appears in every page
 
            <footer> is the main footer of the website that appears in every page
         -->
         <footer>
-            <!-- 
+            <!--
                 HTML Escape Characters:
-                Copyright Symbol: &copy; 
+                Copyright Symbol: &copy;
             -->
             Copyright &copy; 2021 | All rights reserved | HTML and CSS Module | Designed by: Anmar
         </footer>
 
-        <!-- 
+        <!--
             It's a good practice to add some comments:
             Below is the closing/ending div tag for the div element with id value of "container"
          -->
 
     </div> <!-- end div#container -->
 
-    <!-- 
+    <!--
         Can I Use:
-        we can place our elements, attributes, or CSS rules 
-        in this website "https://CanIuse.com" 
+        we can place our elements, attributes, or CSS rules
+        in this website "https://CanIuse.com"
         to check the browsers or the versions of the browsers that support them.
     -->
 </body>

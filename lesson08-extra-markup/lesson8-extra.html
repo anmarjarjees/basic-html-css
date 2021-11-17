@@ -60,10 +60,41 @@
     -->
 
     <title>Extra Markup - Div and Span</title>
+
+    <!-- 
+        Below we are using the <style></style> element as s quick look to using (Embedded) CSS
+        to understand why using the inline <span></span> element 
+
+        Notice that using CSS will be covered in details, stay tuned...
+    -->
+    <style>
+        /* Our CSS code  */
+        .highlight {
+            /* 
+            - red text color 
+            - Bold
+            - Italic
+            - Underline
+            - UPPER CASE
+            - yellow background
+            */
+            color: red;
+            font-weight: bold;
+            font-style: italic;
+            text-decoration: underline;
+            text-transform: uppercase;
+            background-color: yellow;
+        }
+    </style>
+
+    <script>
+        /* our JS code */
+    </script>
 </head>
 
 <body>
     <!--
+        <div> Element:
         <div> stands for division (section of the page)
         <div> is a block-level element (block element)
         <div> like any other element, can have "id" or "class" attribute
@@ -76,10 +107,14 @@
         - it starts directly after the opening body tag
         - and close(end) before the closing body tag
 
-        Note:
-        of you don't want to use div as a block level element,
+        <span> Element:
+        If you don't want to use div as a block level element,
         you can use <span> which is an inline element
         that can be embedded or inserted inside any block element.
+
+        > This element defines a section on a web page that is not physically separated
+        from the other areas by line breaks.  
+        > Use it when you need format an area that is contained within another elements
 
         We can have div inside another div and so on
      -->
