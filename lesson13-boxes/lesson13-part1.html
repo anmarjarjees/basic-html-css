@@ -8,18 +8,25 @@
     <title>Lesson 13 Boxes: Part 1</title>
     <!-- Internal Styles -->
     <style>
+        /* Styling the body means the full background of the browser window */
+        body {
+            background-color: chocolate;
+        }
+
         /* styling the class .wrapper which the main container of our pages */
         .wrapper {
-            /* 
-            NOTE: 
-            We can set the width of any block-level element using the "width" property 
+
+            background-color: antiquewhite;
+            /*
+            NOTE:
+            We can set the width of any block-level element using the "width" property
             But we CANNOT use the width with "inline" elements -> useless no affect
             */
             width: 950px;
             /* 950px => the common width in the old days :-) */
-            background-color: antiquewhite;
 
-            /* 
+
+            /*
             instead of writing:
             border-width: 2px;
             border-style: solid;
@@ -34,10 +41,24 @@
             border: 2px solid black;
         }
 
-        /* Style all the <article> elements */
+        /* Giving a unique background color to each article  */
+        #a1 {
+            background-color: lightcoral;
+        }
+
+        #a2 {
+            background-color: lightgreen;
+        }
+
+        #a3 {
+            background-color: lightblue;
+        }
+
+        /* Style all the <article> elements [semantic elements (Lesson.17)] */
         article {
-            /*  
-            if we don't specify the width value of a block-level element, 
+            font-family: Arial, Helvetica, sans-serif;
+            /*
+            if we don't specify the width value of a block-level element,
             It will just take the full width of its container element
              */
             width: 180px;
@@ -53,11 +74,11 @@
             */
             height: 100px;
 
-            /* 
+            /*
             We can also use:
             min-width: specifies the smallest size a box can be
             displayed at when the browser window is narrow.
-            
+
             max-width: specifies the highest size a box can be
             displayed at when the browser window is wide or large.
 
@@ -66,17 +87,14 @@
             /* min-width: 150px; */
             min-width: 300px;
             max-width: 600px;
-            background-color: beige;
-
-            background-color: beige;
             border: 1px solid red;
 
-            /* 
+            /*
             The text will overlap after setting the width and the height
             Because it cannot fit inside its container element
 
             Solution: using the property "overflow"
-            overflow: to tell the browser what to do 
+            overflow: to tell the browser what to do
             if the content is more than the size of its container
 
             auto ==> to see the scroll bars
@@ -86,7 +104,7 @@
             /* using overflow property */
             overflow: auto;
 
-            /* 
+            /*
             Padding: is the space within the block-level (box) element
             Use padding to add some space inside the article
             space between the block element and its contents
@@ -109,7 +127,7 @@
             padding: value1
             value1: Top/bottom/Left/Right padding
 
-            padding ==> 7px for top/bottom 10px for left/right 
+            padding ==> 7px for top/bottom 10px for left/right
             */
 
             padding-top: 7px;
@@ -117,10 +135,10 @@
             padding-right: 7px;
             padding-left: 7px;
 
-            /* 
-            below is the short way (shorthand) instead of writing 
-            4 statements which means all the sides will have 7px 
-            padding 
+            /*
+            below is the short way (shorthand) instead of writing
+            4 statements which means all the sides will have 7px
+            padding
             */
             padding: 7px;
 
@@ -131,8 +149,8 @@
             padding: 7px 10px 7px 10px;
 
             /*
-                padding: 7px 10px 7px 10px; 
-                since 
+                padding: 7px 10px 7px 10px;
+                since
                 - the top padding = bottom padding
                 - the right padding = left padding
 
@@ -142,18 +160,23 @@
             */
             padding: 7px 10px;
 
-            /* 
-                The same rules for padding 
+            /*
+                The same rules for padding
                 can be applied to margin.
 
                 margin: 5px 8px;
 
-                below we have 5px margin, 
+                below we have 5px margin,
                 it's the value for all sides
 
                 The margin is the space outside the box (block-level element)
-
-                            If the margin property has three values:
+                =============================================================
+                
+                padding: value1 value2 value3;
+                value1: top
+                value2: (left and right)
+                value3: bottom
+                If the margin property has three values:
                 margin: 25px 50px 75px;
                 top margin is 25px
                 right and left margins are 50px
@@ -169,32 +192,72 @@
             bottom margin is 75px
             */
         }
+
+        /* 
+        VERY IMPORTANT NOTE:
+        Two elements (div1 and div2) 
+        div1 above div2
+        - div1 has a bottom margin of 20px
+        - div2 has a top margin of 10px;
+        We might think => The browser will put 30px margin in between then (Wrong)
+        The browser will look at the largest value which is 20px
+        so the browse wil add only 20px 
+        */
     </style>
 </head>
 
 <body>
     <!-- div.wrapper ==> to contain the entire page -->
     <div class="wrapper">
-        <article>
+        <article id="a1">
             <h2>Fender Mustang</h2>
             <p>The Fender Mustang was introduced in 1964 as the basis of a major redesign of Fender's student models
                 then consisting of the Music master and Duo-Sonic. It was originally popular in sixties surf music and
                 attained cult status in the 1990s largely as a result of its use by a number of alternative rock bands.
             </p>
         </article>
-        <article>
+
+        <article id="a2">
             <h2>Fender Stratocaster</h2>
             <p>The Fender Stratocaster or "Strat" is one of the most popular electric guitars of all time, and its
                 design has been copied by many guitar makers. It was designed by Leo Fender, George Fullerton and Fredie
                 Tavares in 1954.
             </p>
         </article>
-        <article>
+
+        <article id="a3">
             <h2>Gibson Les Paul</h2>
             <p>The Gibson Les Paul is a solid body electric guitar that was first sold in 1952. The Les Paul was
                 designed by Ted McCarty in collaboration with popular guitarist Les Paul, whom Gibson enlisted to
                 endorse the new model. It is one of the most well-known electric guitar types in the world.</p>
         </article>
+
+        <div>
+            <h2>Examples of Inline Elements</h2>
+            <!-- 
+                We removed the obsolete attribute => frameborder="0"
+                since we know how to add border using CSS :-)
+             -->
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/gVYxIwsxBP4"
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+
+            <span>I am just a span element!</span>
+
+            <img src="bird.gif" alt="Bird Clip-art">
+
+            <video src="" controls poster="bird.gif"></video>
+            <video src="" controls poster="bird.gif"></video>
+
+            <!-- Or using this way -->
+            <video controls poster="bird.gif">
+                <source src="">
+                <source src="">
+                <source src="">
+            </video>
+        </div>
     </div>
 </body>
 

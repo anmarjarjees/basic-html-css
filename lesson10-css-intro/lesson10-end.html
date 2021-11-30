@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html> -->
 <html lang="en">
 
 <head>
@@ -6,22 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Introducing CSS</title>
-    <!-- 
+    <!--
     CSS ==> Cascading Style Sheet
-    
-    3 ways/methods to apply/configure the styles 
+    Check "CSS Zen Garden" to see how the same content can be rendered in different styles
+
+    3 ways/methods to apply/configure the styles
     starting from the more specific to the general and more global ones:
-    
+
     - Inline Styles
     - Embedded (Internal) Styles
     - External Styles
     - Imported Styles
 
-    
-
     External Styles:
     All style rules will be written in an external file (not in the same HTML file)
-    this external file will have the extension of ".css", 
+    this external file will have the extension of ".css",
     this file must be connected/linked to our html file
 
     Internal (Embedded) Styles:
@@ -31,14 +30,17 @@
     Inline Styles:
     All style rules will be written as attributes for the html elements
 
-    Imported styles (Not used frequently): 
+    Imported styles (Not used frequently):
     Are similar to external styles for connecting with a separate file
-    that contains the CSS code. 
+    that contains the CSS code.
     This file can be imported into:
     - embedded styles
     - another external style sheet
     by using @import directive
-    
+
+    This extra one:
+    - Imported Styles => @import(.....) usually used with Google fonts
+
     Review:
     <element attribute="value">content</element>
     HTML ==> <h1 id="test">Head Title<h1>
@@ -52,16 +54,16 @@
     the styles are inside a separate (external) file
     since that file contains only CSS rules and NO HTML
     the extension of that file will be .css and Not .html
-    
-    Example: 
-    styles.css or style.css or my-styles.css or abc-style.css    
+
+    Example:
+    styles.css or style.css or my-styles.css or abc-style.css
     -->
 
-    <!-- 
+    <!--
         Using External CSS:
         -------------------
-        Add a link to an external CSS file named "css-intro.css" which is inside a sub-folder named "css" 
-        to apply/use external css file in our html page => link element 
+        Add a link to an external CSS file named "css-intro.css" which is inside a sub-folder named "css"
+        to apply/use external css file in our html page => link element
 
         we need to add:
          - href="??? File name and location ??"
@@ -74,7 +76,7 @@
         It's an optional attribute with HTML5 (W3C validator will not complaint):
         - type="text/css"
 
-         
+
         Notice by default VS code will generate: <link rel="stylesheet" href="">
 
         We need to place this line in the head element of every HTML page
@@ -85,12 +87,12 @@
     <!-- We can use the new code without type attribute: -->
     <link rel="stylesheet" href="css/css-intro.css">
 
-    <!-- 
+    <!--
     we will start with Internal Style first:
-        
+
     Internal Style Sheet:
     - Placed inside the HTML head section (Outside the body)
-    - using <style> </style> 
+    - using <style> </style>
     -->
 
     <!-- Using Internal CSS:  -->
@@ -105,10 +107,18 @@
             Selector can be any element like p
             Examples of selector:
             could be ==> id, class, html element (p, h1, h2, ul, etc...)
+
+            These { and } are called "curly braces" or "curly brackets"
+            With coding/programming we use different types of brackets:
+            ( )	=> Round brackets or parentheses
+            [ ]	=> Square brackets or brackets
+            { }	=> Curly brackets or braces
+            ⟨ ⟩ => Angle brackets or chevrons
         */
 
         /* Target the body element to have any background color: */
         body {
+            background-color: cornsilk;
             font-family: Arial, Helvetica, sans-serif;
         }
 
@@ -123,29 +133,29 @@
             /* be careful: after each declaration we have to add ; */
             color: darkred;
             background-color: lightcoral;
-            /* 
-            notice that we can omit the ; from the last declaration 
+            /*
+            notice that we can omit the ; from the last declaration
             that ends with the closing }
             */
         }
 
         /*
-        Notice that the following p style will be applied 
-        so the last rule will override the previous one if they are the same 
+        Notice that the following p style will be applied
+        so the last rule will override the previous one if they are the same
         */
         p {
             color: darkblue;
         }
 
-        /* 
-        Make all h1 element(s) green 
+        /*
+        Make all h1 element(s) green
         Which means making all heading 1 element(s) to have a green color (font color)
         also add a background color of lightblue
         */
         h1 {
             color: green;
-            /* 
-            Because h1 is a block level element and any block level element will be in a new line by itself and take the entire line, 
+            /*
+            Because h1 is a block level element and any block level element will be in a new line by itself and take the entire line,
             so the entire line will have a background color
             */
             background-color: lightblue;
@@ -153,7 +163,7 @@
 
         /* change all h2 to have a red color */
         h2 {
-            /* 
+            /*
             here since we have one declaration
             so the ; is optional! But I like to add it
             */
@@ -171,12 +181,12 @@
             class ==> . (class value can be repeated as many times as we need)
         */
 
-        /* 
-        Target ANY element that has a class value equal to "note" 
-        - any HTML element that has a class = "note" 
+        /*
+        Target ANY element that has a class value equal to "note"
+        - any HTML element that has a class = "note"
         - change the font style to be italic
-        
-        Review: 
+
+        Review:
         Remember that we have two general attributes: id and class that can be applied to any html element:
         id ==> its symbol is # (id value cannot be repeated, it must be unique)
         class ==> its symbol is . (class value can be repeated as many times as we need)
@@ -190,9 +200,9 @@
             font-style: italic;
         }
 
-        /* 
+        /*
         Target ANY <P> element that has a class value equal to "note"
-        
+
         in our HTML file:
         - we have one h1 element and 2 p elements with class value of "note"
 
@@ -204,14 +214,14 @@
             font-weight: bold;
         }
 
-        /* 
+        /*
         Below: style any element that has an id="introduction"
-        and/or any element that has an id="top" 
+        and/or any element that has an id="top"
         in other word, target the element that has an id value of "introduction"
         and the element that has an id value of "top"
-        
+
         The styles:
-        - capital letters 
+        - capital letters
         - any dark color
         - any dark background color
 
@@ -233,13 +243,13 @@
         }
 
 
-        /* 
-        Avoid repeated code (style): Since both id selectors #introduction and #top 
-        have the exactly the same styles so we should definitely combine them together 
-        as you have just did above.  
+        /*
+        Avoid repeated code (style): Since both id selectors #introduction and #top
+        have the exactly the same styles so we should definitely combine them together
+        as you have just did above.
         */
 
-        /* 
+        /*
         #introduction {
             text-transform: uppercase;
             color: darkcyan;
@@ -250,25 +260,25 @@
             text-transform: uppercase;
             color: darkcyan;
             background-color: darkslategrey;
-        } 
+        }
         */
-
 
         /*
         Note:
-        Notice that we are using the color names in this example/file just for learning, 
-        we should avoid using this way of coding the colors by typing their names like "red" or "lightblue" instead we should use one these ways:
-        - HEX Codes 
-        - RGB Values 
-        - HSL 
+        Notice that we are using the color names in this example/file just for learning,
+        we should avoid using this way of coding the colors by typing their names like "red" or "lightblue",
+        instead we should use one of these ways:
+        - HEX Codes
+        - RGB Values
+        - HSL
         (You will learn that in the following lessons)
 
         We can use up to 140 color names:
         W3Schools: https://www.w3schools.com/colors/colors_names.asp
         */
 
-        /* 
-        style the element that has id value of "container" to have a background color of antiquewhite 
+        /*
+        style the element that has id value of "container" to have a background color of antiquewhite
         */
         #container {
             background-color: antiquewhite;
@@ -281,27 +291,29 @@
     <!-- the main container of all the page contents -->
     <div id="container">
         <!-- 
-            The code of this page which is the content of div#container
+            The main code of this HTML page which is the content of div#container
             was taken from chapter-10/css-selectors.html (Page: 237)
+            with some few modifications
         -->
         <h1 class="note">
-            <!-- 
+            <!--
+                Important Note (to be covered in details later):
                 Notice that a element is an inline element,
-                so applying a background color will be applied on the element contents only
-                and not the entire row (line)
+                "Inline elements cannot have width and height "
+                so applying a background color will be applied on the element contents only and not the entire row (line)
              -->
-            <a id="top">Kitchen Garden Calendar</a>
+            <a href="#" id="top">Kitchen Garden Calendar</a>
         </h1>
         <p id="introduction" class="note">Here you can read our handy guide about what to do when.</p>
-        <!-- 
+        <!--
         Inline Styles:
         below is an example of applying an inline styles
-        we use the attribute "style" 
+        we use the attribute "style"
         so inline styles can be applied as attributes for any HTML element:
         style="property: value; property: value; and so on...."
 
         Notice that inline styles will override the external and the internal styles because they are the closest ones to the elements
-     
+
         inline styles: as an attribute for any HTML element
         style = " property: value; property: value; etc... "
 

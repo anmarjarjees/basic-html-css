@@ -12,7 +12,7 @@
             We have 3 main/major units of type size (the most commonly used ones):
             - Pixel Unit (px):
             Depends on screen resolution, may not scale in every browser when text is resized.
-            
+
             - Percentage Value (%):
             Recommended by W3C, scale will when text is resized in browser.
 
@@ -22,28 +22,33 @@
 
             Other Unit values:
             - Text value:
-            Examples: 
+            Examples:
             xx-small, x-small, small, medium (default), large, x-large, xx-large
-            
-            - Point Unit (pt): 
+
+            - Point Unit (pt):
             to configure print version of web page. may not scale in every browser when text is resized
 
-            The default size of text in a browser is 16 pixels  
+            The default size of text in a browser is 16 pixels
+
+            Link: https://www.w3schools.com/css/css_font_size.asp
 
             Print Designer: often refer to the size of text in terms of points
             rather than pixels
 
             Pixels (the browser default):
             - 16 Pixel Scale:
-                Normal Text Size (like p elements): 16px
+                Normal Text Size (like p elements): 16px (by default, unless if the use change the settings)
                 h1: 32px
                 h2: 24px;
                 h3: 18px;
+                h4: 16px;
+                h5 less than the normal size of a pargaraph
+                h6 the same
 
             EMS (the browser default)
                 Normal Text Size (like p elements):  1em
                 (EM is the size of capital letter M)
-                Ems: allow you to change the size of text relative to the size 
+                Ems: allow you to change the size of text relative to the size
                 of the text in the parent element (typically the body element).
 
             Percentages (the browser default):
@@ -51,7 +56,7 @@
                 Normal Text Size (like p elements): 100%
                 h1: 200%
                 h2: 150%
-                h3: 112.5% 
+                h3: 112.5%
 
                 body: 100%
                 h1: 2em ==> (M)
@@ -64,21 +69,21 @@
 
         body {
             font-family: Georgia, Times, serif;
-            /* 
+            /*
             By default the browser wil set the normal font size to 16px;
 
             It's a good practice to reset the font size to its default value of 16px
             in case if the user has changed the browser settings
             */
             font-size: 16px;
-            /* 
+            /*
             Notice that the font-size:  16px == is equivalent to ==> 100% == is equivalent to ==> 1em
 
             So we can set the font size:
-            
+
             - font-size: 16px;
 
-            OR: 
+            OR:
 
             - font-size: 100%;
 
@@ -111,8 +116,8 @@
 
         /* override just the value h1 style for the property  "line-height" */
         h1 {
-            /* 
-            Nice Trick :-) 
+            /*
+            Nice Trick :-)
             Instead of displaying the text of heading 1 which is "BRIARDS"
             We will display the image/logo of "BRIARDS"
 
@@ -120,23 +125,23 @@
             - background-image CSS property => to load the image (with any related settings you like)
             - Change the line height of the element (h1) to make sure that our full image is visible
             - We need to hide the text of the element (h1) => text-indent
-            
+
             because my image inside a sub folder named images
             I have to write images/imageName.imageExtension as the value for url
             */
             background-image: url("images/logo.gif");
             background-repeat: no-repeat;
-            /* we had to use line-height in order to change 
+            /* we had to use line-height in order to change
             the <h1> element height to contain or to view the entire picture */
             line-height: 95px;
             /* notice that our image height is 100px, it should works fine */
 
             /*
                 since our image contains the title, we need to hide the h1 title (text)
-                but we don't want to delete the content/text of h1 or h2 or etc 
+                but we don't want to delete the content/text of h1 or h2 or etc
                 because headings are used by the search engines and screen readers
 
-                so we will just indent our text to the left hand side 
+                so we will just indent our text to the left hand side
 
                 Although it works if we put -215px;
                 but to be 100% sure that this text will not appear,
@@ -149,8 +154,8 @@
 
         /* styling all p elements */
         p {
-            /* 
-            each line in the paragraph (except the last one) 
+            /*
+            each line in the paragraph (except the last one)
             should be set to take up the full width of the containing box
 
             it means: applying the same style as MS Word when we choose "Justify"
@@ -162,8 +167,8 @@
             /* left, right, center */
         }
 
-        /* 
-        Review: target/style h1.credits ==> for any <h1> element that has a class="credits" 
+        /*
+        Review: target/style h1.credits ==> for any <h1> element that has a class="credits"
 
         Notice we don't have any h1 with class value of "credits", but you can add it if you like
         */
@@ -171,7 +176,7 @@
             font-family: "Courier New", Courier, monospace;
         }
 
-        /* 
+        /*
         - styling all the <a> element for hyperlinks:
         - remove/disable the underline default style of the browser => we can use text-decoration
         - change the font to italic
@@ -197,8 +202,10 @@
             length2 ==> the distance to the top or bottom
                 positive values for going down
                 negative values for going up
-                
+
             length3 ==> (optional) the amount of blur (default value is 0 which means no blur)
+
+            The color is black by default
             */
             text-shadow: 2px 2px 5px red;
 
@@ -206,7 +213,7 @@
             text-transform: uppercase;
         }
 
-        /* Task: 
+        /* Task:
         Style any <span> element(s) that:
         - has class="different"
         - and inside p element (child of/descendant of p element)
@@ -227,10 +234,10 @@
 
             NOTE:
             The double colon replaced the single-colon notation for pseudo-elements in CSS3.
-            This was an attempt from W3C to distinguish between pseudo-classes and 
+            This was an attempt from W3C to distinguish between pseudo-classes and
             pseudo-elements.
 
-            So in the old days, we used to have only one singe : but now with CSS3 we have : or ::
+            So in the old days, we used to have only one single : but now with CSS3 we have : or ::
 
             The two Pseudo Elements:
             - ::first-line

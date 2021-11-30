@@ -23,14 +23,14 @@
         <!-- Please remember to write your entire code inside div.wrapper -->
         <h2>HTML Form Structure</h2>
         <!--
-    HTML <form> element: start the form element: 
+    HTML <form> element: start the form element:
 
     Every form should have the following two main types of attributes:
     - action
     - method
 
     Action attribute:
-    The value of this attribute will be "the file" or "The URL" on the server (localhost server in our PC) 
+    The value of this attribute will be "the file" or "The URL" on the server (localhost server in our PC)
     to handle the form request. This file is written in a programming language like:
     - PHP (the popular web programming language - our future module)
     - C#
@@ -64,17 +64,17 @@
     -->
 
         <!--
-    For learning HTML you can leave action attribute value empty, 
-    in such case the form will not be submitted to any other page 
+    For learning HTML you can leave action attribute value empty,
+    in such case the form will not be submitted to any other page
     so the send button function will be used just to refresh the page.
 
     Note:
     The following code will give us:
-    "Error Page not found" because we are calling the file named "register.php" that doesn’t exists. 
+    "Error Page not found" because we are calling the file named "register.php" that doesn’t exists.
     This topic will be covered with me in PHP module
     when I start teaching you how to receive and retrieve all the from inputs.
     -->
-        <form action="register.php" method="POST">
+        <form action="form.php" method="POST">
             <!--
           with HTML5 we can classify our form into different sections
           using "fieldset" element.
@@ -85,11 +85,11 @@
           like below we are grouping the contact and the personal
           details of the same person inside fieldset
         fieldset has a child element named <legend> to give a title for this group (fieldset)
-        we can divide all the form contents into several fieldset elements 
+        we can divide all the form contents into several fieldset elements
         -->
             <fieldset>
                 <legend>Contact and Personal Details</legend>
-                <!-- 
+                <!--
                     Form's elements are inline elements
 
                     We can use any block-level element to display the form fields in vertical way:
@@ -107,25 +107,25 @@
                     - to style them later
                 -->
                 <div>
-                    <!-- 
-                    "label" element has "for" attribute 
-                    the value of this attribute has to be the same value 
+                    <!--
+                    "label" element has "for" attribute
+                    the value of this attribute has to be the same value
                     of the "id" attribute of its corresponding input filed .
-                    
-                    Each label's "for" should have the same value as 
-                    its corresponding input's id 
+
+                    Each label's "for" should have the same value as
+                    its corresponding input's id
                     -->
                     <!-- The most commonly used way is using "for" with "label" -->
                     <label for="first-name">First Name:*</label><br>
-                    <!-- 
+                    <!--
                      Any form element must have the "type" attribute
                     type="????"
-                    
+
                     we can put type="text" (the default value of type attribute)
-                    With HTML5 we can put type="email" or "url" or "number"   
-                    
+                    With HTML5 we can put type="email" or "url" or "number"
+
                     The "id" value it linked to the "for" value
-                    
+
                     id="first-name":
                     - to connect the input field with its label using for attribute
                     - can be used to give this input element a unique style (using CSS)
@@ -135,27 +135,28 @@
                     name="first-name":
                     - *To be used by the back-end developer with a sever-side programming language
                     NOTE for Back-End Development:
-                    In order to get the value of any input field, 
+                    In order to get the value of any input field,
                     every input field MUST have the name attribute
 
                     - can be used by CSS to style this element
                     - can be used by JS to target this element
 
-                    required attribute => this input field is required to have some values (CANNOT BE EMPTY!)
+                    required attribute => this input field is required to have some values (CANNOT BE EMPTY WHEN YOU SUBMIT THE FORM!)
+
                     we can use required = "required" for the old browsers versions
-                    or we can just use required for HTML5
+                    or we can just use the attribute value required for HTML5
 
                     the classical way: required="required"
                     OR:
                     the new HTML5 way: required
-                    
+
                     maxlength attribute:
                     maxlength ==> maximum number of characters (any character)
                     The user CANNOT go beyond the specific number of character
 
                     size attribute:
                     we will use size="30" to change the input field width.
-                    instead of using size attribute we need to use CSS, 
+                    instead of using size attribute we need to use CSS,
                     size="30" is an OLD WAY (but still valid),
                     we will use CSS to style the width (better)
                  -->
@@ -164,25 +165,25 @@
 
                 <!-- Adding another div element as a container for the last name -->
                 <div>
-                    <!-- 
+                    <!--
                     Another way of using label with its input field:
                     we can also place the input element to be a child of its label element
-                    and we don't have to use "for" attribute in this case 
+                    and we don't have to use "for" attribute in this case
                     -->
                     <label>
                         Last Name:*<br>
-                        <!-- 
+                        <!--
                         Below we used  id="last-name" in case to be used with CSS or JS
-                        You can use the value attribute for default input values => value="Simpsons" 
+                        You can use the value attribute for default input values => value="Simpsons"
                         -->
                         <input type="text" id="last-name" name="last-name" required maxlength="30" size="30">
                     </label>
                 </div>
-                <!-- 
-                Before HTML5 we used to have only: type="text" 
+                <!--
+                Before HTML5 we used to have only: type="text"
                 and it's still valid (no errors in validation)
                 type="text" is the default one (the classical type)
-    
+
                 HTML5 => Introduced os us other types that we can use:
                 Notice that all the below new listed attributes belong to HTML5:
                 type="email" ==> to write an email address
@@ -190,27 +191,27 @@
                 type="tel" ==> to write a telephone number
                 type="date" ==> to write/insert the date (Calendar Icon)
                 type="number" ==> to put numbers only (Positive or negative)
-    
-                
+
+
                 For example:
                 Before HTML5, we used to write type="text" for the email address field
                 But with HTML5 we should use type="email" for these two main reasons:
-                - To have an email validation automatically and instantly (has to have @ and the . symbols)
-                - For the mobile users, so the keypad will be changed to show them the @ and .com for example  
-    
+                1- To have an email validation automatically and instantly working by checking the text has the "@" symbol and the "."" symbol
+                2- For the mobile users, so the keypad will be changed to show them the @ and .com for example
+
                 Important Note:
                 All the above new types work only with the modern and updated browsers that support HTML5.
-                If the user opening a website with an old version browser (doesn't support HTML5) 
+                If the user opening a website with an old version browser (doesn't support HTML5)
                 they will be simply changed to type="text" as it used to be before HTML5
                 -->
 
                 <!-- Adding another div element as a container for the email field -->
                 <div>
                     <label>Email:*<br>
-                        <!-- 
+                        <!--
                         Notice any browser that supports HTML5 will validate the email field
                         the pattern must be anyText@anyText.anyText
-        
+
                         With HTML5, we can also add the new attribute "placeholder"
                         -->
                         <input type="email" required name="email" placeholder="name@example.com" maxlength="40"
@@ -238,14 +239,14 @@
                 <!-- Adding another div element as a container for the website: type="date" -->
                 <div>
                     Date of Birth:
-                    <!-- 
+                    <!--
                 Note: using placeholder with type="date" will give us error in validation
-                By default we will have the placeholder as: YYYY-MM-DD because of type="date" 
-                so it will be always fixed format based on our windows date and time settings. 
+                By default we will have the placeholder as: YYYY-MM-DD because of type="date"
+                so it will be always fixed format based on our windows date and time settings.
                 With Google Chrome, size="20" has no effect on input of type="date"
 
                 W3C Validator: Using placeholder attribute with input:date will give us an error:
-                Error: Attribute placeholder is only allowed 
+                Error: Attribute placeholder is only allowed
                 when the input type is email, number, password, search, tel, text, or url.
                 -->
                     <input type="date" name="birthday" placeholder="YYYY-MM-DD" size="20"><br>
@@ -258,15 +259,15 @@
                     <label>
                         How many computers do you have:
                         <br>
-                        <!-- 
+                        <!--
                             we will use CSS to style the size
                             size attribute also has no effect o input of type ="number"
-                            
+
                             This number input field allows only numbers greater than or equal to 0
-                            and less than or equal to 6. 
-                    
-                            if you add the attribute step="2", 
-                            It will also prevent submitting any odd number in the same range. 
+                            and less than or equal to 6.
+
+                            if you add the attribute step="2",
+                            It will also prevent submitting any odd number in the same range.
                         -->
                         <input type="number" name="comp" placeholder="0" min="0" max="6">
                     </label>
@@ -274,7 +275,7 @@
 
                 <!-- Adding another div element as a container for the fav color: type="color" -->
                 <div>
-                    <!-- 
+                    <!--
                 HTML5 => type="color" => will create colorpicker component
                 which enables user to select and enter color code
 
@@ -296,15 +297,15 @@
                 <legend>Registration/Login Information</legend>
                 <div>
                     <label>Username:
-                        <input id="username" type="text" name="username" maxlength="15" size="20">
+                        <input type="text" id="username" name="username" maxlength="15" size="20">
                     </label>
                 </div>
                 <br>
 
                 <div>
                     <label for="password1">Password</label>
-                    <!-- 
-                    notice that type="password" hides the characters when the user enters password 
+                    <!--
+                    notice that type="password" hides the characters when the user enters password
                     -->
                     <input type="password" id="password1" name="password1" maxlength="12" size="15">
                 </div>
@@ -318,7 +319,7 @@
 
                 <div>
                     <label for="aboutyou">Tell us about yourself:</label><br>
-                    <!-- 
+                    <!--
                     using textarea element to let the user type/write his paragraphs
 
                     Old Classical (Optional) Attributes (still valid):
@@ -333,7 +334,7 @@
                     <label for="resume">Please upload your resume</label><br>
                     Note: you can use the following formats: .doc, .docx, or .pdf
                     <br>
-                    <!-- 
+                    <!--
                         Notes:
                         - If the user needs to upload a file,
                         the form "method" value has to be "POST" NOT "GET"
@@ -352,7 +353,7 @@
                 <div>
                     What's your most favourite computer type:
                     <br>
-                    <!-- 
+                    <!--
                         Radio Buttons:
                         1- At least one option (item) should be selected by default
                         2- User CANNOT select more than one (and only one) item
@@ -363,10 +364,10 @@
                         checked (for new browsers that support HTML5)
 
                         2) Solution: using "name" attribute, for two reasons:
-                        reason#1: 
+                        reason#1:
                         to group all the related radio button items
                         so the user can only check/select on item
-                        
+
                         reason#2:
                         The one we discussed before which is to be used mainly for the backend development
                         in order for example "PHP/Python developers" to get the user values we use:
@@ -374,11 +375,11 @@
 
 
                         With radio button fields, we need to add "value" attribute
-                        - value attribute: 
-                        a) has to be "unique" for each radio button option, 
+                        - value attribute:
+                        a) has to be "unique" for each radio button option,
                         b) The value is not shown to the user, but it will be sent to the server when the form is submitted
 
-                        You can read more: https://www.w3schools.com/tags/att_input_type_radio.asp 
+                        You can read more: https://www.w3schools.com/tags/att_input_type_radio.asp
 
                         Tip:
                         Always add the <label> tag for best accessibility practices!
@@ -395,29 +396,29 @@
                 <div>
                     What's your favourite music?
                     <br>
-                    <!-- 
+                    <!--
                         With checkbox, user can select one, all, or none
-                        
-                        By default, the data sent to the server from a checkbox that is checked is the value of "on". 
-                        If you give the checkbox a value attribute, 
+
+                        By default, the data sent to the server from a checkbox that is checked is the value of "on".
+                        If you give the checkbox a value attribute,
                         the value you give this attribute is the value that will be sent to the server
 
                         NOTE:
-                        It's not mandatory or required to use the same value for the name attribute 
-                        for all the checkbox options (like radio buttons) 
+                        It's not mandatory or required to use the same value for the name attribute
+                        for all the checkbox options (like radio buttons)
                         depending on the following real-world situations:
 
                         if checkboxes are completely unrelated, then you can just deal with them all separately,
                         by giving each checkbox input a unique value for its "name" attribute.
 
-                        if the checkboxes are all related so we should use the same value for all the "name" attributes 
+                        if the checkboxes are all related so we should use the same value for all the "name" attributes
                         these values of the checked (selected) checkbox inputs will be sent to the server as a group of values
                         Back-end programmers can deal with it as list (array)
 
                         Please check the following link for more details:
                         https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox#using_checkbox_inputs
 
-                      
+
                         Using <label> element is important for two reasons:
                         ***************************************************
                         1- The <label> element is useful for screen-reader users,
@@ -473,13 +474,13 @@
 
                 <div>
                     <label for="campus">Choose your CBC campus:</label>
-                    <!-- 
+                    <!--
                         Don't forget that "name" attribute
                         is used by the server-side languages: PHP, Python, etc...
                      -->
                     <select name="campus" id="campus">
                         <option value="to">Toronto</option>
-                        <!-- 
+                        <!--
                             selected (Optional)==> this option will be selected by default
                             when the page is first loaded
 
@@ -492,7 +493,9 @@
                 </div>
 
                 <div>
-                    <label for="instruments"> How many instruments do you play?</label>
+                    <label for="instruments">
+                        How many instruments do you play?
+                    </label>
                     <br>
                     <br>
                     Note: Please use the CTRL (Windows) or COMMAND (MAC) to select multiple instruments<br>
@@ -548,22 +551,54 @@
                          -->
                         <option value="Edge">Microsoft Edge</option>
                         <option value="Chrome">Google Chrome</option>
+                        <!-- <option value="Firefox">Mozilla Firefox</option> -->
+                        <!-- we can use this short way -->
                         <option value="Firefox">
                         <option value="Opera">
                         <option value="Safari">
                         <option value="Internet Explorer">
                     </datalist>
+                    <!-- 
+                            To learn more about datalist form element:
+                        Link: https://www.w3schools.com/tags/tag_datalist.asp
+                        Link: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist
+                    -->
                 </div>
             </fieldset> <!-- Personal Information -->
 
             <!--
                     At the end of the form we need to have
-                    the submit option and reset
+                    the options/fields/buttons:
+                    - submit => to submit the form
+                    - reset => to reset/clear the form data
+
+                    Below we are using multiple examples/ways just for learning of course!
             -->
 
             <!--
-                    the most commonly used way (Better):
-                -->
+                The most commonly used way (Better):
+
+                NOTE:
+                type="submit" => form will give us the value "Submit" as a label for the button
+                type="reset" => form will give us the value "Reset" as a label for the button
+                Even we don't add any value
+            -->
+            <br><br>
+            <!--
+                Important Note:
+                For back-end development like using PHP,
+                we need to add the attribute "name" with any value like "submit" or "register"
+                as this the attribute "name" with its value can be used in PHP programming
+                to test if the form is submitted or not yet
+            -->
+            <input type="submit">
+            <input type="reset">
+
+            <!--
+                OR: you can customize the title/label for each button using value attribute
+            -->
+
+            <br><br>
             <input type="submit" value="Register" name="register">
             <!-- To clear all the form fields: type="reset" -->
             <input type="reset" name="reset" value="Clear">

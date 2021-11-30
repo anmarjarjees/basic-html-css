@@ -41,9 +41,22 @@
              
             <hr>
             <div>
+                <!-- Below is an example of nested lists -->
                 <ul>
-                    <li>First Program</li>
-                    <li>Second Program</li>
+                    <li>First Program:
+                        <ul>
+                            <li>First Program Part1</li>
+                            <li>First Program Part2</li>
+                            <li>First Program Part3</li>
+                        </ul>
+                    </li>
+                    <li>Second Program:
+                        <ul>
+                            <li>Second Program Part1</li>
+                            <li>Second Program Part2</li>
+                            <li>Second Program Part3</li>
+                        </ul>
+                    </li>
                     <li>Third Program</li>
                 </ul>
             </div>
@@ -51,7 +64,15 @@
 
         <p>This paragraph is used for testing "General Sibling Selector".</p>
 
-        <h1 id="top">Kitchen Garden Calendar</h1>
+        <h1 class="note">
+            <!--
+                Important Note (to be covered in details later):
+                Notice that a element is an inline element,
+                "Inline elements cannot have width and height "
+                so applying a background color will be applied on the element contents only and not the entire row (line)
+             -->
+            <a href="#" id="top">Kitchen Garden Calendar</a>
+        </h1>
         <h2>Main Calendar</h2>
         <p id="introduction">Here you can read our handy guide about what to do when.</p>
         <!-- 

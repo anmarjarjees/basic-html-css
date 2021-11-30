@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lesson 12 Part 1: Pseudo Class</title>
     <style>
-        style>header,
+        /* Repeat the same rules */
+        header,
         footer,
         section,
         aside,
@@ -51,17 +52,18 @@
 
         /* Style any element with class "title" */
         .title {
-            /* notice that the color of the font-family value
+            /*
+            notice that the color of the font-family value
             is different, so it's in black (or other color)
             because “Alaska” is not considered to be a web safe font.
-            
+
             Web Safe Fonts: are the fonts that are supported or available
             in all the browsers in any platform or Operating system
 
             below we used "Adelle Sans" font, although it's working in our
             machine but it might not work on MAC
             */
-            font-family: "Adelle Sans";
+            font-family: Alaska, 'Adelle Sans', 'Times New Roman', Times, serif;
             font-style: italic;
         }
 
@@ -71,7 +73,7 @@
             color: brown;
         }
 
-        /* 
+        /*
             below is a bad way to repeat the same selector
             we need to group all the styles in one block
         */
@@ -79,7 +81,7 @@
             text-decoration: underline;
         }
 
-        /* 
+        /*
         Style any fieldset:
         background color and border
         */
@@ -108,14 +110,14 @@
 
         /*
         style the legend elements:
-        with any background 
+        with any background
         giving it a padding
 
         */
         legend {
             background-color: peachpuff;
             /*
-                it's good idea to have some padding 
+                it's good idea to have some padding
                 is the space within the box
                 padding: top right bottom left
 
@@ -138,7 +140,7 @@
 
         /* Attribute Selectors Page:292 */
 
-        /* 
+        /*
         style any element that has an attribute "class"
         any element that has class="....
 
@@ -149,7 +151,7 @@
             font-style: italic;
         }
 
-        /* 
+        /*
         style any element that has an attribute "type"
         any type value like:
         type="text", type="email", type="tel", or etc...(Again, we don't care about the value)
@@ -160,10 +162,10 @@
             background-color: lightblue;
         }
 
-        /* 
+        /*
         Be more specific by selecting/targeting/styling all h1 and h2 elements
-        that have attributes "class" 
-        
+        that have attributes "class"
+
         in other words, styling any h1 or h2 that have a class attribute
         */
         h1[class],
@@ -172,9 +174,9 @@
             text-transform: uppercase;
         }
 
-        /* 
+        /*
         No need to create another new rule for h2[class],
-        we can merge it or add it to h1[class] since both have 
+        we can merge it or add it to h1[class] since both have
         the same styles
         */
         /*
@@ -183,15 +185,15 @@
         }
         */
 
-        /* 
+        /*
         Matching a specific attribute with a specific value:(*)
-        
+
         Task: Let's target/style each element that:
         - has an attribute "type"
         - the attribute value is "email"
 
         style any element that has an attribute named "type"
-        and at the same time the value of "type" is "email" 
+        and at the same time the value of "type" is "email"
 
         not only styling any type=*******
         its only type="email"
@@ -206,15 +208,16 @@
 
         /*
         Prefix
-        style a specific attribute that has a value starting 
+        style a specific attribute that has a value starting
         with these 3 letters "sub" like class="submenu" , class="subitems", class="subsediaries"
-        
-        any element that has a class attribute with the value 
+
+        any element that has a class attribute with the value
         starting with "sub"
 
         it has to start with "sub" as the first 3 letters.
-        
+
         Examples:
+        class="sub"
         class="submenu"
         class="subitems"
         class="sub-sidebar"
@@ -229,7 +232,7 @@
         /*
         Substring:
         style any element that has a class value contains
-        the letter "m" like: class="main" or class="submenu"
+        the letter "m" like: class="main" or class="submenu" or class="mama"
 
         By using the symbol * with =
         */
@@ -237,8 +240,8 @@
             letter-spacing: 12px;
         }
 
-        /* 
-        style an element that has an id attribute with a value that 
+        /*
+        style an element that has an id attribute with a value that
         starts with letter "d"
 
         but we don't have an id value staring with "d"
@@ -255,12 +258,28 @@
         link <a> ==> a:link or we can just write a
         child of:
         class value contains the letter "m" ==> [class*="m"]
+
+        Review Specificity:
+        - [class*="m"] => class => 10
+        - a => element => 1
+        - :link => 10
+        - total: 21
         */
         [class*="m"] a:link {
             /* any style */
             background-color: yellow;
             color: red;
         }
+
+        /* Suffix */
+        [class$="u"] {
+            font-weight: bolder;
+        }
+
+        /*
+        Book Example: p[attr$"g"]
+        The Correct Book Example: p[attr=$"g"]
+        */
     </style>
 </head>
 

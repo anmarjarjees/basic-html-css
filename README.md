@@ -13,6 +13,26 @@ It contains my HTML/CSS code examples and lectures for my Digital Media and Web 
 -	My code demos and examples
 -   Validator.w3.org (For HTML validation)
 
+## About the lessons
+The lessons labels are prepared and listed based on the textbook "HTML & CSS Design and Build". The sequence or the order that I follow in my lectures is like this:
+
+- Lesson 1: Introduction
+- Lesson 2: TEXT
+- Lesson 3: LISTS
+- Lesson 4: LINKS
+- Lesson 5: IMAGES
+- Lesson 8: EXTRA MARKUP
+- Lesson 17: HTML5 Layout
+- Lesson 6: TABLES
+- Lesson 7: FORMS
+- Lesson 10: Introducing CSS
+- Lesson 11: COLOR
+- Lesson 12: TEXT
+- Lesson 13: BOXES
+- Lesson 14: LISTS, TABLES, AND FORMS
+- Lesson 15: LAYOUT
+- Lesson 16: IMAGES
+
 ### Website Files Names:
 https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/Dealing_with_files
 

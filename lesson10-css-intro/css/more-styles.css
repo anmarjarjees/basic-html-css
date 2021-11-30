@@ -1,7 +1,8 @@
-        /* Just Pure CSS Code */
-        /* Working with Selectors - Page: 238 */
+/* 
+Just Pure CSS Code: 
+Working with Selectors - Page: 238 
+==================================
 
-        /*
 Selector {
     Declaration ==> property: value;
     property: value;
@@ -18,53 +19,54 @@ we can omit/skip the ; only with these two cases:
 That's why it's a good idea to add ; always
 */
 
-        /******** Universal Selector: all the HTML elements ******************/
-        /*
-        Universal Selector:
-        Apply the styles to all the elements in the document (webpage) without any exception. The symbol is: * which means all the HTML elements inside the page
-        */
+/******** Universal Selector: all the HTML elements *********/
+/*
+Universal Selector:
+Apply the styles to all the elements in the document (webpage) without any exception. The symbol is: * which means all the HTML elements inside the page
+*/
 
-        * {
-            /* Task: target/style the font size to be 16px => px stands for pixel */
-            /* 
-            We will discus the units of type size in details (lesson 12)
-            Page: 275 and Page: 276
-            */
-            font-size: 16px;
-
-            /* 
+* {
+/*
     Major Font Types:
     Two major and main types that are frequently used in web development:
     - Serif Fonts
     - Sans-serif Fonts
 
-    VSC will give us many font options like (Adobe Dreamweaver) because if one font is not available, 
+    VSC will give us many font options like (Adobe Dreamweaver) because if one font is not available,
     the browser will jump to the next one and so on We will have more topics about font later
 
     You can read more about Fonts: https://www.w3schools.com/css/css_font.asp
-    
+
     Task: target/style the font family (face)
     Task below: style the font family (face) with any sans-serif font family
     */
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+            /* 
+            Task: target/style the font size to be 16px => px stands for pixel 
+          
+            We will discus the units of type size in details 
+            (lesson 12) Page: 275 and Page: 276
+            */
+            font-size: 16px;
         }
 
-        /****** Type Selector: HTML elements *********************
+/****** Type Selector: HTML elements *********************
 
 Type Selector ==> matches element names
 Just the HTML element names
-examples: h1, h2, p, ul, li, div, etc... 
+examples: h1, h2, p, ul, li, div, etc...
 */
 
-        /* 
-Task: The body element, style the body text content to have a dark green color 
+/*
+Task: The body element, style the body text content to have a dark green color
 which means all the normal text (HTML p, li, headings elements, etc.) inside the body
 Based on the word cascading for CSS
 all the elements inside the body element will have the color to be darkgreen
 in other words most of the styles that we apply to the parent element will affect is children elements
 */
 
-        body {
+    body {
             color: darkgreen;
             /* all the text contents/elements like: p, headings, li (except links) will be darkgreen */
             /*
@@ -75,11 +77,11 @@ in other words most of the styles that we apply to the parent element will affec
 
         /*
 Task:
-style all the h1, h2, and h3 by changing their font family to be: 
+style all the h1, h2, and h3 by changing their font family to be:
 serif fonts of "Times New Roman" group.
 Hint: use font-family property
 
-Although we don't have heading <h3> in our HTML file, 
+Although we don't have heading <h3> in our HTML file,
 but we can style it for the future in case if we need to add h3
 */
 
@@ -89,19 +91,87 @@ but we can style it for the future in case if we need to add h3
             font-family: 'Times New Roman', Times, serif;
         }
 
-        /* Task: Target all p element(s) to have the font "tahoma" and only "tahoma" */
+/* 
+NOTE
+Avoid using 2 or more same rules!!!! 
+if selectors have the same properties and value, just combine them all
+*/
+h1 {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+h2 {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+h3 {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+hr {
+    /* 1. change the border color to be brown */
+    border-color: brown;
+    /*
+    NOTE:
+    if we just type the property "color"
+    we will not see any changes because color property will only
+    affect the text:
+    color: blue; ==> useless for <hr> element because <hr> element CANNOT
+    contain text inside!
+
+    color: blue; ==> for <p>, <h1>, <ul>, <body>
+    */
+
+    /* 2. change the border width (thickness) */
+    border-width: 3px;
+
+    /*
+    3. change the border style:
+        - dashed
+        - dotted
+        - double
+        - groove
+        - inset
+        - outset
+        - ridge
+        - solid
+        - none
+    */
+    border-style: dashed;
+
+    /*
+    instead of typing 3 lines of css:
+    border-color: red;
+    border-width: 3px;
+    border-style: dashed;
+
+    we can just use the shortcut/shorthand way:
+    border: width color style;
+    border: 3px red dashed;
+    in css, we can use this shorthand property named "border":
+    */
+    border: 3px brown dashed;
+}
+
+       /* Task: target/style all ul element(s) to have a "beige" background color: */
+       ul {
+        /* the entire <ul> block will have the beige background color */
+        background-color: beige;
+    }
+
+     /* Task: Target all p element(s) to have the font "tahoma" and only "tahoma" */
         p {
-            /* 
+            /*
     although all the element will have font-family: 'Lucida Sans'
     based on our * selector
     but using p element will override the * styles
-    
+
     In CSS, we have "specificity" rule ==> Page: 239
     */
             font-family: Tahoma;
         }
 
-        /* 
+        /*
         Please refer to my pdf in-class notes for more information about "Specificity"
 
         Starting with the More Specific (Selectors with Hight points)
@@ -124,72 +194,22 @@ but we can style it for the future in case if we need to add h3
 
         /* More examples about type selector */
 
-        /* 
+        /*
             Task: style all the hr element(s) => we might have one or more or maybe nothing!
             1- change the "border color" to be: brown
             2- change the "border width" to be: 3px
             3- change the "border style" to be: dashed
 
-            Notice that to let VSC code helps you, the keyword is "border". 
+            Notice that to let VSC code helps you, the keyword is "border".
             When you type border VSC will give you all the properties related to border
         */
-
-        hr {
-            /* 1. change the border color to be brown */
-            border-color: brown;
-            /* 
-            NOTE: 
-            if we just type the property "color"
-            we will not see any changes because color property will only
-            affect the text:
-            color: blue; ==> useless for <hr> element because <hr> element CANNOT
-            contain text inside!
-
-            color: blue; ==> for <p>, <h1>, <ul>, <body>
-            */
-
-            /* 2. change the border width (thickness) */
-            border-width: 3px;
-
-            /* 
-            3. change the border style:
-                - dashed
-                - dotted
-                - double
-                - groove
-                - inset
-                - outset
-                - ridge
-                - solid
-                - none
-            */
-            border-style: dashed;
-
-            /* 
-            instead of typing 3 lines of css:
-            border-color: red;
-            border-width: 3px;
-            border-style: dashed;
-
-            we can just use the shortcut/shorthand way:
-            border: width color style;
-            border: 3px red dashed; 
-            in css, we can use this shorthand property named "border": 
-            */
-            border: 3px brown dashed;
-        }
-
-        /* Task: target/style all ul element(s) to have a "beige" background color: */
-        ul {
-            /* the entire <ul> block will have the beige background color */
-            background-color: beige;
-        }
+ 
 
 
         /* ************ Class Selector ************ */
         /* Class Selector: class has the symbol: . */
 
-        /* 
+        /*
         Task: style any element that has class value of "rule"
         <element class="rule">
         by changing the text inside this element to be "uppercase" ==> Hint: text-transform:
@@ -204,15 +224,15 @@ but we can style it for the future in case if we need to add h3
             text-transform: uppercase;
         }
 
-        /* 
-        Quick test of "Specificity" => Task: make all p elements to be in lower case 
+        /*
+        Quick test of "Specificity" => Task: make all p elements to be in lower case
         This property will affect all p elements except the p element that has a class of "rule"
         */
         p {
             text-transform: lowercase;
         }
 
-        /* 
+        /*
         Task: Style only the p element(s) that has a class attribute value of "note"
         Or:
         all the "note" class that is an attribute of p element only:
@@ -221,6 +241,11 @@ but we can style it for the future in case if we need to add h3
         by making the "font weight" to be "bold" and the "color" to be "red"
 
         So our selector will be: p.note (Without Spaces)
+
+        Slice your selector to count the points:
+        - p element => 1
+        - .note class => 10
+        - Total: 1 + 10 => 11
         */
 
         p.note {
@@ -228,16 +253,16 @@ but we can style it for the future in case if we need to add h3
             color: red;
         }
 
-        /* 
+        /*
         Notice that above selector: p.note has 11 points of specificity?
         When we hover the mouse over the selector, VScode will give us this hint:
-        
+
         <p class="note">
         Selector Specificity: (0, 1, 1)
 
         The reason:
         we need to divide our selector into individual pieces/parts:
-        
+
         our selector: p.note
         - the first part is the p element: p
         - the second part is our class "rule": .note
@@ -247,8 +272,8 @@ but we can style it for the future in case if we need to add h3
         */
 
 
-        /* 
-        Task: 
+        /*
+        Task:
         style any ul element that has a class value of "note" by changing the "list style" to "square"
 
         Hints:
@@ -274,22 +299,36 @@ but we can style it for the future in case if we need to add h3
             background-color: lightgreen;
         }
 
-        /* 
-        Task: style the div element that has id value of "container" 
+        /*
+        Task: style the div element that has id value of "container"
         by applying any background color you like
+
+        Our selector: div#container
+        - div => HTML Element => 1
+        - #container => ID => 100
+        - Total: 100 + 1 = 101
         */
         div#container {
             background-color: burlywood;
         }
 
         /*
-            The above selector: div#container 
+            The above selector: div#container
             div (1 point) + #container (100) == total ==> 101 (Specificity points)
         */
 
         /* 
+            The below selector: #container
+            has only #container (100) == total ==> 100 (Specificity points) 
+            so its background color will take effect
+        */
+        #container {
+            background-color: lightskyblue;
+        }
+
+        /*
         Task: Style the element that has id value of "top" by using text decoration to have an underline
-        
+
         Notice that we only have this element: <h1 id="top">Kitchen Garden Calendar</h1>
         */
         #top {
@@ -299,7 +338,7 @@ but we can style it for the future in case if we need to add h3
         /* ********** Descendant Selector *********** */
         /* parentElement childElement (grandChildElement or etc...) */
 
-        /* 
+        /*
         Task: target/style any <li> element which is inside <ol> [the children <li> of <ol> elements]:
         by changing the font style to "italic"
 
@@ -311,25 +350,25 @@ but we can style it for the future in case if we need to add h3
             color: cadetblue;
         }
 
-        /* 
+        /*
         Note: in the example above, we were targeting the <li> of the <ol> only
-        we could have just written ol only as a selector 
-        and having the same result based on the cascading rules, 
+        we could have just written ol only as a selector
+        and having the same result based on the cascading rules,
         but we wrote ol li just to demonstrate the idea of "Descendant Selector"
 
         The other solution, we can simply just write the following
         */
         ol {
             font-style: italic;
-            /* 
-            Notice that the following color will not be applied 
+            /*
+            Notice that the following color will not be applied
             because of the specificity
              */
             color: chartreuse;
         }
 
         /*
-        Task: 
+        Task:
         style <ul> element(s) which is inside <header>
         or style the ul element(s) which is the descendant of the header element
         by changing the "list style type" to a "circle"
@@ -363,7 +402,7 @@ but we can style it for the future in case if we need to add h3
             border: 3px blue dotted;
         }
 
-        /* 
+        /*
         Task: style <a> element(s) which is the descendant of <li> element:
         - color to be yellow
         - background color to be dark red
@@ -389,13 +428,13 @@ but we can style it for the future in case if we need to add h3
             font-style: italic;
         }
 
-        /* 
-        ************ Child Selector ********************** 
+        /*
+        ************ Child Selector **********************
         Child Selector: Matches element(s) that are "direct" child of another
         the symbol is: >
         */
 
-        /* 
+        /*
         Task: target/style <ul> element that is the direct (first generation) child of div#container
         by give it a border of 4px width, red color, and solid line
         */
@@ -404,8 +443,8 @@ but we can style it for the future in case if we need to add h3
             border: 4px red solid;
         }
 
-        /* 
-        Task: Style/target the hr element which is the "direct" child of div#container 
+        /*
+        Task: Style/target the hr element which is the "direct" child of div#container
         using border short hand with any settings you like
         */
 
@@ -413,16 +452,16 @@ but we can style it for the future in case if we need to add h3
             border: 5px dotted magenta;
         }
 
-        /* 
-        **************** Adjacent Sibling Selector ****** 
+        /*
+        **************** Adjacent Sibling Selector ******
         Matches an element that is the "next" sibling of another
-        the symbol is: + 
+        the symbol is: +
         */
 
 
-        /* 
+        /*
         Task: Style any h2 element which is an adjacent "next" sibling of h1 elements:
-        
+
         in HTML:
         <h1>...........
         No other element in between
@@ -441,28 +480,28 @@ but we can style it for the future in case if we need to add h3
             letter-spacing: 5px;
         }
 
-        /* 
+        /*
         Task: Style the p element which is the "adjacent" sibling of h1:
         in our HTML code:
         <h1>Heading 1</h1>
         NO HTML element in between (just spaces of comments)
         <p>Here is a paragraph</p>
 
-        Note: 
-        remember that this style will not work, 
+        Note:
+        remember that this style will not work,
         we need to comment the line <h2>Main Calendar</h2> in our code for testing it
         */
         h1+p {
-            /* 
+            /*
             Adding more/less spaces between the words
-            Remember by default, Browsers add only one space 
+            Remember by default, Browsers add only one space
             */
             word-spacing: 15px;
         }
 
-        /* 
-        Task: style h2 which is the "next adjacent sibling" of hr 
-        
+        /*
+        Task: style h2 which is the "next adjacent sibling" of hr
+
         in HTML:
         <hr>...........
         No other element in between (spaces are ok)
@@ -472,16 +511,16 @@ but we can style it for the future in case if we need to add h3
             text-transform: uppercase;
         }
 
-        /* 
-        Task: style ul which is the "next adjacent sibling" of h2 
-        
+        /*
+        Task: style ul which is the "next adjacent sibling" of h2
+
         in HTML:
         <h2>...........
         No other element in between (spaces are ok)
         <ul>...........
         */
         h2+ul {
-            /* 
+            /*
             Notice that the following rule/style: font-family will NOT take affect
             Because of the number of points for the selectors (Specificity)
             */
@@ -496,12 +535,12 @@ but we can style it for the future in case if we need to add h3
         */
 
         /*
-        Task: 
-        Target/style all the p sibling(s) that come after h1 (not only the first one). 
+        Task:
+        Target/style all the p sibling(s) that come after h1 (not only the first one).
         Also it could be some element(s) in between, still working
-        So the condition here that all p elements 
-        that are written after any h1 elements and inside the same container (parent) 
-        because they are sibling of course. 
+        So the condition here that all p elements
+        that are written after any h1 elements and inside the same container (parent)
+        because they are sibling of course.
 
         in HTML:
         <h1>...........
@@ -512,10 +551,10 @@ but we can style it for the future in case if we need to add h3
             word-spacing: 10px;
         }
 
-        /* 
+        /*
         style the h2 element which is/are sibling(s) to hr
         so all h2 elements that come after hr
-        
+
         in HTML:
         <hr>...........
         It could have any element in between or nothing just spaces (it works in both ways)
