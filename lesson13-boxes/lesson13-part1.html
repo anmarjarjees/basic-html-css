@@ -21,7 +21,9 @@
             NOTE:
             We can set the width of any block-level element using the "width" property
             But we CANNOT use the width with "inline" elements -> useless no affect
+            Any height and width properties will have no effect on inline elements
             */
+            /* a fixed width */
             width: 950px;
             /* 950px => the common width in the old days :-) */
 
@@ -203,6 +205,15 @@
         The browser will look at the largest value which is 20px
         so the browse wil add only 20px 
         */
+
+        span {
+            background-color: yellow;
+            width: 400px;
+            height: 200px;
+            /* Make this inline element to be block-level element */
+            display: block;
+            margin: 5px;
+        }
     </style>
 </head>
 
@@ -245,6 +256,7 @@
             </iframe>
 
             <span>I am just a span element!</span>
+            <span>Again, I am just another span element!</span>
 
             <img src="bird.gif" alt="Bird Clip-art">
 

@@ -10,7 +10,11 @@
     <style>
         /* styling the class .wrapper which the main container of our pages */
         .wrapper {
-            width: 950px;
+            /* a fixed width */
+            width: 1300px;
+
+            /* it could be up to 1300px as maximum */
+            max-width: 1300px;
             background-color: antiquewhite;
 
             /* 
@@ -83,8 +87,13 @@
             will affect the border (not the box) to have rounded corner(s)
             */
             /* border-radius: 20px; ==> 20px rounded corners for all the corners */
-            border-top-left-radius: 20px;
             border-radius: 20px;
+            /* Only for old versions of the browsers */
+            -webkit-border-radius: 20px;
+            -moz-border-radius: 20px;
+
+            /* Specifying only the top/left radius */
+            border-top-left-radius: 20px;
 
             /*
                 overflow:
@@ -103,6 +112,13 @@
         /* convert the <li> elements of the main navigation 
            (not the <li> in all the page) to be inline instead 
            for block-level elements
+
+           We can target these li elements using:
+           - header nav li {}
+           OR:
+           - header li {}
+           OR:
+           - nav li {}
         */
         header nav li {
             /* style only <li> which is a child of <nav> */
@@ -129,7 +145,13 @@
         inside the <nav> inside the <header>:
         */
 
-        /* link ==> a:link, a:visited, a:hover, a:active */
+        /* 
+        link ==> a:link, a:visited, a:hover, a:active 
+
+        Don't forget that we can also have :focus between LoVe and HAte :-)
+        a:focus => to get focus by the keyboard action like using TAB key
+        Link ==> a:link, a:visited, a:focus, a:hover, a:active
+        */
 
         /* Styling the normal link to get rid from 
         the browser default style: blue color with underline */
@@ -155,6 +177,11 @@
             /* font-style: italic; */
         }
 
+        /* Good to use :focus for accessibility point: */
+        nav a:focus {
+            color: blue;
+        }
+
         a:active {
             color: yellow;
         }
@@ -176,6 +203,24 @@
         /* or going with the very simple way */
         .hideIt {
             visibility: hidden;
+        }
+
+        /* 
+        Notice when using "display: inline Block"
+        The items will be layout sit based on the baseline 
+        Below, we changed the height to these three paragraphs;
+        */
+
+        #a4 {
+            height: 300px
+        }
+
+        #a5 {
+            height: 600px
+        }
+
+        #a6 {
+            height: 500px
         }
     </style>
 </head>
@@ -209,7 +254,7 @@
             <li>Spa town, a town visited for the supposed healing properties of the water</li>
             <li>Foot spa</li>
         </ul>
-
+        <hr>
         <article id="a1">
             <h2>Fender Mustang</h2>
             <p>The Fender Mustang was introduced in 1964 as the basis of a major redesign of Fender's student models
@@ -232,6 +277,29 @@
                 designed by Ted McCarty in collaboration with popular guitarist Les Paul, whom Gibson enlisted to
                 endorse the new model. It is one of the most well-known electric guitar types in the world.</p>
         </article>
+        <hr>
+        <article id="a4">
+            <h2>Fender Mustang</h2>
+            <p>The Fender Mustang was introduced in 1964 as the basis of a major redesign of Fender's student models
+                then consisting of the Music master and Duo-Sonic. It was originally popular in sixties surf music and
+                attained cult status in the 1990s largely as a result of its use by a number of alternative rock bands.
+            </p>
+        </article>
+
+        <article id="a5">
+            <h2>Fender Stratocaster</h2>
+            <p>The Fender Stratocaster or "Strat" is one of the most popular electric guitars of all time, and its
+                design has been copied by many guitar makers. It was designed by Leo Fender, George Fullerton and Fredie
+                Tavares in 1954.
+            </p>
+        </article>
+
+        <article id="a6">
+            <h2>Gibson Les Paul</h2>
+            <p>The Gibson Les Paul is a solid body electric guitar that was first sold in 1952. The Les Paul was
+                designed by Ted McCarty in collaboration with popular guitarist Les Paul, whom Gibson enlisted to
+                endorse the new model. It is one of the most well-known electric guitar types in the world.</p>
+        </article>
 
         <div>
             <h2>Examples of Inline Elements</h2>
@@ -246,6 +314,7 @@
             </iframe>
 
             <span>I am just a span element!</span>
+            <span>Again, I am just another span element!</span>
 
             <img src="bird.gif" alt="Bird Clip-art">
 

@@ -163,11 +163,13 @@
 
         <!--
             NOTE:
-            When any browser couldn't understand the element (not defined element)
-            It will just treat it as an inline element:
+            When any browser couldn't understand/recognize the element 
+            (not defined element), It will just treat it as an inline element:
 
-            for fun, I put my initial to be an HTML element
-            the browser will display the content in horizontal layout
+            for fun, I put my initial AJ to be an HTML element => <aj></aj>
+            the browser will display/treat this undefined element 
+            as an inline element like <span>
+            so it will just render its content in horizontal layout (horizontally)
 
             <aj>
                 My new element
@@ -176,6 +178,11 @@
             <aj>
                 My initial :-)
             </aj>
+
+            in such case, we can add this rule :-)
+            aj {
+                display: block;
+            }
         -->
 
         <!--
@@ -187,7 +194,7 @@
             <main>
 
             </main>
-    -->
+        -->
 
         <!--
             HTML5 <section> element:

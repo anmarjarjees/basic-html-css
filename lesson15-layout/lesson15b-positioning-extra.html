@@ -7,34 +7,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>More about Positioning</title>
     <style>
+        /* 
+        Styling the two div elements with class="img-div" or/and class="video-div"  
+        */
         .img-div,
         .video-div {
+            /* Giving them some visual different appearance */
+            border: 2px solid blue;
+            padding: 5px;
+            /* 
+            based on our image width widths which is 896px
+            giving both this width value.
+            the video is less than 896px but we can center it...
+            */
+            width: 896px;
+
             /* The parent element has "relative" position */
             position: relative;
             /*
             We don't need to set the position corners/sides/margins: top, left, right, bottom
             This div will be just used as an anchor point for its children
-            that have "absolute" positioning 
+            that have "absolute" positioning
             */
-
-            border: 2px solid blue;
-
-            width: 896px;
-            /* based on our image width */
-            padding: 5px;
         }
 
         .video-div video {
-            /* 
-                since video element is an inline  
+            /*
+                since video element is an inline
                 we cannot set its margin to auto
-                is has to be a block level element
+                is has to be a block-level element first
             */
             display: block;
             margin: auto;
         }
 
-        /* The first child of div.img-div */
+        /* 
+        The parent element "div.img-div"
+        has these 4 heading 2 elements (children) with these id values:
+        - #box-wrapper-title
+        - #box-header-title
+        - #box-main-title
+        - #box-footer-title
+
+        The parent element "div.video-div"
+        has this heading 2 element (child) with this id value:
+        - #video-title 
+
+        We will style them all to give them different style
+        but most important giving them the "absolute" positioning:
+        */
         #box-wrapper-title,
         #box-header-title,
         #box-main-title,
@@ -49,30 +70,31 @@
             border-radius: 7px;
         }
 
+        /*
+        Now we need to set these margins: top, right, bottom, left
+
+        They work as pairs by using the box corners (using them logically!):
+        - top AND left
+        - top AND right
+        - bottom AND left
+        - bottom AND right
+
+        We set the four corners of any box shape
+
+        We can use these two properties together:
+        top: 5px;
+        bottom: 10px;
+
+        To summarize, 
+        we should avoid combining these opposite direction/sides 
+        to avoid any confusion:
+        - left AND right
+        - top AND bottom
+        */
         #box-wrapper-title {
-            /* 
-                We need to set these margins: top, right, bottom, left
-                
-                They work as pairs by using the box corners (using them logically!): 
-                - top AND left
-                - top AND right
-                - bottom AND left
-                - bottom AND right
-
-                We set the four corners of any box shape
-
-                We can use these two properties together:
-                top: 5px;
-                bottom: 10px;
-
-                To summarize, we can combine these opposite direction: 
-                - left AND right
-                - top AND bottom
-            */
             top: -15px;
             right: 10px;
         }
-
 
         #box-header-title {
             top: 18px;
@@ -121,14 +143,15 @@
                 <img src="page-layout.png" alt="Page layout/Mockup">
             </div>
             <hr>
+
             <div class="video-div">
                 <h3 id="video-title">Nice Animated Video!</h3>
                 <!-- We can use canIUse.com to check any element or attribute -->
                 <video poster="assets/images/sea_spa_logo.jpg" preload="auto" controls="controls" muted="muted"
                     autoplay="autoplay" loop="loop">
                     <source src="puppy.mp4" type="video/mp4">
-                    <!-- 
-                        This warning message for IE8 and less: 
+                    <!--
+                        This warning message for IE8 and less:
                         Remember that it just an alternative text (paragraph)
                         to appear if the video element cannot be loaded/rendered
                     -->

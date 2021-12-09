@@ -27,13 +27,13 @@
             border-bottom: 2px groove rgb(165, 164, 164);
             /* font style "italic" */
             font-style: italic;
-            /* 
+            /*
                 text-shadow: value1 value2 value3 color
                 value1 ==> left or right
                 value2 ==> top or bottom
                 value3 ==> the amount of blur (optional)
                 */
-            text-shadow: 1px 1px 1px rgb(165, 164, 164);
+            text-shadow: 1px 1px 2px rgb(165, 164, 164);
             margin: auto;
         }
 
@@ -53,13 +53,13 @@
             background-color: rgb(252, 175, 175);
             padding: 5px;
             width: 690px;
-            /* 
+            /*
             Yes, the width of this element is: 700px
             But we have padding of 5px!!!!
 
             in Boxing model => The actual width of any element will be total of its pure width + padding + border
 
-            so the real width of this element => 700px + 5px + 5px = 710px 
+            so the real width of this element => 700px + 5px + 5px = 710px
             to make it equal to exactly 700:
             - we can remove the padding (we don't like to remove the padding)
             - reduce the width value based on the value of the padding
@@ -73,12 +73,12 @@
             float: left;
         }
 
-        /* 
-        
+        /*
+
         Clearing Floats:
         ===============
         One final problem:
-        The footer will jump to the right side for the top element 
+        The footer will jump to the right side for the top element
         because of the floating left issue
 
         In this case we cannot use overflow: auto
@@ -90,19 +90,19 @@
             text-align: center;
             font-weight: bold;
             padding: 3px 0;
-            /* 
+            /*
             We don't want to see any other elements on the both sides of this element
             To make this elements start in a clear/fresh space (line)
             */
             clear: both;
-            /* 
+            /*
             we want to empty (clear) any element from the left side so we can also use: clear: left;
             */
         }
 
 
-        /* 
-        Good point to consider:        
+        /*
+        Good point to consider:
         If we need to use clear both for more than one element in a page
         We can declare a custom "class" for example => "clear-both-sides"
         and apply this class to any html element as needed

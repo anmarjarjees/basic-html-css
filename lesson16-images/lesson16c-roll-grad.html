@@ -10,13 +10,12 @@
         /* style the <a> element that has class="button" */
         /* below is just the shared rules between the two buttons  */
         a.button {
-
             background-image: url("images/button-sprite.jpg");
             /*
             Dear students,
             Please remember that any inline-level element 
-            CANNOT have width or height properties,
-            unless if we convert them to block-level elements
+            CANNOT have width or height properties (useless as they have no effect),
+            unless if we convert it to block-level elements
             
             <a> is an inline-level element 
             we need to convert it into a block-level element
@@ -24,10 +23,9 @@
             be carful that width and height properties work ONLY with block element
             so we need to convert a to block element in order to see the height
 
-            Make it block in order to have all the above rules (height, background-image, and text-indent)
-            working properly just by adding display: block
-
-            block-level 
+            Make it block in order to have all the following rules:
+            (height, background-image, and text-indent)
+            working properly just by adding display: block / inline-block
             */
             display: inline-block;
             height: 36px;

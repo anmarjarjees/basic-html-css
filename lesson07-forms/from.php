@@ -1,19 +1,19 @@
 <?php
 /*
 PHP Comments:
-Here is my PHPfile with the extension .php
-The file icon is Elephant :-)
+Here is my PHP file with the extension .php
+The file icon in VScode is Elephant :-)
 
 The ElePHPant is the adorable, elephantine mascot of the PHP project.
 Link: https://www.php.net/elephpant.php
 */
 
 // Another way of using comment in PHP
+
 /*
 Variables:
 Variables are just containers in the memory to contain/save any type of value.
 So a variable can have/save a text value, numbers, and others...
-
 
 Like Algebra:
 x = 1
@@ -35,4 +35,10 @@ $computerType = $_POST['comptype'];
 $progLanguages = $_POST['prog-lang'];
 
 // and so on for the rest of the form field...
+
+/*
+After saving all the user's input to php variables,
+we can start manipulating these variables in our PHP code
+like saving these info into a database.
+*/
 ?>

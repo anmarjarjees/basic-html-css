@@ -9,7 +9,7 @@
 
     <style>
         /* 
-        Styling any <input> element that is a child of (inside) <fieldest> 
+        Styling any <input> element that is a child of (inside) <fieldset> 
         */
         fieldset input {
             border: 1px solid rgb(77, 74, 74);
@@ -53,11 +53,15 @@
         }
 
         /*
-            change the width of the input field
-            that has id value of "fullname"
+            change the width of all the input fields:          
         */
-        input#fullname {
-            width: 200px;
+        input {
+            /* 
+            With input element
+            display: block; No NEED to make it block in order to apply width/height 
+            */
+            width: 210px;
+            height: 30px;
         }
 
 
@@ -157,7 +161,7 @@
             we need to add padding from the left
             because we have the background image on the left
             */
-            padding-left: 20px;
+            padding-left: 22px;
         }
 
         /* 

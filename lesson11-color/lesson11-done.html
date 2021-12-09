@@ -20,10 +20,10 @@
         */
 
         /* 
-        Task: body element: change the color to blue
+        Task: body element: change the color (text color) to blue
         
         Based on the idea of "Cascading" of "CSS",
-        all the elements inside the body will have the following rules:        
+        all the text elements inside the body will have the following rules:        
         */
         body {
             /* make all the text inside the body to be blue */
@@ -65,7 +65,6 @@
             max ==> 255
 
             W3Schools: https://www.w3schools.com/colors/colors_hsl.asp
-
             */
             color: rgb(12, 12, 160);
 
@@ -80,10 +79,17 @@
             */
             color: hsl(240, 86%, 34%);
 
+            /* 
+            using background-image to see the a (opacity or alpha) effect 
+            Notice that background-image will be covered in details later
+            */
+            background-image: url('otters.jpg');
 
-            /* this color will be applied*/
+            /* 
+            Notice that this background color will be applied 
+            only if the background image are not loaded 
+            */
             background-color: brown;
-
             /* 
             Using Colors:
             You can use any color as long as you check that 
@@ -105,11 +111,7 @@
         */
 
         div#container {
-            /* 
-            using background-image to see the a (opacity or alpha) effect 
-            Notice that background-image will be covered in details later
-            */
-            background-image: url('otters.jpg');
+            background-color: rgba(128, 85, 28, 0.4);
         }
 
         /* Styling the header element */
@@ -127,6 +129,10 @@
             */
             background-color: rgba(100, 100, 150, 0.5);
             border: 1px solid #007a99;
+
+            color: #ffffff;
+            /* can also summarized to */
+            color: #fff;
         }
 
         /* Style any ul element */
@@ -152,6 +158,21 @@
         background-color: #ff000080;    red transparency 
         background-color: #00ff0080;    green transparency 
         background-color: #0000ff80;    blue transparency 
+
+        --------------------
+        Working with Colors:
+        --------------------
+        It's very important to choose good colors for our websites, 
+        it's crucial not only for making our website looking nice 
+        but also for accessibility. 
+        
+        For example, avoid using red, green, brown, gray, or purple next to each other.
+        White, black, and shades of blue and yellow are easier for most people to differentiate.
+
+        Check the following websites for some color ideas:
+        - https://paletton.com/
+        - https://color.adobe.com/
+        - https://www.canva.com/learn/100-color-combinations/
         */
     </style>
 </head>

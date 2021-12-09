@@ -23,11 +23,28 @@
         <!-- Please remember to write your entire code inside div.wrapper -->
         <h2>HTML Form Structure</h2>
         <!--
-    HTML <form> element: start the form element:
+    A form is an HTML element that contains and organizes object called "From Controls".
+    From Controls are the objects that accept the information
 
-    Every form should have the following two main types of attributes:
-    - action
-    - method
+    NOTE:
+    There can be multiple forms on a web page,
+    but they CANNOT be nested inside each other.
+
+    HTML <form> element: has the opening and closing tags =><form></form>
+
+    Like many other html elements, form elements come with required/optional attributes and some of them are new for HTML5 (not previous versions):
+    
+    - action (required)
+    - method (optional) => has a default (initial) value of "get" (explained below)
+    - autocomplete (HTML5 attribute-optional) => is the default value is "on", 
+    browser will use autocompletion to fill form filed.
+    You can set its value to "off" if you don't want to disable this feature
+    - id/class (optional) like any other element
+    - name (optional) => naming the form to be easily accessed by client-side scripting if needed
+
+    Generally, every form should/must have the following two main types of attributes:
+    - action (should)
+    - method (must)
 
     Action attribute:
     The value of this attribute will be "the file" or "The URL" on the server (localhost server in our PC)
@@ -74,6 +91,8 @@
     This topic will be covered with me in PHP module
     when I start teaching you how to receive and retrieve all the from inputs.
     -->
+
+        <!-- Start the form element: -->
         <form action="form.php" method="POST">
             <!--
           with HTML5 we can classify our form into different sections
@@ -141,14 +160,17 @@
                     - can be used by CSS to style this element
                     - can be used by JS to target this element
 
-                    required attribute => this input field is required to have some values (CANNOT BE EMPTY WHEN YOU SUBMIT THE FORM!)
+                    required attribute: 
+                    - a new attribute that has been introduced by HTML5
+                    - this (input) field is required to have some values 
+                    (CANNOT BE EMPTY WHEN YOU SUBMIT THE FORM!)
 
-                    we can use required = "required" for the old browsers versions
-                    or we can just use the attribute value required for HTML5
+                    We can use required = "required" as the classical way
+                    or we can just use the attribute value required
 
-                    the classical way: required="required"
+                    The classical way: required="required"
                     OR:
-                    the new HTML5 way: required
+                    The other way: required
 
                     maxlength attribute:
                     maxlength ==> maximum number of characters (any character)
@@ -159,8 +181,15 @@
                     instead of using size attribute we need to use CSS,
                     size="30" is an OLD WAY (but still valid),
                     we will use CSS to style the width (better)
+
+                    Finally, we can use the HTML5 attribute "autofocus",
+                    Browser places cursor in the form control and sets focus.
+                    Syntax:
+                    - autofocus
+                    OR
+                    - autofocus="autofocus"
                  -->
-                    <input type="text" id="first-name" name="first-name" required maxlength="30" size="30">
+                    <input type="text" id="first-name" name="first-name" required maxlength="30" size="30" autofocus>
                 </div>
 
                 <!-- Adding another div element as a container for the last name -->

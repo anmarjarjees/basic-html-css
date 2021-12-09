@@ -14,7 +14,7 @@ It contains my HTML/CSS code examples and lectures for my Digital Media and Web 
 -   Validator.w3.org (For HTML validation)
 
 ## About the lessons
-The lessons labels are prepared and listed based on the textbook "HTML & CSS Design and Build". The sequence or the order that I follow in my lectures is like this:
+The lessons labels are prepared and listed to reflect the content of each chapter based on the textbook "HTML & CSS Design and Build". The sequence or the order that I follow in my lectures is like this:
 
 - Lesson 1: Introduction
 - Lesson 2: TEXT
