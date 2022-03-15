@@ -7,29 +7,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lesson 16a: Images Size and Floating</title>
     <style>
-        /* 
-          style the 3 types of images:
+        /*
+          style the 3 types (different size) of images:
           - small
           - large
-          - medium 
+          - medium
          */
 
         /*
-            Specifying image sizes helps pages to load more smoothly 
-            Because the HTML and CSS code (text content) will be loaded before the images. 
+            Specifying image sizes helps pages to load more smoothly
+            Because the HTML and CSS code (text content) will be loaded before the images.
             And the HTML/CSS will tell the browser how much space it needed for every image.
-         */
+        */
 
-        /* 
-        Style the large images 
-        target any <img> that has a class="large"
+        /*
+        Style the large images:
+        Target any <img> that has a class="large" => img.large (more specific => specificity)
+        target any element that has a class="large" => .large
+
+        NOTE: 
+        With RWD, we don't use fixed width or height with images
+        We usually use % and with the properties "width" and "max-width"
+        Refer to my RWD full code lectures
         */
         img.large {
             width: 500px;
             height: 500px;
+            /* 
+            With RWD:
+            width: 100%; => 100% based on its container not based on the actual image size 
+            max-width: 100%; =>   make the image responsive, 
+            but we don't want the image to exceed their actual size
+            in this example, the image will not go beyond the 500px
+            */
         }
 
-        /* 
+        /*
         Style the medium images: target any <img> that has a class="medium"
         */
         img.medium {
@@ -37,7 +50,7 @@
             height: 250px;
         }
 
-        /* 
+        /*
         Style the small images: target any <img> that has a class="small"
         */
         img.small {
@@ -61,13 +74,13 @@
             margin-left: 10px;
         }
 
-        /* 
+        /*
         To review: we can convert the inline <img> element to be displayed
-        like block-level element. and at the same time we can center it 
+        like block-level element. and at the same time we can center it
         as we used to center our main div.container using margin with auto values
         */
 
-        /* 
+        /*
         Note: the following two rules are important for your final project:
         - display: block;
         - margin: 10px auto;
@@ -79,11 +92,11 @@
             margin: 10px auto;
             /* adding a red border also */
             border: 2px solid red;
-            /* 
+            /*
             Optional task: if you want to clear any floating element on the left side
-            or on the right side of this block-level <img> we need to use 
+            or on the right side of this block-level <img> we need to use
             a CSS Property (command) "clear" with the value of "both" to clear
-            any elements from both sides (left and right)
+            any floating element(s) from both sides (left and right)
             */
             clear: both;
             /* clear both left and right */
@@ -93,27 +106,32 @@
 
 <body>
     <h1>Controlling Image Size</h1>
-    <!-- 
+    <!--
         using width and height attributes for the <img> tag
         is not allowed with HTML5:
         example:
         <img src="images/magnolia-large.jpg" width="500" height="300" alt="Magnolia" />
         So we will have to use the CSS rules for specifying the width and height
         as shown above
+
+        Notice that we used the /> at the end of the img element which is the classical
+        We can omit / as we learnt before:
+        <img src="" alt="">
      -->
     <img src="images/magnolia-large.jpg" class="large" alt="Magnolia" />
     <img src="images/magnolia-medium.jpg" class="medium" alt="Magnolia" />
     <img src="images/magnolia-small.jpg" class="small" alt="Magnolia" />
     <hr>
     <h1>Aligning Images Using CSS</h1>
-    <!-- 
+    <!--
         Below we have the <img> tag inside the <p> element before the text
-        and that's why we will see in the browser the image then the paragraph, 
+        and that's why we will see in the browser the image then the paragraph,
         so the image will be aligned to the left side of the paragraph because
         of its location inside the HTML.
         But with CSS we can change the alignment of the image.
     -->
-    <p><img src="images/magnolia-medium.jpg" alt="Magnolia" class="medium align-right" />
+    <p>
+        <img src="images/magnolia-medium.jpg" alt="Magnolia" class="medium align-right" />
         <b>
             <i>Magnolia</i>
         </b> is a large genus that contains over 200 flowering plant species. It is named after French botanist Pierre
@@ -126,8 +144,10 @@
         <i>Magnolia stellata</i> and <i>Magnolia soulangeana</i>, flower quite early in the spring before the leaves
         open. Others flower in late spring or early summer, such as <i>Magnolia grandiflora</i>.
     </p>
+
     <!-- and img tag not inside any paragraph -->
     <img src="images/magnolia-medium.jpg" alt="Magnolia" class="medium align-center">
+
     <p>
         <img src="images/magnolia-medium.jpg" alt="Magnolia" class="medium align-right" />
         <b>

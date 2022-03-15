@@ -1,0 +1,29 @@
+/* Style the body element */
+body {
+    /* add a background image: using url() CSS built-in function */
+    background-image: url("../images/pattern.gif");
+
+    /* 
+    the default behaviour of the browser
+    is to repeat the background image
+    horizontally (x) and vertically (y) 
+    */
+
+    /* We can add all the following properties: */
+    /* background-repeat: no-repeat; */
+
+    /* repeat-x will repeat the image horizontally */
+    /* background-repeat: repeat-x; */
+
+    /* repeat-y will repeat the image vertically */
+    /* background-repeat: repeat-y; */
+
+    /* the default */
+    /* background-repeat: repeat; */
+    /* background-position: right top; */
+    /* background-position: center top; */
+    background-attachment: fixed;
+    /*
+    background-attachment: scroll (the default) or fixed
+    */
+}

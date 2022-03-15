@@ -14,8 +14,8 @@
             /* 950px width */
             width: 950px;
 
-            /* 
-            Remember to center the element 
+            /*
+            Remember to center the element
             we can use margin auto for left and right
             still ok to use them also for top and bottom
             as we see below:
@@ -26,17 +26,17 @@
             - Width
             - Height
             - Margins
-            - Paddings 
+            - Paddings
 
-            For example, we cannot use auto margin with iframe or img elements. 
+            For example, we cannot use auto margin with iframe or img elements.
             Anyhow, as we learnt before we can convert an inline element to block element using => display: block;
-            so in your assignment we have img element that we need to centre, 
-            we can still auto but we have to make it block-level first.               
-         
+            so in your assignment we have img element that we need to centre,
+            we can still auto but we have to make it block-level first.
+
             Important notes for your assignment:
             ===================================
             Q) to make the left and the right margin exactly the same and changed automatically when we zoom in/out:
-            
+
             A) We need to ask the browser to set the left and the right margin automatically using the value "auto"
             */
             margin-left: auto;
@@ -60,7 +60,7 @@
             border-bottom: 2px groove rgb(165, 164, 164);
             /* font style "italic" */
             font-style: italic;
-            /* 
+            /*
                 text-shadow: value1 value2 value3 color
                 value1 ==> left or right
                 value2 ==> top or bottom
@@ -68,24 +68,24 @@
                 */
             text-shadow: 1px 1px 1px rgb(165, 164, 164);
             margin: auto;
-            /* 
+            /*
             float:
-            takes an element in normal flow 
-            and place it to the left or 
+            takes an element in normal flow
+            and place it to the left or
             right of the containing element
-            
+
             we commented the float to practice float property again with p elements
 
             Remember that float is a danger command :-)
-            because the block-element will lose its physical existence 
+            because the block-element will lose its physical existence
             because floating option will make a block-level behave as inline element!
             it means the element below/beneath the floating element will jump to take whatever space available
             */
             /* float: left; */
 
-            /* 
+            /*
             Important Note To Review:
-            float property will disable the block-level feature 
+            float property will disable the block-level feature
             */
         }
 
@@ -97,9 +97,9 @@
             /* bad idea :-( to use fixed height! */
             /* height: 870px; */
 
-            /* 
+            /*
             good idea :-) to use  => overflow: auto;
-            Because all its children (p elements) have floating left property so this div.content will collapse. 
+            Because all its children (p elements) have floating left property so this div.content will collapse.
             */
             overflow: auto;
         }
@@ -108,30 +108,31 @@
         /* style any p element */
         p {
             background-color: yellow;
+            /* 10px for top/bottom - 0 for left/right */
             margin: 10px 0;
-            /* 
+            /*
             NOTE:
             One of the original and classical way to display block-element horizontally (side-side),
             is using float: left or float: right
 
-            To display all p element beside each other by using float 
+            To display all p element beside each other by using float
             */
             float: left;
             /*
-            to see the affect of float property, 
+            to see the affect of float property,
             let's change/specify the width property for all p elements to indicate how wide the floated element should be
-            
+
             Generally, we should use the width property if we have two or more block elements to be floated
             */
             width: 250px;
-            /* 
+            /*
                 Another example about floating:
                 p element is a block-level
-                
-                using float will make the element floating above its container (it will loose its physical existence) 
 
-                all the p elements are inside div.content, 
-                but the moment we use =>  float: right; or   float: left; 
+                using float will make the element floating above its container (it will loose its physical existence)
+
+                all the p elements are inside div.content,
+                but the moment we use =>  float: right; or   float: left;
                 their container will be empty
 
                 Solutions:
@@ -147,7 +148,7 @@
         p.clear {
             color: blue;
             /* clear as a class name because we want to empty (clear) any element from the left side: */
-            /* 
+            /*
             clear property works with the float property
             clear: left; => will clear any item/element on the left side of the current element
             clear: right; => will clear any item/element on the right side of the current element

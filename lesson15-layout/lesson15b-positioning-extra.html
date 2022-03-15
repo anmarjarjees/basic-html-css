@@ -7,20 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>More about Positioning</title>
     <style>
-        /* 
-        Styling the two div elements with class="img-div" or/and class="video-div"  
+        /*
+        Styling the two elements with class="img-div" or/and class="video-div"
         */
         .img-div,
         .video-div {
             /* Giving them some visual different appearance */
             border: 2px solid blue;
             padding: 5px;
-            /* 
+            /*
             based on our image width widths which is 896px
             giving both this width value.
             the video is less than 896px but we can center it...
             */
             width: 896px;
+            margin: auto;
 
             /* The parent element has "relative" position */
             position: relative;
@@ -41,7 +42,7 @@
             margin: auto;
         }
 
-        /* 
+        /*
         The parent element "div.img-div"
         has these 4 heading 2 elements (children) with these id values:
         - #box-wrapper-title
@@ -51,7 +52,7 @@
 
         The parent element "div.video-div"
         has this heading 2 element (child) with this id value:
-        - #video-title 
+        - #video-title
 
         We will style them all to give them different style
         but most important giving them the "absolute" positioning:
@@ -85,8 +86,8 @@
         top: 5px;
         bottom: 10px;
 
-        To summarize, 
-        we should avoid combining these opposite direction/sides 
+        To summarize,
+        we should avoid combining these opposite direction/sides
         to avoid any confusion:
         - left AND right
         - top AND bottom
@@ -107,7 +108,7 @@
         }
 
         #box-footer-title {
-            bottom: 0px;
+            bottom: 0;
             right: 30px;
         }
 
@@ -138,7 +139,7 @@
             <div class="img-div">
                 <h3 id="box-wrapper-title">The div.wrapper - main container</h3>
                 <h3 id="box-header-title">The Page Header also contains the nav element</h3>
-                <h3 id="box-main-title">The main content</h3>
+                <h3 id="box-main-title">The main content of the page</h3>
                 <h3 id="box-footer-title">The Page footer</h3>
                 <img src="page-layout.png" alt="Page layout/Mockup">
             </div>

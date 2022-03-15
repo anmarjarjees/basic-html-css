@@ -12,12 +12,12 @@
         div {
             border: 1px solid black;
             margin: 10px;
-            /* 
+            /*
             margin: one value;
             margin: 10px;  => margin of 10px to all the sides
             */
 
-            /* 
+            /*
             margin: T R B L;
 
             Remember that when the left margin and the right margin both are set to auto,
@@ -25,7 +25,7 @@
             */
             margin: 10px auto 10px auto;
 
-            /* 
+            /*
             Or:
             First value: 10px => for top and bottom sides
             Second value auto => for left and right sides
@@ -34,7 +34,7 @@
              */
             margin: 10px auto;
 
-            /* 
+            /*
             Or using 3 values:
             margin: value1 value2 value3;
             - value1 => For the top
@@ -43,22 +43,22 @@
             */
             margin: 10px auto 5px;
 
-            /* 
+            /*
             Don't forget :-) the same rules of margins can be applied to padding
             */
 
             /*
-            All div elements will take 90% of its container 
+            All div elements will take 90% of its container (its parent element)
 
             using % measurement unit will make this element responsive
             */
             width: 90%;
         }
 
-        /* 
-        
+        /*
+
         We have 4 types of positioning:
-        - static (Normal Flow): The default
+        - static (Normal Flow): The default/initial
         - relative
         - absolute
         - fixed
@@ -70,59 +70,59 @@
         position: absolute;
         position: fixed;
 
-        relative, absolute, and fixed need to have the following pair from 
+        relative, absolute, and fixed need to have the following pair from
         the following properties:
         top, right, bottom, left
 
-        So, with relative (sometimes), absolute, or fixed position we do need to specify any pair two logical sides: 
+        So, with relative (sometimes), absolute, or fixed position we do need to specify any pair two logical sides:
         -	Top left
         -	Bottom left
-        -	Top Right 
-        -	Bottom Right 
-       
+        -	Top Right
+        -	Bottom Right
+
         We can think about the four corners of a box shape
         */
 
-        /* 
-        static: the normal flow, 
+        /*
+        static: the normal flow,
         each block-level element sits on top of the next one
         */
         p {
-            /* 
+            /*
             below is the default option so it has no effect */
             position: static;
         }
 
         /*
-        relative: moves an element in relation to 
+        relative: moves an element in relation to
         where it would have been in normal flow
         */
 
-        /* 
-        Style any p element that has a class 
-        with the value of "relative-p" which means class="relative-p" 
+        /*
+        Style any p element that has a class
+        with the value of "relative-p" which means class="relative-p"
         */
         p.relative-p {
-            /* 
+            /*
             To easily differentiate this paragraph in the brooder window, let's give it different colors
             */
             background-color: lightyellow;
             color: red;
 
-            /* 
+            /*
             once we use relative positioning,
             we can control the flow of the current element
             using: top, bottom, left, or right
             */
             position: relative;
-            /* 
+            /*
               It's not enough to write:
-              position: relative; 
-              
+              position: relative;
+
               In most cases, we also need to specify the position
-              using 2 from the following sides: 
+              using 2 from the following sides:
               - top, left, right, and bottom
-              
+
               Examples:
               top and right ==> go together
               top and left ==> go together
@@ -131,7 +131,7 @@
 
               Again, we can think about the four corners of a box shape
 
-            so below we used only two sides: top and left 
+            so below we used only two sides: top and left
             to target the top/left corner
 
             Please remember these two properties
@@ -140,16 +140,16 @@
             */
             top: 10px;
             left: 30px;
-            /* 
-            The element will move 
+            /*
+            The element will move
             10px from the top
             30px form the left
             Based on its normal flow (its original anchor point without any positioning)
             */
         }
 
-        /* 
-          Yes, you can use the following selector 
+        /*
+          Yes, you can use the following selector
           to target the same element!
           */
         p[class="relative-p"] {
@@ -158,19 +158,19 @@
 
 
         /*
-        absolute: moves an element in relation to its containing (parent) element 
+        absolute: moves an element in relation to its containing (parent) element
         when the containing element has a relative position property (no need to set any pixels).
-        
-        If the containing element doesn't have a relative position property, 
+
+        If the containing element doesn't have a relative position property,
         its child element with position absolute will be positioned based to the browser window
         */
 
-        /* 
+        /*
             Practice the notes about "absolute":
             - we will target the paragraph with the class value of "absolute-p"
             - this p.absolute-p is inside the div.third-div
             - the div.third-div is the parent/container of p.absolute-p
-            - Based on the absolute positioning rules, 
+            - Based on the absolute positioning rules,
 
             <div class="third-div">
                 <p class="absolute-p"> ... </p>
@@ -180,8 +180,8 @@
         /*
 
             target the div with class "third-div"
-            
-            this selector "div.third-div" is the container (parent) element of "p.absolute-p" 
+
+            this selector "div.third-div" is the container (parent) element of "p.absolute-p"
         */
 
         div.third-div {
@@ -192,16 +192,16 @@
             position: relative;
             /*
             Notice here we only have => position: relative
-            Without any value for: top, left, right, or, bottom! 
+            Without any value for: top, left, right, or, bottom!
             So the element will not move anywhere,
             even if it has a "relative" position
             because we didn't use/specify any number of pixels to move the item/element from:
-            top/left, 
-            top/right, 
-            bottom/left, 
+            top/left,
+            top/right,
+            bottom/left,
             or bottom/right
 
-            Question: 
+            Question:
             Why we applied relative positioning for this element if we don't want to move it anywhere?
 
             Answer:
@@ -221,18 +221,18 @@
         /*
         styling any p element with class="absolute-p"
         we only have one => p.absolute-p
-        
-        Remember that this paragraph is a child 
+
+        Remember that this paragraph is a child
         of the parent element "div.third-div"
         and its parent element has the relative positioning
 
-        absolute: moves an element in relation to 
+        absolute: moves an element in relation to
         its containing element
 
         Example in this page:
         div.third-div is the containing element (parent) of p.absolute-p
 
-        we have a <div> with class="div.third-div" which is 
+        we have a <div> with class="div.third-div" which is
         the container of <p> with class="absolute
 
         position absolute is used with position relative as explained below inside the following rule:
@@ -240,7 +240,7 @@
         p.absolute-p {
             /* give it different colors to see it easier */
             color: rgb(45, 45, 151);
-            /* background-color: rgba(187, 218, 238, 0.5); 
+            /* background-color: rgba(187, 218, 238, 0.5);
             */
             background-color: rgb(187, 218, 238);
 
@@ -255,7 +255,7 @@
             this absolute positioned <p> will be positioned
             based on the browser window
 
-            else <p> will be positioned based 
+            else <p> will be positioned based
             on its relative container element
             */
             position: absolute;
@@ -266,8 +266,8 @@
             /*
             The z-index property specifies the stack order of an element.
             An element with greater stack order is always in front of an element with a lower stack order.
-            
-            Note: 
+
+            Note:
             z-index ONLY works on positioned elements
             (position: absolute, position: relative, position: fixed, or position: sticky).
 
@@ -288,7 +288,7 @@
         div.third-div div {
             background-color: rgb(240, 202, 98);
             font-style: italic;
-            /* 
+            /*
             Remember these notes:
             - the current "div" is inside "div.third-div"
             - the parent element of this div which is "div.third-div" has a relative positioning
@@ -303,7 +303,7 @@
             position: absolute;
             top: 0;
             right: 0;
-            /* 
+            /*
             With position: relative, absolute, or fixed, boxes
             or elements can overlap.
             So we can change the order of the elements (arrange them)
@@ -347,9 +347,9 @@
             */
 
             z-index: 10;
-            /* 
-            Please note that margin properties will NOT work with positioning 
-            
+            /*
+            Please note that margin properties will NOT work with positioning
+
             We used these two properties with "auto" value to center the element but they will not work with positioning properties:
 
             margin-left:auto;
@@ -416,8 +416,8 @@
             propelled by pushing your feet against the ground, thus rolling yourself and the device forward in a sort
             of
             gliding walk.</p>
-        <!-- 
-            Notice that I gave this p element a class of "absolute-p" to practice the absolute positioning 
+        <!--
+            Notice that I gave this p element a class of "absolute-p" to practice the absolute positioning
         -->
         <p class="absolute-p">The machine became known as the Draisienne (or "hobby horse"). It was made entirely of
             wood.

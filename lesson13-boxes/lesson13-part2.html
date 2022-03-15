@@ -17,7 +17,7 @@
             max-width: 1300px;
             background-color: antiquewhite;
 
-            /* 
+            /*
             instead of writing:
             border-width: 2px;
             border-style: solid;
@@ -31,7 +31,7 @@
             */
             border: 2px solid black;
 
-            /* 
+            /*
             We need to center our div.container to be the in centre it's container which is the body,
             We can use this trick (for the second assignment also):
             */
@@ -56,13 +56,13 @@
             background-color: beige;
             border: 1px solid red;
 
-            /* 
+            /*
             To convert block-level element to inline-level element we can use:
 
             display: inline;  ==> the element will lose its width and height!
 
-            To make block-level element to flow like an inline element, 
-            while retaining the other features (like width, height) of 
+            To make block-level element to flow like an inline element,
+            while retaining the other features (like width, height) of
             a block-level element we can use:
 
             display: inline-block;
@@ -82,7 +82,7 @@
             box-shadow: 5px 5px 15px 2px black;
 
 
-            /* 
+            /*
             CSS3: Rounded Corners
             will affect the border (not the box) to have rounded corner(s)
             */
@@ -109,8 +109,8 @@
 
         /* style the main nav in my page */
 
-        /* convert the <li> elements of the main navigation 
-           (not the <li> in all the page) to be inline instead 
+        /* convert the <li> elements of the main navigation
+           (not the <li> in all the page) to be inline instead
            for block-level elements
 
            We can target these li elements using:
@@ -127,11 +127,11 @@
             margin: 0 5px;
         }
 
-        /* 
-        When using inspect feature in any browser, 
-        we found that there are some values for the top and bottom margins 
+        /*
+        When using inspect feature in any browser,
+        we found that there are some values for the top and bottom margins
         plus there is a padding of 40px by default
-        that were added by the browser itself. 
+        that were added by the browser itself.
         So we will override them below:
         */
         header nav ul {
@@ -140,29 +140,29 @@
             padding: 0;
         }
 
-        /* 
-        To style only <a> elements (anchor tag) that are 
+        /*
+        To style only <a> elements (anchor tag) that are
         inside the <nav> inside the <header>:
         */
 
-        /* 
-        link ==> a:link, a:visited, a:hover, a:active 
+        /*
+        link ==> a:link, a:visited, a:hover, a:active
 
         Don't forget that we can also have :focus between LoVe and HAte :-)
         a:focus => to get focus by the keyboard action like using TAB key
         Link ==> a:link, a:visited, a:focus, a:hover, a:active
         */
 
-        /* Styling the normal link to get rid from 
+        /* Styling the normal link to get rid from
         the browser default style: blue color with underline */
         a:link {
             color: brown;
             /* to remove the underline */
             text-decoration: none;
             /* without any decoration */
-            /* 
-            Change the text inside the link to be Uppercase. 
-            we should do the uppercase using CSS 
+            /*
+            Change the text inside the link to be Uppercase.
+            we should do the uppercase using CSS
             instead of type them with uppercase inside the html
             */
             text-transform: uppercase;
@@ -190,7 +190,7 @@
             margin: 0;
         }
 
-        /* 
+        /*
         .hideIt class is used to hide any element that has a class="hideIt":active
         */
 
@@ -205,9 +205,9 @@
             visibility: hidden;
         }
 
-        /* 
+        /*
         Notice when using "display: inline Block"
-        The items will be layout sit based on the baseline 
+        The items will be layout sit based on the baseline
         Below, we changed the height to these three paragraphs;
         */
 
@@ -303,7 +303,7 @@
 
         <div>
             <h2>Examples of Inline Elements</h2>
-            <!-- 
+            <!--
                 We removed the obsolete attribute => frameborder="0"
                 since we know how to add border using CSS :-)
              -->

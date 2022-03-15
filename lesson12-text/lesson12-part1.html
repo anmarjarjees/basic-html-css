@@ -68,7 +68,7 @@
         */
 
         body {
-            font-family: Georgia, Times, serif;
+            font-family: Georgia, 'Times New Roman', Times, serif;
             /*
             By default the browser wil set the normal font size to 16px;
 
@@ -104,6 +104,7 @@
         h2 {
             font-family: Arial, Verdana, sans-serif;
             font-weight: bold;
+            /* useless => it's bold by default */
             font-style: italic;
             text-transform: uppercase;
             /* line-height is similar to line-spacing in MS Word */
@@ -178,7 +179,7 @@
 
         /*
         - styling all the <a> element for hyperlinks:
-        - remove/disable the underline default style of the browser => we can use text-decoration
+        - remove/disable the underline which is the default style of the browser => we can use text-decoration
         - change the font to italic
         */
 
@@ -228,6 +229,14 @@
         }
 
         /*
+       Task: Style the <span> element that is inside a <p> element
+       with id="note"
+       */
+        p#note span {
+            background-color: rgb(253, 253, 63);
+        }
+
+        /*
             In CSS we have these two symbols to be used:
             - :: => Pseudo Elements ==> selector::Pseudo Element (with double ::)
             - : => Pseudo Class ==> selector:Pseudo Element (with one : ) => To be covered in different lesson
@@ -247,7 +256,7 @@
         */
 
         /*
-            Example os Pseudo Element:
+            Example of Pseudo Element:
             Task: style ONLY the "first line" of a paragraph with id="memo"
          */
         p#memo::first-line {
@@ -258,7 +267,7 @@
         }
 
         /*
-            Example os Pseudo Element:
+            Example of Pseudo Element:
             Task: style ONLY the "first letter" of a paragraph with id="memo"
          */
         p#memo::first-letter {

@@ -7,7 +7,7 @@
 
 <body>
     <!-- HTML Comment -->
-    <!-- 
+    <!--
     We have 6 types of headings:
     h1 is the maximum size of headings
     h6 is the minimum size of headings
@@ -18,22 +18,22 @@
     <h4>Heading 4 Element: Section Subtitle</h4>
     <h5>Heading 5 Element: Subsection title</h5>
     <h6>Heading 6 Element: Subsection Subtitle</h6>
-    <!-- 
-    Hints: 
-    - To add/remove (toggle) a comment => CTRL + /        
+    <!--
+    Hints:
+    - To add/remove (toggle) a comment => CTRL + /
     - To format the code: ALT + SHIFT + F
     - To toggle "Word Wrap": ALT + Z
     -->
 
-    <!-- 
-        We also have <p> element for paragraph: 
-        Opening <p> tag and closing </p> tag 
-        
+    <!--
+        We also have <p> element for paragraph:
+        Opening <p> tag and closing </p> tag
+
         Notice that the heading and tex begin near hte left margin.
         This is called "Left Alignment" and is the default alignment for web pages.
 
         "align" attribute can be used to align the text with these values: left, right, center
-        but this attribute is "Obsolete" in HTML5, 
+        but this attribute is "Obsolete" in HTML5,
         which means that this attribute has been used in XHTML,
         but  has been removed from W3C HTML5.
     -->
@@ -42,39 +42,40 @@
     <p>
         Video provides a powerful way to help you prove your point.
         When you click Online Video, you can paste in the
-        embed code for the video you want to add. You can also type a keyword to search online for the video that best
+        embed code for the video you want to add. You can also type a keyword to search online for the video that
+        best
         fits your document.
     </p>
 
-    <!-- 
+    <!--
         In Our textbook => Page. 48
         Not all elements in HTML have opening and closing tags!
-        We have few of them that only have opening tag (no closing). 
-        These types of elements are considered to be "Stand-alone" tags 
+        We have few of them that only have opening tag (no closing).
+        These types of elements are considered to be "Stand-alone" tags
         are also called "Empty Elements" or "Self-contained Tags"
 
-        hr is for a horizontal ruler 
+        hr is for a horizontal ruler
         br is for line break
-        
+
         Example:
         <br> ==> Line break OR <br />
         <hr> ==> Horizontal Ruler OR <hr />
     -->
 
 
-    <!-- 
+    <!--
 	Below is the classical way (before HTML 5) which is the XHTML syntax,
-    to write an empty element: "<" then "hr" then space then "/" then ">" 
+    to write an empty element: "<" then "hr" then space then "/" then ">"
 	-->
     <hr />
 
     <!-- But with HTML5 we can ignore the space and / although it's still valid to put them -->
     <hr>
 
-    <!-- 
+    <!--
         Phrase elements: also called "Logical Style Elements" indicate the context
         and meaning of the text between the container tags.
-        
+
         Including:
         <abbr> - Abbreviation text
         <cite> - Citation text
@@ -86,14 +87,14 @@
         <small> - Smaller text
         <sub> - Subscript text
         <sup> - Superscript text
-        
-        NOTE: 
+
+        NOTE:
         Although some element display the text in the same style/format/italic
         like <cite> and <em> display the text in "italic",
         but these tags/elements semantically describe the text as <cite> for citation
         and em for emphasis.
     -->
-    <!-- 
+    <!--
         Two Types of Elements:
         - Block-Level Elements
         - Inline Elements
@@ -101,7 +102,7 @@
         wil be explained in details later
     -->
 
-    <!-- 
+    <!--
         inline elements: can be embedded or inserted inside block elements
         examples:
         <i> for italic, <b> for bold, <em> for emphasis: are examples of inline elements
@@ -109,8 +110,8 @@
     -->
     <p>This word will be <b>bold</b>, this word will be <i>italic</i></p>
 
-    <!-- 
-		 <em> will make the text italic 
+    <!--
+		 <em> will make the text italic
 		 <i> will also make the text italic
 
 		 <em> is important for other programs, like Screen Readers
@@ -119,6 +120,19 @@
 		 <sup> for superscript
 		 <sub> for subscript
 	-->
+
+
+    <!--
+        W3C Error:
+        <em>
+             <b>
+                 powerful way
+             </em>
+        </b>
+
+        Error: End tag em violates nesting rules.
+        Error: No b element in scope but a b end tag seen.
+    -->
 
     <p>Here is my 1<sup>st</sup> page about <em>HTML5</em>, <br>
         The water symbol in Chemistry is H<sub>2</sub>O</p>
@@ -136,8 +150,8 @@
 
     <!--
     For making up quotations
-    using blockquote will indent the content 
-    Browser tend to indent the contents of the <blockquote> element  
+    using blockquote will indent the content
+    Browser tend to indent the contents of the <blockquote> element
     -->
     <blockquote>
         "The browser will indent
@@ -152,7 +166,8 @@
     <!-- OR: -->
     <br />
 
-    <!-- 
+    <!--
+    <abbr>: The Abbreviation element
 		using abbr element for abbreviations
 		example:
 		MS ==> Microsoft
@@ -170,15 +185,15 @@
 	-->
     <p>
         <abbr title="Microsoft">MS</abbr> Office Applications include
-        Word, Excel, PowerPoint, and Outlook
+        Word, Excel, PowerPoint, and Outlook.
     </p>
 
-    <!-- 
-        cite to reference a piece of work in italic style 
+    <!--
+        cite to reference a piece of work in italic style
     -->
     <p>The famous movie <cite>The Sound of Music</cite> by Robert Wise</p>
 
-    <!-- 
+    <!--
     address is for contact details (information)
     about the page author like his email or a company physical address
     -->
@@ -191,7 +206,7 @@
 
 </html>
 
-<!-- 
+<!--
     Challenge:
     Create a new HTML Page: lesson2-practice.html inside lesson02 folder
     Full HTML5 template
@@ -200,5 +215,5 @@
 	Heading 1 => Learning HTML5
 	Heading 2 => Working with text
 	Add a horizontal line
-	One Paragraph  We learned how to work with text in chapter 2. We also learned about empty elements which are the elements that don’t have closing tags. 
+	One Paragraph  We learned how to work with text in chapter 2. We also learned about empty elements which are the elements that don’t have closing tags.
 -->

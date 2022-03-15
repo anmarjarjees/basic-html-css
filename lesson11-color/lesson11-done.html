@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS Color Final</title>
     <style>
-        /* 
+        /*
         we can use the two versions of CSS:
-        -CSS2: CSS Level 2 
+        -CSS2: CSS Level 2
         (the old classical rules that are supported by all the browsers)
-        -CSS3: CSS Level 3 
+        -CSS3: CSS Level 3
         (was introduced with HTML5)
 
         Web Safe Colors:
@@ -19,47 +19,55 @@
         Link: https://developer.mozilla.org/en-US/docs/Web/CSS/color
         */
 
-        /* 
+        /*
         Task: body element: change the color (text color) to blue
-        
+
         Based on the idea of "Cascading" of "CSS",
-        all the text elements inside the body will have the following rules:        
+        all the text elements inside the body will have the following rules:
         */
         body {
             /* make all the text inside the body to be blue */
             color: blue;
-            /* 
-            HTML Color Names => maximum 147 names:
+            /*
+            HTML Color Names => maximum 140 names:
             W3Schools: https://www.w3schools.com/colors/colors_names.asp
 
-            Instead of using names, we should use: 
-            - Hex code 
-            - RGB 
+            Instead of using names, we should use:
+            - Hex code
+            - RGB
             - HSL (Hue, Saturation, Light => in Photoshop)
             */
 
             /* 1. Hex (Hexadecimal) Code */
-            /* 
+            /*
             - The # symbol signifies that the value is hexadecimal.
             - You can use either UPPERCASE or lowercase letters.
-            #RRGGBB ==> Red, Green, and Blue => to be used in Digital Media (Screens) 
+            #RRGGBB ==> Red, Green, and Blue => to be used in Digital Media (Screens)
             */
 
             /* Remember, in Photoshop we used: CMYK  - Cyan Magenta Yellow Black => for printing */
 
             color: #0c0ca0;
 
-            /* 
-            RGB: 
-            using: rgb(value1, value2, value3) 
+            /* Hex values: */
+            /* background-color: #ffffff; */
+            /* #fff */
+            background-color: #fff;
+            /* #fff */
+            /* background-color: #000000; */
+            background-color: #000;
+
+            /*
+            RGB:
+            using: rgb(value1, value2, value3)
             value1 ==> r for red
             value2 ==> g for green
             value3 ==> b for blue
-            
+
             Each value ==> from 0 to 255
             r: red
             g: green
-            b: blue 
+            b: blue
             The numbers have to between 0 and 255
             min ==> 0
             max ==> 255
@@ -68,7 +76,7 @@
             */
             color: rgb(12, 12, 160);
 
-            /* 
+            /*
             HSL Colors
             HSL color values are supported in IE9+, Firefox, Chrome, Safari, and in Opera 10+.
 
@@ -79,20 +87,20 @@
             */
             color: hsl(240, 86%, 34%);
 
-            /* 
-            using background-image to see the a (opacity or alpha) effect 
+            /*
+            using background-image to see the a (opacity or alpha) effect
             Notice that background-image will be covered in details later
             */
             background-image: url('otters.jpg');
 
-            /* 
-            Notice that this background color will be applied 
-            only if the background image are not loaded 
+            /*
+            Notice that this background color will be applied
+            only if the background image are not loaded
             */
             background-color: brown;
-            /* 
+            /*
             Using Colors:
-            You can use any color as long as you check that 
+            You can use any color as long as you check that
             there is adequate contrast between your text and background colors.
             You want your visitors to be able to read the content on your site easily.
             Hint: Please refer to my in-class notes for "Typography" module for mor details
@@ -102,10 +110,10 @@
             */
         }
 
-        /* 
-        Task: target the "div" that has an id = "container" 
+        /*
+        Task: target the "div" that has an id = "container"
         which means => div#container
-        
+
         if we had our div to have class = "container", we can write div.container
         but our div has the id="container"
         */
@@ -116,14 +124,14 @@
 
         /* Styling the header element */
         header {
-            /* 
-            using CSS3 rgba (a alpha) 
-            
+            /*
+            using CSS3 rgba (a alpha)
+
             a is for the opacity of the element
-            a = alpha value: 0.000 and 1.0
-            0 ==> completely transparent 
-            1 ==> is the full color (no transparent)                
-            Examples: 
+            a = alpha value: 0.000 and 1
+            0 ==> completely transparent
+            1 ==> is the full color (no transparent)
+            Examples:
             0.5 is 50% opacity
             0.15 is 15% opacity
             */
@@ -137,7 +145,7 @@
 
         /* Style any ul element */
         ul {
-            /* 
+            /*
             using the CSS3: HSL and HSLA
             hsl(hue, saturation, lightness)
             hsla(hue, saturation, lightness, alpha)
@@ -149,23 +157,23 @@
             background-color: hsla(36, 100%, 50%, 0.5);
         }
 
-        /* 
+        /*
         Hexadecimal colors with transparency
         NOTE: We can also use alpha with hex values
         To add transparency, add two additional digits between 00 and FF.
         Examples of defining different HEX colors with transparency:
 
-        background-color: #ff000080;    red transparency 
-        background-color: #00ff0080;    green transparency 
-        background-color: #0000ff80;    blue transparency 
+        background-color: #ff000080;    red transparency
+        background-color: #00ff0080;    green transparency
+        background-color: #0000ff80;    blue transparency
 
         --------------------
         Working with Colors:
         --------------------
-        It's very important to choose good colors for our websites, 
-        it's crucial not only for making our website looking nice 
-        but also for accessibility. 
-        
+        It's very important to choose good colors for our websites,
+        it's crucial not only for making our website looking nice
+        but also for accessibility.
+
         For example, avoid using red, green, brown, gray, or purple next to each other.
         White, black, and shades of blue and yellow are easier for most people to differentiate.
 
@@ -181,12 +189,12 @@
     <!-- the main container of all the page contents -->
     <div id="container">
         <header>
-            <!-- 
+            <!--
                 The code of this page which is the content of div#container
                 was taken from chapter-10/css-selectors.html (Page: 237)
             -->
             <h1 class="note">
-                <!-- 
+                <!--
                     Notice that a element is an inline element,
                     so applying a background color will be applied on the element contents only
                     and not the entire row (line)
@@ -196,18 +204,18 @@
             <h2>Your Dream Garden</h2>
         </header>
         <p id="introduction" class="note">Here you can read our handy guide about what to do when.</p>
-        <!-- 
+        <!--
             Inline Styles:
             below is an example of applying an inline styles
-            we use the attribute "style" so inline styles can be applied 
+            we use the attribute "style" so inline styles can be applied
             as attributes for any HTML element:
             style="property: value; property: value; and so on...."
-    
+
             Notice that inline styles will override the external and the internal styles because they are the closest ones to the elements
-         
+
             inline styles: as an attribute for any HTML element
             style = " property: value; property: value; "
-    
+
             Notice that we don't use { and } because there is no selector,
             our our selector is the current element itself
             -->

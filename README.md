@@ -9,7 +9,8 @@ It contains my HTML/CSS code examples and lectures for my Digital Media and Web 
 -	developer.mozilla.org
 -	W3schools.com
 -   TutorialRepublic.com
--	HTML5doctor.com   
+-	HTML5doctor.com 
+-   CanIUse.com 
 -	My code demos and examples
 -   Validator.w3.org (For HTML validation)
 
@@ -25,6 +26,7 @@ The lessons labels are prepared and listed to reflect the content of each chapte
 - Lesson 17: HTML5 Layout
 - Lesson 6: TABLES
 - Lesson 7: FORMS
+- Lesson 9: Audio and Video
 - Lesson 10: Introducing CSS
 - Lesson 11: COLOR
 - Lesson 12: TEXT

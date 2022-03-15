@@ -7,22 +7,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lesson 12 Part 1: Pseudo Class</title>
     <style>
-        /* 
+        /*
     Very Important Note:
-    We still need to make sure that the listed new HTML5 block elements 
-    are being displayed as block elements in the very old browsers like ie8 and before,
-    for that reason we will keep the following rule. 
-    you will do the same in your assignment2 and the project 
+    We still need to make sure that the listed new HTML5 block elements
+    are being displayed as block elements in the very old browsers like IE8 and before,
+    for that reason we will keep the following rule.
+    you will do the same in your assignment2 and the project
 
     Remember that The second last part of chapter 17 (HTML5 Layout):
     We studied these elements:
     <header> <section> <article> <aside> <nav> <footer> <figure> <figcaption>
-    
+
     Problem:
-    All these elements suppose to be displayed as block elements, 
-    but old browsers can't display them as block elements 
-    because they can't recognize them! so they will displayed as inline elements 
-    
+    All these elements suppose to be displayed as block elements,
+    but old browsers can't display them as block elements
+    because they can't recognize them! so they will displayed as inline elements
+
     Solution:
     to overcome this issue we will need to add the following CSS rule: display: block;
     so we can group them all into one selector to apply this style:
@@ -39,19 +39,19 @@
         }
 
 
-        /* 
-        style any <h2> inside the <section> 
+        /*
+        style any <h2> inside the <section>
         Descendant Selector
         */
         section h2 {
             color: brown;
         }
 
-        /* 
+        /*
         To recap:
         - Pseudo Elements: acts like an extra element in the code:
         we focused on these two Pseudo Elements rules
-        ::first-letter 
+        ::first-letter
         (The textbook [Released in 2011] uses one : but we should use :: now)
         ::first-line
 
@@ -79,33 +79,38 @@
     NOTE:
     - We can also add :focus to be used with the Keyboard TAB key for Accessibility
     - We should add it between LoVe and HAte:
-    :link 
+    :link
     :visited
     :focus
     :hover
     :active
     */
 
-        /* 
+        /*
     let's style the <a> elements inside our <nav> element which is inside the <header> element
     in other word, style the a element which is the descendant of nav which is the descendant of header
     header => nav => a
 
     Descendant Selector (Page 238 table):
-    style any <a> element inside the <nav> which is inside the header        
+    style any <a> element inside the <nav> which is inside the header
 
 
-    my basic/initial selector: header nav a 
+    my basic/initial selector: header nav a
 
     we will apply the four types of "Pseudo Classes" on our selector "header nav a"
     */
 
-        /* The default normal link (visited): */
+        /* The default normal link: */
         header nav a:link {
-            text-decoration: none;
             /* remove the default underline */
-            color: rgb(129, 6, 6);
+            text-decoration: none;
+
             /* override the default blue color */
+            color: rgb(129, 6, 6);
+
+            /*
+            make the main nav stands out by using Capital letters
+            */
             text-transform: uppercase;
         }
 
@@ -125,6 +130,22 @@
         header nav a:active {
             color: rgb(255, 0, 0);
         }
+
+        /* More examples of using Pseudo Element  */
+        p::before {
+            content: "Paragraph: ";
+        }
+
+        p::after {
+            content: "Thanks for reading!";
+        }
+
+        /* 
+        To learn more about Pseudo Elements:
+        https://www.w3schools.com/css/css_pseudo_elements.asp
+        OR:
+        https://www.tutorialrepublic.com/css-tutorial/css-pseudo-elements.php
+        */
     </style>
 </head>
 
@@ -156,7 +177,7 @@
             <h2>Welcome to our school</h2>
             <h3>The right choice for your career</h3>
 
-            <p>Just a simple paragraph</p>
+            <p>Just a simple paragraph.</p>
             <!-- we can have <aside> inside the section -->
             <aside>
 

@@ -1,6 +1,6 @@
-/* 
-Just Pure CSS Code: 
-Working with Selectors - Page: 238 
+/*
+Just Pure CSS Code:
+Working with Selectors - Page: 238
 ==================================
 
 Selector {
@@ -42,10 +42,10 @@ Apply the styles to all the elements in the document (webpage) without any excep
     */
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
-            /* 
-            Task: target/style the font size to be 16px => px stands for pixel 
-          
-            We will discus the units of type size in details 
+            /*
+            Task: target/style the font size to be 16px => px stands for pixel
+
+            We will discus the units of type size in details
             (lesson 12) Page: 275 and Page: 276
             */
             font-size: 16px;
@@ -91,9 +91,9 @@ but we can style it for the future in case if we need to add h3
             font-family: 'Times New Roman', Times, serif;
         }
 
-/* 
+/*
 NOTE
-Avoid using 2 or more same rules!!!! 
+Avoid using 2 or more same rules!!!!
 if selectors have the same properties and value, just combine them all
 */
 h1 {
@@ -203,7 +203,7 @@ hr {
             Notice that to let VSC code helps you, the keyword is "border".
             When you type border VSC will give you all the properties related to border
         */
- 
+
 
 
         /* ************ Class Selector ************ */
@@ -233,7 +233,7 @@ hr {
         }
 
         /*
-        Task: Style only the p element(s) that has a class attribute value of "note"
+        Task: Style only the p element(s) that has/have a class attribute value of "note"
         Or:
         all the "note" class that is an attribute of p element only:
         <p class="note">
@@ -317,9 +317,9 @@ hr {
             div (1 point) + #container (100) == total ==> 101 (Specificity points)
         */
 
-        /* 
+        /*
             The below selector: #container
-            has only #container (100) == total ==> 100 (Specificity points) 
+            has only #container (100) == total ==> 100 (Specificity points)
             so its background color will take effect
         */
         #container {
@@ -435,12 +435,12 @@ hr {
         */
 
         /*
-        Task: target/style <ul> element that is the direct (first generation) child of div#container
+        Task: target/style <ul> element that is the direct child (first generation) of div#container
         by give it a border of 4px width, red color, and solid line
         */
 
         div#container>ul {
-            border: 4px red solid;
+            border: 5px red solid;
         }
 
         /*
@@ -476,7 +476,7 @@ hr {
         writing its sibling element with + sign
         */
         h1+h2 {
-            /* Adding spaces between the letters */
+            /* Adding more spaces between the letters */
             letter-spacing: 5px;
         }
 
@@ -484,7 +484,7 @@ hr {
         Task: Style the p element which is the "adjacent" sibling of h1:
         in our HTML code:
         <h1>Heading 1</h1>
-        NO HTML element in between (just spaces of comments)
+        NO HTML element in between (just spaces or comments)
         <p>Here is a paragraph</p>
 
         Note:

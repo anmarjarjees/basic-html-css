@@ -119,6 +119,9 @@
         /* Target the body element to have any background color: */
         body {
             background-color: cornsilk;
+            /*
+          declaration => background-color: blanchedalmond;
+          */
             font-family: Arial, Helvetica, sans-serif;
         }
 
@@ -132,7 +135,7 @@
         p {
             /* be careful: after each declaration we have to add ; */
             color: darkred;
-            background-color: lightcoral;
+            background-color: lightgoldenrodyellow;
             /*
             notice that we can omit the ; from the last declaration
             that ends with the closing }
@@ -184,6 +187,9 @@
         /*
         Target ANY element that has a class value equal to "note"
         - any HTML element that has a class = "note"
+
+        In other word, style the class named "note"
+        
         - change the font style to be italic
 
         Review:
@@ -290,7 +296,7 @@
 <body>
     <!-- the main container of all the page contents -->
     <div id="container">
-        <!-- 
+        <!--
             The main code of this HTML page which is the content of div#container
             was taken from chapter-10/css-selectors.html (Page: 237)
             with some few modifications
@@ -323,7 +329,7 @@
         - Inline styles override the global styles applied to the elements
         -->
 
-        <p style="color:antiquewhite; background-color:brown;">
+        <p id="vip" style="color:antiquewhite; background-color:brown;">
             here is just a simple text to practice the inline styles
         </p>
         <h2>Spring</h2>
@@ -352,6 +358,10 @@
             <a href="http://www.example.org">Example</a>.
         </p>
         <p>
+            <!-- 
+                href="#top"
+                Contains a URL or a URL fragment that the hyperlink points to 
+            -->
             <a href="#top">Top of page</a>
         </p>
     </div> <!-- end div#container -->
